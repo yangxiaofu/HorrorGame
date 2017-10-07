@@ -2,6 +2,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Assertions;
+using Game.Characters;
 
 namespace Game.Core{
 	public class CameraRaycaster : MonoBehaviour {
@@ -11,6 +13,9 @@ namespace Game.Core{
 		const string ENEMY_LAYER = "Enemy";
 		const int INTERACTABLE_ITEM_BIT = 8;
 		const int ENEMY_BIT = 9;
+
+		public delegate void MouseOverEnemy(Enemy enemy);
+		public event MouseOverEnemy OnMouseOverEnemy;
 
 		/// <summary>
 		/// This function is called every fixed framerate frame, if the MonoBehaviour is enabled.
@@ -28,7 +33,9 @@ namespace Game.Core{
         private void RaycastForEnemy(RaycastHit hit)
         {
             if (hit.transform.gameObject.layer == LayerMask.NameToLayer(ENEMY_LAYER)){
-				print("Hit an enemy");
+				var enemy = hit.transform.gameObject.GetComponent<Enemy>();
+				Assert.IsNotNull(enemy, "The game object that you are click on may not have an enemy script on top of it");
+				OnMouseOverEnemy(enemy);
 			}
         }
 

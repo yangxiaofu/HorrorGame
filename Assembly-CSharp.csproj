@@ -52,11 +52,14 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\_Characters\_Enemies\Enemy.cs" />
+     <Compile Include="Assets\_Characters\_Enemies\EnemySight.cs" />
      <Compile Include="Assets\_Characters\_Player\Player.cs" />
      <Compile Include="Assets\_Characters\Character.cs" />
+     <Compile Include="Assets\_Characters\CharacterMovement.cs" />
      <Compile Include="Assets\_Core\CameraArm.cs" />
      <Compile Include="Assets\_Core\CameraRaycaster.cs" />
      <Compile Include="Assets\_Core\NavMeshBaker.cs" />
+     <Compile Include="Assets\_Items\Item.cs" />
      <Compile Include="Assets\NavMeshComponents-master\Assets\Examples\Scripts\AgentLinkMover.cs" />
      <Compile Include="Assets\NavMeshComponents-master\Assets\Examples\Scripts\ClickToMove.cs" />
      <Compile Include="Assets\NavMeshComponents-master\Assets\Examples\Scripts\DestroyOnTrigger.cs" />
