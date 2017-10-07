@@ -11,6 +11,7 @@ namespace Game.Characters{
 		void Start(){
 			_sight = GetComponentInChildren<EnemySight>();
 			Assert.IsNotNull(_sight);
+			_sight.Setup(this.transform);
 
 			_characterMovement = GetComponent<CharacterMovement>();
 			Assert.IsNotNull(_characterMovement);

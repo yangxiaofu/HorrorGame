@@ -7,10 +7,10 @@ namespace Game.Characters{
 	public class EnemySight : MonoBehaviour {
 		[SerializeField] float _angleOfSight = 45f;
 		[SerializeField] float _sightDistance = 50f;
+		Transform _parent;
 		const string PLAYER = "Player";
 		Player _target;
 		Vector3 _targetDirection;
-		float _sightHeight;
 
 		public delegate void PlayerSeen(Player player);
 		public event PlayerSeen OnPlayerSeen;
@@ -22,11 +22,16 @@ namespace Game.Characters{
 			Assert.IsNotNull(_target, "Player is not in the game scene.");
 		}
 		
+		public void Setup(Transform parent)
+		{
+			_parent = parent;
+		}
+		
 		void FixedUpdate()
 		{
-			_targetDirection = _target.transform.position - transform.position;
-			float angleOfPlayer = Vector3.Angle(_targetDirection, this.transform.forward);
-			
+			_targetDirection = _target.transform.position - _parent.transform.position;
+			float angleOfPlayer = Vector3.Angle(_targetDirection, _parent.transform.forward);
+
 			if (PlayerInLineOfSight(angleOfPlayer))
             {
                 RaycastForPlayer();
@@ -35,25 +40,29 @@ namespace Game.Characters{
 
         private void RaycastForPlayer()
         {
-            var rayCastDirection = transform.TransformDirection(new Vector3(_targetDirection.x, 0, _targetDirection.z));
             RaycastHit hit;
-            if (Physics.Raycast(transform.position, rayCastDirection, out hit, _sightDistance))
+			
+            if (Physics.Raycast(transform.position, _targetDirection, out hit, _sightDistance))
             {
-                if (hit.transform.CompareTag(PLAYER))
-                {
-					Assert.IsNotNull(hit.transform.gameObject.GetComponent<Player>());
+                if (!hit.transform.CompareTag(PLAYER)) return;
 
-					if (OnPlayerSeen != null) 
-					{
-						OnPlayerSeen(hit.transform.gameObject.GetComponent<Player>());
-					}
-                }
+				var player = hit.transform.gameObject.GetComponent<Player>();
+
+				Assert.IsNotNull(player);
+
+				if (OnPlayerSeen != null) OnPlayerSeen(player);
             }
         }
 
         private bool PlayerInLineOfSight(float angleOfPlayer)
 		{
 			return angleOfPlayer < _angleOfSight;
+		}
+
+		void OnDrawGizmos()
+		{
+			Gizmos.color = Color.red;
+			Gizmos.DrawRay(transform.position, _targetDirection);
 		}
 	}
 }
