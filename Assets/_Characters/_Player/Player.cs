@@ -3,17 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 namespace Game.Characters{
-	public class Player : MonoBehaviour {
-
-		// Use this for initialization
-		void Start () {
-			
-		}
+	public class Player : Character{
 		
-		// Update is called once per frame
-		void Update () {
-			
-		}
+		
 	}
 }
 

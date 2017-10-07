@@ -51,7 +51,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\_Characters\_Enemies\Enemy.cs" />
      <Compile Include="Assets\_Characters\_Player\Player.cs" />
+     <Compile Include="Assets\_Characters\Character.cs" />
      <Compile Include="Assets\_Core\CameraArm.cs" />
      <Compile Include="Assets\_Core\CameraRaycaster.cs" />
      <Compile Include="Assets\_Core\NavMeshBaker.cs" />
