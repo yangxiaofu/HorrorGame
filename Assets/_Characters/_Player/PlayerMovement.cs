@@ -1,21 +1,32 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityStandardAssets.Characters.ThirdPerson;
+﻿using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
 
-namespace Game.Characters{
-	public class PlayerMovement : MonoBehaviour {
-		private Transform m_Cam;   
-		private ThirdPersonCharacter m_Character;        
-		private Vector3 m_CamForward;             // The current forward direction of the camera
-        private Vector3 m_Move;
+namespace Game.Characters
+{
+    public class PlayerMovement : CharacterMovement{
+		[SerializeField] float m_MoveSpeedMultiplier = 1f;
+		Transform mainCamera;          
+		Vector3 m_CamForward;             // The current forward direction of the camera
+        Vector3 m_Move;
 
 		void Start()
         {
+            GetCharacterMovementComponents();
+            SetupCapsuleCollider();
+            SetupRigidBodyVariables();
             FindMainCamera();
-            m_Character = GetComponent<ThirdPersonCharacter>();
-			
+        }
+
+        private void SetupCapsuleCollider()
+        {
+            m_CapsuleHeight = m_Capsule.height;
+            m_CapsuleCenter = m_Capsule.center;
+        }
+
+        private void SetupRigidBodyVariables()
+        {
+            m_Rigidbody.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezeRotationZ;
+            m_OrigGroundCheckDistance = m_GroundCheckDistance;
         }
 
         private void FindMainCamera()
@@ -23,7 +34,7 @@ namespace Game.Characters{
             // get the transform of the main camera
             if (Camera.main != null)
             {
-                m_Cam = Camera.main.transform;
+                mainCamera = Camera.main.transform;
             }
             else
             {
@@ -33,7 +44,7 @@ namespace Game.Characters{
             }
         }
 
-        private void FixedUpdate()
+        void FixedUpdate()
         {
             // read inputs
             float h = CrossPlatformInputManager.GetAxis("Horizontal");
@@ -41,11 +52,11 @@ namespace Game.Characters{
             bool crouch = Input.GetKey(KeyCode.C);
 
             // calculate move direction to pass to character
-            if (m_Cam != null)
+            if (mainCamera != null)
             {
                 // calculate camera relative direction to move:
-                m_CamForward = Vector3.Scale(m_Cam.forward, new Vector3(1, 0, 1)).normalized;
-                m_Move = v*m_CamForward + h*m_Cam.right;
+                m_CamForward = Vector3.Scale(mainCamera.forward, new Vector3(1, 0, 1)).normalized;
+                m_Move = v*m_CamForward + h*mainCamera.right;
             }
             else
             {
@@ -58,9 +69,24 @@ namespace Game.Characters{
 #endif
 
             // pass all parameters to the character control script
-            m_Character.Move(m_Move, crouch, false);
+            Move(m_Move, crouch, false);
 
         }
+
+		void OnAnimatorMove()
+		{
+			// we implement this function to override the default root motion.
+			// this allows us to modify the positional speed before it's applied.
+			if (m_IsGrounded && Time.deltaTime > 0)
+			{
+				Vector3 v = (m_Animator.deltaPosition * m_MoveSpeedMultiplier) / Time.deltaTime;
+
+				// we preserve the existing y part of the current velocity.
+				v.y = m_Rigidbody.velocity.y;
+				m_Rigidbody.velocity = v;
+			}
+		}
+
 	
 	}
 }

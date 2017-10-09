@@ -113,10 +113,8 @@ GameObject:
   - component: {fileID: 54256517008349682}
   - component: {fileID: 136295976914842370}
   - component: {fileID: 195567672973670162}
-  - component: {fileID: 114782987686291656}
-  - component: {fileID: 114008291773953250}
   - component: {fileID: 114153879513713686}
-  - component: {fileID: 114141866476699568}
+  - component: {fileID: 114381923779576112}
   - component: {fileID: 114835032598282990}
   m_Layer: 9
   m_Name: Enemy
@@ -1557,7 +1555,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1018004224050966}
-  m_LocalRotation: {x: 0.5326752, y: 0.070340455, z: 0.83613276, w: -0.110415146}
+  m_LocalRotation: {x: 0.53267515, y: 0.07034045, z: 0.83613265, w: -0.11041513}
   m_LocalPosition: {x: 0.000022271464, y: -0.00006150465, z: 0.026027026}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1875,8 +1873,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1042937933141708}
   m_LocalRotation: {x: -0, y: -0.60576504, z: -0, w: 0.7956436}
-  m_LocalPosition: {x: -5.311464, y: 0, z: -1.5960367}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 227.77, y: 0, z: 253.74}
+  m_LocalScale: {x: 1.0000002, y: 1, z: 1.0000002}
   m_Children:
   - {fileID: 4731357108956316}
   - {fileID: 4920353740728776}
@@ -2532,36 +2530,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _angleOfSight: 45
   _sightDistance: 5.7
---- !u!114 &114008291773953250
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1042937933141708}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ce7a80d520cacc042b5fe14f373d8173, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_MovingTurnSpeed: 360
-  m_StationaryTurnSpeed: 180
-  m_JumpPower: 6
-  m_GravityMultiplier: 2
-  m_RunCycleLegOffset: 0.2
-  m_MoveSpeedMultiplier: 1
-  m_AnimSpeedMultiplier: 1
-  m_GroundCheckDistance: 0.2
---- !u!114 &114141866476699568
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1042937933141708}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 14faa6706aa684f928d02833edee1b89, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114153879513713686
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2574,7 +2542,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _meleeAttackRadius: 1.17
---- !u!114 &114782987686291656
+--- !u!114 &114381923779576112
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -2582,9 +2550,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1042937933141708}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8c5335f0882fe4d478883cc8c58ce906, type: 3}
+  m_Script: {fileID: 11500000, guid: d3c46f758f7b5464a85e15eed3f5b5fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_GravityMultiplier: 2
+  m_MovingTurnSpeed: 360
+  m_StationaryTurnSpeed: 180
+  m_GroundCheckDistance: 0.2
+  m_RunCycleLegOffset: 0.2
+  m_AnimSpeedMultiplier: 1
   target: {fileID: 0}
 --- !u!114 &114835032598282990
 MonoBehaviour:
