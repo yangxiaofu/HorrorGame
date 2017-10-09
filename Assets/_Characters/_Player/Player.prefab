@@ -682,9 +682,9 @@ GameObject:
   - component: {fileID: 95281468026783072}
   - component: {fileID: 54019914651353066}
   - component: {fileID: 136601956127036016}
-  - component: {fileID: 114727963860273526}
   - component: {fileID: 114039839450389130}
   - component: {fileID: 114104779921206522}
+  - component: {fileID: 114768177607395466}
   - component: {fileID: 114518048580141594}
   m_Layer: 0
   m_Name: Player
@@ -749,6 +749,22 @@ GameObject:
   - component: {fileID: 4803136153871132}
   m_Layer: 0
   m_Name: EthanLeftHandRing3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1513192785292046
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4235673599105236}
+  - component: {fileID: 108538599605039130}
+  m_Layer: 0
+  m_Name: Point light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1571,6 +1587,19 @@ Transform:
   m_Father: {fileID: 4724142091702604}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4235673599105236
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1513192785292046}
+  m_LocalRotation: {x: 0.102327734, y: -0, z: -0, w: 0.99475074}
+  m_LocalPosition: {x: 0, y: 0.664, z: 0.104}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4350615172861170}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 11.746, y: 0, z: 0}
 --- !u!4 &4235705387609948
 Transform:
   m_ObjectHideFlags: 1
@@ -1701,12 +1730,13 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1478101941135492}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.1, y: 5.821589e-18, z: 0.1}
+  m_LocalPosition: {x: 256.89, y: 5.821589e-18, z: 175.65}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4079426543053544}
   - {fileID: 4716422799644514}
   - {fileID: 4846234597787962}
+  - {fileID: 4235673599105236}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2487,6 +2517,56 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!108 &108538599605039130
+Light:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1513192785292046}
+  m_Enabled: 1
+  serializedVersion: 8
+  m_Type: 0
+  m_Color: {r: 0.77205884, g: 0.77205884, b: 0.77205884, a: 1}
+  m_Intensity: 45
+  m_Range: 45.28
+  m_SpotAngle: 85.3
+  m_CookieSize: 10
+  m_Shadows:
+    m_Type: 1
+    m_Resolution: -1
+    m_CustomResolution: -1
+    m_Strength: 1
+    m_Bias: 0
+    m_NormalBias: 0.4
+    m_NearPlane: 0.2
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_Lightmapping: 4
+  m_AreaSize: {x: 1, y: 1}
+  m_BounceIntensity: 1
+  m_FalloffTable:
+    m_Table[0]: 0
+    m_Table[1]: 0
+    m_Table[2]: 0
+    m_Table[3]: 0
+    m_Table[4]: 0
+    m_Table[5]: 0
+    m_Table[6]: 0
+    m_Table[7]: 0
+    m_Table[8]: 0
+    m_Table[9]: 0
+    m_Table[10]: 0
+    m_Table[11]: 0
+    m_Table[12]: 0
+  m_ColorTemperature: 6570
+  m_UseColorTemperature: 0
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0
 --- !u!114 &114039839450389130
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2500,7 +2580,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_MovingTurnSpeed: 360
   m_StationaryTurnSpeed: 180
-  m_JumpPower: 6
+  m_JumpPower: 12
   m_GravityMultiplier: 2
   m_RunCycleLegOffset: 0.2
   m_MoveSpeedMultiplier: 1
@@ -2533,7 +2613,7 @@ MonoBehaviour:
   _currentHealth: 100
   _startingHealth: 100
   _secondsBeforeDeathDisappear: 2
---- !u!114 &114727963860273526
+--- !u!114 &114768177607395466
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -2541,7 +2621,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1478101941135492}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 521b611700410be45810047f0a74e899, type: 3}
+  m_Script: {fileID: 11500000, guid: f07f90972f46e44efaaef499dfeb2468, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!136 &136601956127036016

@@ -54,6 +54,7 @@
      <Compile Include="Assets\_Characters\_Enemies\Enemy.cs" />
      <Compile Include="Assets\_Characters\_Enemies\EnemySight.cs" />
      <Compile Include="Assets\_Characters\_Player\Player.cs" />
+     <Compile Include="Assets\_Characters\_Player\PlayerMovement.cs" />
      <Compile Include="Assets\_Characters\Character.cs" />
      <Compile Include="Assets\_Characters\CharacterHealth.cs" />
      <Compile Include="Assets\_Characters\CharacterMovement.cs" />
