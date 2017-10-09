@@ -21,7 +21,13 @@ namespace Game.Characters{
         private void OnMouseOverEnemy(Enemy enemy)
         {
 			if (Input.GetMouseButtonDown(0)){
-				Debug.Log("Attack the enemy " + enemy);
+				float distanceFromEnemy = Vector3.Distance(transform.position, enemy.transform.position);
+
+				if (distanceFromEnemy <= _meleeAttackRadius)
+				{
+					enemy.GetComponent<CharacterHealth>().TakeDamage(_meleeWeaponDamage);
+				}
+				
 			}
         }
     }

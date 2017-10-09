@@ -685,6 +685,7 @@ GameObject:
   - component: {fileID: 114727963860273526}
   - component: {fileID: 114039839450389130}
   - component: {fileID: 114104779921206522}
+  - component: {fileID: 114518048580141594}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -2516,6 +2517,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb45163ee8f46443ebb25b87ac5a8f24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _meleeAttackRadius: 0.94
+  _meleeWeaponDamage: 100
+--- !u!114 &114518048580141594
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1478101941135492}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c87148c3c1b24987b30aad8bc430e23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _currentHealth: 100
+  _startingHealth: 100
+  _secondsBeforeDeathDisappear: 2
 --- !u!114 &114727963860273526
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -7,6 +7,7 @@ namespace Game.Characters{
 	public class EnemySight : MonoBehaviour {
 		[SerializeField] float _angleOfSight = 45f;
 		[SerializeField] float _sightDistance = 50f;
+		public float sightDistance{get{return _sightDistance;}}
 		Transform _parent;
 		const string PLAYER = "Player";
 		Player _target;

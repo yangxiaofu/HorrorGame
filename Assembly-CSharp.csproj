@@ -55,10 +55,14 @@
      <Compile Include="Assets\_Characters\_Enemies\EnemySight.cs" />
      <Compile Include="Assets\_Characters\_Player\Player.cs" />
      <Compile Include="Assets\_Characters\Character.cs" />
+     <Compile Include="Assets\_Characters\CharacterHealth.cs" />
      <Compile Include="Assets\_Characters\CharacterMovement.cs" />
      <Compile Include="Assets\_Core\CameraArm.cs" />
      <Compile Include="Assets\_Core\CameraRaycaster.cs" />
      <Compile Include="Assets\_Core\NavMeshBaker.cs" />
+     <Compile Include="Assets\_Core\SelectionBase.cs" />
+     <Compile Include="Assets\_Environment\DoorBehaviour.cs" />
+     <Compile Include="Assets\_Environment\InteractableItem.cs" />
      <Compile Include="Assets\_Items\Item.cs" />
      <Compile Include="Assets\NavMeshComponents-master\Assets\Examples\Scripts\AgentLinkMover.cs" />
      <Compile Include="Assets\NavMeshComponents-master\Assets\Examples\Scripts\ClickToMove.cs" />
@@ -83,10 +87,16 @@
      <Compile Include="Assets\NavMeshComponents-master\Assets\Tests\NavMeshSurfaceModifierTests.cs" />
      <Compile Include="Assets\NavMeshComponents-master\Assets\Tests\NavMeshSurfaceModifierVolumeTests.cs" />
      <Compile Include="Assets\NavMeshComponents-master\Assets\Tests\NavMeshSurfaceTests.cs" />
+     <Compile Include="Assets\Textures\Scripts\Survey.cs" />
      <None Include="Assets\NavMeshComponents-master\ProjectSettings\ProjectVersion.txt" />
+     <None Include="Assets\Standard Assets\Environment\Water\Water4\Shaders\FXWater4Simple.shader" />
+     <None Include="Assets\Standard Assets\Environment\Water (Basic)\Shaders\FXWaterBasic.shader" />
      <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
+     <None Include="Assets\Standard Assets\Environment\Water\Water\Shaders\FXWaterPro.shader" />
      <None Include="Assets\Standard Assets\Characters\ThirdPersonCharacter\ThirdPersonCharacterGuidelines.txt" />
      <None Include="Assets\Standard Assets\Characters\FirstPersonCharacter\FirstPersonCharacterGuidelines.txt" />
+     <None Include="Assets\Standard Assets\Environment\Water\Water4\Shaders\WaterInclude.cginc" />
+     <None Include="Assets\Standard Assets\Environment\Water\Water4\Shaders\FXWater4Advanced.shader" />
      <None Include="Assets\Standard Assets\Characters\RollerBall\RollerBallGuidelines.txt" />
  <Reference Include="UnityEngine.UI">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
