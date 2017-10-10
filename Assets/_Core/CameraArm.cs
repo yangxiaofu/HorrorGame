@@ -6,11 +6,9 @@ using Game.Characters;
 
 namespace Game.Core	{
 	public class CameraArm : MonoBehaviour {
-
-		Player _player;
-
+		GameObject _player;
 		void Start(){
-			_player = FindObjectOfType<Player>();
+			_player = GameObject.FindGameObjectWithTag("Player");
 			Assert.IsNotNull(_player);
 		}
 

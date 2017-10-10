@@ -6,10 +6,10 @@ using Game.Core;
 using System;
 
 namespace Game.Characters{
+	[SelectionBase]
 	public class Player : Character{
 		[SerializeField] float _meleeWeaponDamage = 10f;
 		CameraRaycaster _cameraRaycaster;
-
 
 		void Start(){
 			_cameraRaycaster = FindObjectOfType<CameraRaycaster>();
@@ -26,6 +26,8 @@ namespace Game.Characters{
 				if (distanceFromEnemy <= _meleeAttackRadius)
 				{
 					enemy.GetComponent<CharacterHealth>().TakeDamage(_meleeWeaponDamage);
+				} else {
+					print("You are too far from the enemy.");
 				}
 				
 			}

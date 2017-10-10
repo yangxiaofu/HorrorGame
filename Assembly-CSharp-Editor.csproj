@@ -51,22 +51,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\NavMeshComponents-master\Assets\Examples\Editor\NavMeshPrefabInstanceEditor.cs" />
-     <Compile Include="Assets\NavMeshComponents-master\Assets\NavMeshComponents\Editor\NavMeshComponentsGUIUtility.cs" />
-     <Compile Include="Assets\NavMeshComponents-master\Assets\NavMeshComponents\Editor\NavMeshLinkEditor.cs" />
-     <Compile Include="Assets\NavMeshComponents-master\Assets\NavMeshComponents\Editor\NavMeshModifierEditor.cs" />
-     <Compile Include="Assets\NavMeshComponents-master\Assets\NavMeshComponents\Editor\NavMeshModifierVolumeEditor.cs" />
-     <Compile Include="Assets\NavMeshComponents-master\Assets\NavMeshComponents\Editor\NavMeshSurfaceEditor.cs" />
-     <None Include="Assets\NavMeshComponents-master\ProjectSettings\ProjectVersion.txt" />
-     <None Include="Assets\Standard Assets\Environment\Water\Water4\Shaders\FXWater4Simple.shader" />
-     <None Include="Assets\Standard Assets\Environment\Water (Basic)\Shaders\FXWaterBasic.shader" />
-     <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
-     <None Include="Assets\Standard Assets\Environment\Water\Water\Shaders\FXWaterPro.shader" />
-     <None Include="Assets\Standard Assets\Characters\ThirdPersonCharacter\ThirdPersonCharacterGuidelines.txt" />
-     <None Include="Assets\Standard Assets\Characters\FirstPersonCharacter\FirstPersonCharacterGuidelines.txt" />
-     <None Include="Assets\Standard Assets\Environment\Water\Water4\Shaders\WaterInclude.cginc" />
-     <None Include="Assets\Standard Assets\Environment\Water\Water4\Shaders\FXWater4Advanced.shader" />
-     <None Include="Assets\Standard Assets\Characters\RollerBall\RollerBallGuidelines.txt" />
+     <Compile Include="Assets\_Core\CrossPlatformInput\Editor\CrossPlatformInput\CrossPlatformInputInitialize.cs" />
+     <None Include="Assets\_Environment\Water\Water\Water4\Shaders\FXWater4Simple.shader" />
+     <None Include="Assets\_Environment\Water\Water (Basic)\Shaders\FXWaterBasic.shader" />
+     <None Include="Assets\_Core\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
+     <None Include="Assets\_Environment\Water\Water\Water\Shaders\FXWaterPro.shader" />
+     <None Include="Assets\_Environment\Water\Water\Water4\Shaders\WaterInclude.cginc" />
+     <None Include="Assets\_Environment\Water\Water\Water4\Shaders\FXWater4Advanced.shader" />
  <Reference Include="UnityEditor.Advertisements">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/Advertisements/Editor/UnityEditor.Advertisements.dll</HintPath>
  </Reference>
@@ -126,12 +117,8 @@
  </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
-      <Project>{9E797682-0B2B-70E9-AC5B-3061F510CB4F}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
     <ProjectReference Include="Assembly-CSharp.csproj">
       <Project>{55E7D035-A1CA-91BC-40A4-6B34CDD79FC3}</Project>      <Name>Assembly-CSharp</Name>    </ProjectReference>
-    <ProjectReference Include="Assembly-CSharp-Editor-firstpass.csproj">
-      <Project>{F037539C-CB59-20F5-7FF8-AA9124E169F2}</Project>      <Name>Assembly-CSharp-Editor-firstpass</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

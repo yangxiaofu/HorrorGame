@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-using UnityStandardAssets.CrossPlatformInput;
+using Game.Core;
 
 namespace Game.Characters
 {
@@ -8,6 +8,8 @@ namespace Game.Characters
 		Transform mainCamera;          
 		Vector3 m_CamForward;             // The current forward direction of the camera
         Vector3 m_Move;
+        const string HORIZONTAL_AXIS = "Horizontal";
+        const string VERTICAL_AXIS = "Vertical";
 
 		void Start()
         {
@@ -47,8 +49,8 @@ namespace Game.Characters
         void FixedUpdate()
         {
             // read inputs
-            float h = CrossPlatformInputManager.GetAxis("Horizontal");
-            float v = CrossPlatformInputManager.GetAxis("Vertical");
+            float h = CrossPlatformInputManager.GetAxis(HORIZONTAL_AXIS);
+            float v = CrossPlatformInputManager.GetAxis(VERTICAL_AXIS);
             bool crouch = Input.GetKey(KeyCode.C);
 
             // calculate move direction to pass to character
@@ -70,7 +72,6 @@ namespace Game.Characters
 
             // pass all parameters to the character control script
             Move(m_Move, crouch, false);
-
         }
 
 		void OnAnimatorMove()
@@ -90,4 +91,3 @@ namespace Game.Characters
 	
 	}
 }
-
