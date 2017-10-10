@@ -9,14 +9,10 @@ using Game.Environment;
 namespace Game.Core{
 	public class CameraRaycaster : MonoBehaviour {
 		float _rayCastDistance = 50f;
-		const string INTERACTABLE_ITEM = "Interactable Item";
 		const string ENEMY_LAYER = "Enemy";
 		const int INTERACTABLE_ITEM_BIT = 8;
 		const int ENEMY_BIT = 9;
 		const int GROUND_BIT = 10;
-
-		public delegate void MouseOverInteractableItem(InteractableItem item);
-		public event MouseOverInteractableItem OnMouseOverInteractableItem;
 
 		public delegate void MouseOverEnemy(Enemy enemy);
 		public event MouseOverEnemy OnMouseOverEnemy;
@@ -24,9 +20,6 @@ namespace Game.Core{
 		public delegate void MouseOverGround(Vector3 mousePositionOnGround);
 		public event MouseOverGround OnMouseOverGround;
 
-		/// <summary>
-		/// This function is called every fixed framerate frame, if the MonoBehaviour is enabled.
-		/// </summary>
 		void FixedUpdate()
 		{
 			RaycastHit hit; 

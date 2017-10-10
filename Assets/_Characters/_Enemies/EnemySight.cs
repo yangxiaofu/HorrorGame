@@ -31,7 +31,11 @@ namespace Game.Characters{
 		void FixedUpdate()
 		{
 			_targetDirection = _target.transform.position - _parent.transform.position;
-			float angleOfPlayer = Vector3.Angle(_targetDirection, _parent.transform.forward);
+
+			float angleOfPlayer = Vector3.Angle(
+				_targetDirection, 
+				_parent.transform.forward
+			);
 
 			if (PlayerInLineOfSight(angleOfPlayer))
             {
@@ -43,7 +47,9 @@ namespace Game.Characters{
         {
             RaycastHit hit;
 			
-            if (Physics.Raycast(transform.position, _targetDirection, out hit, _sightDistance))
+            if (Physics.Raycast(
+				transform.position, _targetDirection, out hit, _sightDistance))
+
             {
                 if (!hit.transform.CompareTag(PLAYER)) return;
 
