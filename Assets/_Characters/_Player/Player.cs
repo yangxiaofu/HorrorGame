@@ -9,11 +9,16 @@ namespace Game.Characters{
 	[SelectionBase]
 	public class Player : Character{
 		[SerializeField] float _meleeWeaponDamage = 10f;
+		[SerializeField] float _pickupDistance = 2f;
+		public float pickupDistance{get{return _pickupDistance;}}
 		CameraRaycaster _cameraRaycaster;
 
 		void Start(){
 			_cameraRaycaster = FindObjectOfType<CameraRaycaster>();
-			Assert.IsNotNull(_cameraRaycaster, "Camera Raycaster is not available.");
+			Assert.IsNotNull(
+				_cameraRaycaster, 
+				"Camera Raycaster is not available."
+			);
 
 			_cameraRaycaster.OnMouseOverEnemy += OnMouseOverEnemy;
 		}

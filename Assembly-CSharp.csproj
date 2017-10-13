@@ -88,7 +88,10 @@
      <Compile Include="Assets\_Environment\Water\Water\Water\Scripts\Water.cs" />
      <Compile Include="Assets\_Environment\Water\Water\Water\Scripts\WaterBase.cs" />
      <Compile Include="Assets\_Environment\Water\Water\Water\Scripts\WaterTile.cs" />
+     <Compile Include="Assets\_Inventory\Inventory.cs" />
      <Compile Include="Assets\_Items\Item.cs" />
+     <Compile Include="Assets\_Items\ItemConfig.cs" />
+     <Compile Include="Assets\_Items\ItemPickup.cs" />
      <None Include="Assets\_Environment\Water\Water\Water4\Shaders\FXWater4Simple.shader" />
      <None Include="Assets\_Environment\Water\Water (Basic)\Shaders\FXWaterBasic.shader" />
      <None Include="Assets\_Core\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />

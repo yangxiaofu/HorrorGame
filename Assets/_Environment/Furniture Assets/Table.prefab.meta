@@ -1,5 +1,7 @@
 fileFormatVersion: 2
 guid: b0d9d4c2014874090b641d8c0a162480
+labels:
+- Furniture
 timeCreated: 1507495401
 licenseType: Free
 NativeFormatImporter:

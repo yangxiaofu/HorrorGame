@@ -7,12 +7,14 @@ using Game.Characters;
 namespace Game.Core	{
 	public class CameraArm : MonoBehaviour {
 		GameObject _player;
-		void Start(){
+		void Start()
+		{
 			_player = GameObject.FindGameObjectWithTag("Player");
-			Assert.IsNotNull(_player);
+			Assert.IsNotNull(_player, "Player needs to be tagged with player tag.");
 		}
 
-		void Update(){
+		void Update()
+		{
 			this.transform.position = _player.transform.position;
 		}
 	}
