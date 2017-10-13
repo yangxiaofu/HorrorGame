@@ -1,34 +1,58 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.Assertions;
+using Game.Characters;
+using Game.Core;
 
 namespace Game.Items{
 	[ExecuteInEditMode]
-	public class ItemPickup : MonoBehaviour {
+	public class ItemPickup : MonoBehaviour, IPointerClickHandler {
 		[SerializeField] ItemConfig _item;
+		Player _player;
 
-        void Update()
-		{
-			DestroyChildObjects();
-
-			var itemObject = Instantiate(
-				_item.GetItemPrefab(), 
-				this.transform.position, 
-				Quaternion.identity
-			) as GameObject;
-
-			itemObject.transform.SetParent(
-				this.transform
-			);		
+		void Start(){
+			_player = GameObject.FindObjectOfType<Player>();
 		}
-		private void DestroyChildObjects()
+        void Update()
+        {
+            DestroyChildObjects();
+            InstiantiateItem();
+        }
+
+        private void InstiantiateItem()
+        {
+            var itemObject = Instantiate(
+                            _item.GetItemPrefab(),
+                            this.transform.position,
+                            Quaternion.identity
+                        ) as GameObject;
+
+            itemObject.transform.SetParent(
+                this.transform
+            );
+        }
+
+        private void DestroyChildObjects()
         {
             foreach (Transform child in this.transform)
             {
                 DestroyImmediate(child.gameObject);
             }
         }
-	}
+
+        public void OnPointerClick(PointerEventData eventData)
+        {
+            float distanceFromPlayer = Vector3.Distance(_player.transform.position, this.transform.position);
+			if (distanceFromPlayer < _player.pickupDistance){
+				var item = _item.GetItemPrefab().GetComponent<Item>();
+				_player.GetComponent<Inventory>().AddItem(item);
+				Destroy(this.gameObject);
+			} else {
+				Debug.Log("This item is too far away from the player.");
+			}
+        }
+    }
 
 }
