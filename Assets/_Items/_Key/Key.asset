@@ -8,8 +8,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6024487872fd247079408905c94ea8c2, type: 3}
-  m_Name: Item
+  m_Script: {fileID: 11500000, guid: 2df9d592261ae49ccacb23fdafdda8e8, type: 3}
+  m_Name: Key
   m_EditorClassIdentifier: 
-  _itemPrefab: {fileID: 1981049264731866, guid: cfbf54a8e4269493498922c015629f91,
+  _itemPrefab: {fileID: 1312937441385756, guid: 21cf5335cbc364ed194535449ef80671,
     type: 2}
+  _passCode: 1234

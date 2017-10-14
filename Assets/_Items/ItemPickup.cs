@@ -23,6 +23,8 @@ namespace Game.Items
 
         private void InstiantiateItem()
         {
+            if (_item == null) return;
+            
             var itemObject = Instantiate(
 				_item.GetItemPrefab(),
 				this.transform.position,
