@@ -46,11 +46,11 @@ namespace Game.Items
         {
             float distanceFromPlayer = Vector3.Distance(_player.transform.position, this.transform.position);
 			if (distanceFromPlayer < _player.pickupDistance){
-				var item = _item.GetItemPrefab().GetComponent<Item>();
-				_player.GetComponent<Inventory>().AddItem(item);
+                _item.AddToInventory(_player.GetComponent<Inventory>());
 				Destroy(this.gameObject);
 			} else {
 				Debug.Log("This item is too far away from the player.");
+                //TODO: UI that tellsthe player that you are too far away from the player. 
 			}
         }
 

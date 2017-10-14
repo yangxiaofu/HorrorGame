@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 using NUnit.Framework;
+using Game.Core;
 
-namespace Game.Items.LockTests{
+namespace Game.Core.LockTests{
 	
 	[TestFixture]	
 	public class LockTest {

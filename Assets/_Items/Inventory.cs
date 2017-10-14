@@ -5,17 +5,22 @@ using UnityEngine;
 
 namespace Game.Items{
 	public class Inventory : MonoBehaviour {
-		[SerializeField] List<Item> _items = new List<Item>();
-		[SerializeField] List<Key> _keys = new List<Key>();
+		[SerializeField] List<ItemConfig> _items = new List<ItemConfig>();
+		[SerializeField] List<KeyConfig> _keys = new List<KeyConfig>();
 
-		public void AddItem(Item item)
+		public void AddItem(ItemConfig item)
 		{
 			_items.Add(item);
 		}
 
-		public Key FindKey(string passCode)
+		public void AddKey(KeyConfig key)
 		{
-			return _keys.Find(a => a.passcode == passCode);
+			_keys.Add(key);
+		}
+
+		public KeyConfig FindKey(string passCode)
+		{
+			return _keys.Find(a => a.passCode == passCode);
 		}
 	}
 }

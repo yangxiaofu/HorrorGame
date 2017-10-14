@@ -4,12 +4,16 @@ using UnityEngine;
 
 namespace Game.Items{
 	[CreateAssetMenu(menuName = "Game/Item")]
-	public class ItemConfig : ScriptableObject {
+	public abstract class ItemConfig : ScriptableObject {
+		[Header("Item General")]
 		[SerializeField] GameObject _itemPrefab;
 		public GameObject GetItemPrefab()
 		{
 			return _itemPrefab;
 		}
+
+		public abstract void AddToInventory(Inventory inv);
+
 	}
 
 }
