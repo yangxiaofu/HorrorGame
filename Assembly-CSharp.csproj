@@ -77,7 +77,10 @@
      <Compile Include="Assets\_Core\Flashlight.cs" />
      <Compile Include="Assets\_Core\GroundChecker.cs" />
      <Compile Include="Assets\_Core\SelectionBase.cs" />
-     <Compile Include="Assets\_Environment\DoorBehaviour.cs" />
+     <Compile Include="Assets\_Environment\Door\Door.cs" />
+     <Compile Include="Assets\_Environment\Door\DoorController.cs" />
+     <Compile Include="Assets\_Environment\Door\Key.cs" />
+     <Compile Include="Assets\_Environment\Door\Lock.cs" />
      <Compile Include="Assets\_Environment\InteractableItem.cs" />
      <Compile Include="Assets\_Environment\Water\Water (Basic)\Scripts\WaterBasic.cs" />
      <Compile Include="Assets\_Environment\Water\Water\Water\Scripts\Displace.cs" />
@@ -88,7 +91,7 @@
      <Compile Include="Assets\_Environment\Water\Water\Water\Scripts\Water.cs" />
      <Compile Include="Assets\_Environment\Water\Water\Water\Scripts\WaterBase.cs" />
      <Compile Include="Assets\_Environment\Water\Water\Water\Scripts\WaterTile.cs" />
-     <Compile Include="Assets\_Inventory\Inventory.cs" />
+     <Compile Include="Assets\_Items\Inventory.cs" />
      <Compile Include="Assets\_Items\Item.cs" />
      <Compile Include="Assets\_Items\ItemConfig.cs" />
      <Compile Include="Assets\_Items\ItemPickup.cs" />

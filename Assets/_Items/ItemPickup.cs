@@ -1,19 +1,19 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.Assertions;
 using Game.Characters;
-using Game.Core;
 
-namespace Game.Items{
-	[ExecuteInEditMode]
+namespace Game.Items
+{
+    [ExecuteInEditMode]
 	public class ItemPickup : MonoBehaviour, IPointerClickHandler {
 		[SerializeField] ItemConfig _item;
 		Player _player;
 
-		void Start(){
+		void Start()
+		{
 			_player = GameObject.FindObjectOfType<Player>();
+			Assert.IsNotNull(_player);
 		}
         void Update()
         {
@@ -24,10 +24,10 @@ namespace Game.Items{
         private void InstiantiateItem()
         {
             var itemObject = Instantiate(
-                            _item.GetItemPrefab(),
-                            this.transform.position,
-                            Quaternion.identity
-                        ) as GameObject;
+				_item.GetItemPrefab(),
+				this.transform.position,
+				Quaternion.identity
+			) as GameObject;
 
             itemObject.transform.SetParent(
                 this.transform
@@ -53,6 +53,12 @@ namespace Game.Items{
 				Debug.Log("This item is too far away from the player.");
 			}
         }
+
+		void OnDrawGizmos()
+		{
+			Gizmos.color = Color.green;
+			Gizmos.DrawWireSphere(this.transform.position, _player.pickupDistance);
+		}
     }
 
 }

@@ -11,4 +11,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6024487872fd247079408905c94ea8c2, type: 3}
   m_Name: Item
   m_EditorClassIdentifier: 
-  _itemPrefab: {fileID: 0}
+  _itemPrefab: {fileID: 1981049264731866, guid: cfbf54a8e4269493498922c015629f91,
+    type: 2}

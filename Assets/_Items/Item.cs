@@ -9,7 +9,7 @@ using Game.Core;
 namespace Game.Items{
     public class Item : MonoBehaviour
     {
-	
+		
     }
 }
 

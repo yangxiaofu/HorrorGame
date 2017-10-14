@@ -2504,6 +2504,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _meleeAttackRadius: 0.94
   _meleeWeaponDamage: 100
+  _pickupDistance: 1.49
 --- !u!114 &114321649311362562
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2568,7 +2569,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62ea64864e40341d78dd59a9db7d7cfc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _item: {fileID: 0}
+  _items: []
+  _keys:
+  - passCode: 1234
 --- !u!136 &136601956127036016
 CapsuleCollider:
   m_ObjectHideFlags: 1
