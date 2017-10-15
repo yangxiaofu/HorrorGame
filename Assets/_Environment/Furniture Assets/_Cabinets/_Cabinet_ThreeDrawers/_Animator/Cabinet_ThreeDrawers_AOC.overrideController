@@ -6,5 +6,11 @@ AnimatorOverrideController:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: Cabinet_ThreeDrawers_AOC
-  m_Controller: {fileID: 0}
-  m_Clips: []
+  m_Controller: {fileID: 9100000, guid: c000bcd271b51400dba5035a0c7977b7, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 0a346a3d18441489cb6bfd71223664f0, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: f5e576d5335cc46e89b045ba7a49376e, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 31b6c670c06454295872f6b83c151c4d, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 2f8172a3b6d2041859c719a98167b986, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 547fbb26e7c474c58ad787073cc30a58, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: b92e0f7f2040746deb3995dd263d53c1, type: 2}

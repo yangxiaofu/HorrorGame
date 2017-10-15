@@ -6,9 +6,19 @@ ModelImporter:
   serializedVersion: 21
   fileIDToRecycleName:
     100000: //RootNode
+    100002: Door
+    100004: Door 1
+    100006: Door_end
     400000: //RootNode
+    400002: Door
+    400004: Door 1
+    400006: Door_end
     2300000: //RootNode
+    2300002: Door 1
+    2300004: Door
     3300000: //RootNode
+    3300002: Door 1
+    3300004: Door
     4300000: Door
   materials:
     importMaterials: 1

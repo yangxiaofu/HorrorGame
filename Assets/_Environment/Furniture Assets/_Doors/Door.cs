@@ -10,13 +10,10 @@ using Game.Items;
 namespace Game.Environment{
 	public class Door : InteractableItem, IPointerClickHandler{
 		
-		[Header("Box Collider")]
-		[SerializeField] Vector3 _boxColliderSize;
 		void Start()
         {
 			PerformInteractableObjectAssertions();
 			SetupInteractableItemVariables();
-			SetupDoorVariables();		
 		}
 
         void Update()
@@ -26,12 +23,6 @@ namespace Game.Environment{
 				CloseDoor();
 			}
 		}
-
-        private void SetupDoorVariables()
-        {
-            var boxCollider = gameObject.AddComponent<BoxCollider>();
-			boxCollider.size = _boxColliderSize;
-        }
 
         public void OnPointerClick(PointerEventData eventData)
         {
