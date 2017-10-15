@@ -7,14 +7,29 @@ using Game.Characters;
 
 namespace Game.Core{
 	public class PlayerControl : MonoBehaviour {
+
+		[Header("Movement Control")]
 		[SerializeField] float _forwardSpeed = 3f;
 		[SerializeField] float _backwardSpeed = 2f;	
 		[SerializeField] float _groundDistance = 0.2f;
+
+		[Tooltip("This is the layer mask for which the camera raycater will hit. ")]
 		[SerializeField] LayerMask _ground;
 
 		[Tooltip("Adjusting this impacts the minimum energy level that impacts the player movement.")]
 		[Range(0, 1)]
 		[SerializeField] float _minimumEnergyFactor = 0.1f;
+
+
+		[Header("Animator Variables")]
+		[SerializeField] AnimatorOverrideController _animOC;
+		[SerializeField] Avatar _avatar;
+
+		[Header("Capsule Collider")]
+		[SerializeField] Vector3 _center = new Vector3(0, 0.8f, 0);
+		[SerializeField] float _radius = 0.3f;
+		[SerializeField] float _height = 1.6f;
+
 		float _speed = 0f;
 		Rigidbody _body;
 		Animator _anim;
@@ -28,7 +43,48 @@ namespace Game.Core{
 		const string VERTICAL_AXIS = "Vertical";
 		const string WALK_FORWARD = "Walk";
 		const string WALK_BACKWARD = "Walk_Backward";
-		void Start(){
+
+
+		void Awake()
+        {
+            AddAnimatorComponent();
+			AddRigidBodyComponent();
+			AddCapsuleCollider();
+        }
+
+        private void AddCapsuleCollider()
+        {
+			var cc = gameObject.AddComponent<CapsuleCollider>();
+			cc.center = _center;
+			cc.radius = _radius;
+			cc.height = _height;
+        }
+
+        private void AddRigidBodyComponent()
+        {
+            var rb = gameObject.AddComponent<Rigidbody>();
+			rb.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
+			
+        }
+
+        private void AddAnimatorComponent()
+        {
+            Assert.IsNotNull(
+                            _animOC,
+                            "Please add the player animation Override Controller referenced in the PlayerControl component"
+                        );
+
+            Assert.IsNotNull(
+                _avatar,
+                "Add the player avatar into PlayerControl component on Player"
+            );
+
+            _anim = gameObject.AddComponent<Animator>();
+            _anim.runtimeAnimatorController = _animOC;
+            _anim.avatar = _avatar;
+        }
+
+        void Start(){
 			_body = GetComponent<Rigidbody>();
 			Assert.IsNotNull(_body);
 
@@ -42,8 +98,6 @@ namespace Game.Core{
 			_flashlight = GetComponentInChildren<Flashlight>();
 			Assert.IsNotNull(_flashlight);
 
-			_anim = GetComponent<Animator>();
-			Assert.IsNotNull(_anim);
 		}
 
 		void Update(){

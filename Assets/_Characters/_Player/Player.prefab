@@ -2534,6 +2534,9 @@ MonoBehaviour:
   _ground:
     serializedVersion: 2
     m_Bits: 0
+  _animOC: {fileID: 22100000, guid: 78044126ab0d04cd48f58be9cafb9a46, type: 2}
+  _avatar: {fileID: 9000000, guid: ba3786cedeed8f347a9f04d75650e204, type: 3}
+  _minimumEnergyFactor: 0.1
 --- !u!114 &114503269127648902
 MonoBehaviour:
   m_ObjectHideFlags: 1
