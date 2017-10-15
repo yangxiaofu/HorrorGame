@@ -10,7 +10,7 @@ namespace Game.Core{
 	public class CameraRaycaster : MonoBehaviour {
 		float _rayCastDistance = 50f;
 		const string ENEMY_LAYER = "Enemy";
-		const int INTERACTABLE_ITEM_BIT = 8;
+		const  int INTERACTABLE_ITEM_BIT = 8;
 		const int ENEMY_BIT = 9;
 		const int GROUND_BIT = 10;
 

@@ -8,7 +8,6 @@ namespace Game.Items{
 		[Header("Key Specific")]
 		[SerializeField] string _passCode;
 		public string passCode{get{return _passCode;}}
-
         public override void AddToInventory(Inventory inv)
         {
             inv.AddKey(this);

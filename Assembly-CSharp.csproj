@@ -76,8 +76,13 @@
      <Compile Include="Assets\_Core\CrossPlatformInput\Scripts\VirtualInput.cs" />
      <Compile Include="Assets\_Core\Flashlight.cs" />
      <Compile Include="Assets\_Core\GroundChecker.cs" />
+     <Compile Include="Assets\_Core\Lock.cs" />
      <Compile Include="Assets\_Core\SelectionBase.cs" />
+     <Compile Include="Assets\_Environment\Furniture Assets\_Cabinets\Cabinet.cs" />
+     <Compile Include="Assets\_Environment\Furniture Assets\_Cabinets\ItemPlacementParent.cs" />
+     <Compile Include="Assets\_Environment\Furniture Assets\_Doors\Door.cs" />
      <Compile Include="Assets\_Environment\InteractableItem.cs" />
+     <Compile Include="Assets\_Environment\WallWithDoor.cs" />
      <Compile Include="Assets\_Environment\Water\Water (Basic)\Scripts\WaterBasic.cs" />
      <Compile Include="Assets\_Environment\Water\Water\Water\Scripts\Displace.cs" />
      <Compile Include="Assets\_Environment\Water\Water\Water\Scripts\GerstnerDisplace.cs" />
@@ -87,9 +92,7 @@
      <Compile Include="Assets\_Environment\Water\Water\Water\Scripts\Water.cs" />
      <Compile Include="Assets\_Environment\Water\Water\Water\Scripts\WaterBase.cs" />
      <Compile Include="Assets\_Environment\Water\Water\Water\Scripts\WaterTile.cs" />
-     <Compile Include="Assets\_Items\_Doors\Door.cs" />
-     <Compile Include="Assets\_Items\_Doors\Key.cs" />
-     <Compile Include="Assets\_Items\_Doors\Lock.cs" />
+     <Compile Include="Assets\_Items\_Key\Key.cs" />
      <Compile Include="Assets\_Items\_Key\KeyConfig.cs" />
      <Compile Include="Assets\_Items\Inventory.cs" />
      <Compile Include="Assets\_Items\ItemConfig.cs" />

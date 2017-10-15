@@ -2412,6 +2412,18 @@ ModelImporter:
     104808: WithWithDoor 4x3_proxy.029
     104810: WithWithDoor 4x3_proxy.030
     104812: WithWithDoor 4x3_proxy.031
+    104814: Corner Filler
+    104816: Corner Filler_proxy
+    104818: Corner Filler_proxy.001
+    104820: Corner Filler_proxy.002
+    104822: Corner Filler_proxy.003
+    104824: Wall 1x3_proxy
+    104826: Wall 1x3_proxy.001
+    104828: Wall 1x3_proxy.003
+    104830: Wall 4x3_proxy
+    104832: Wall 4x3_proxy.001
+    104834: Wall 4x3_proxy.010
+    104836: WallWithDoor
     400000: Fakes
     400002: Ground 2x2_proxy
     400004: Ground 2x2_proxy.001
@@ -4819,6 +4831,18 @@ ModelImporter:
     404808: WithWithDoor 4x3_proxy.029
     404810: WithWithDoor 4x3_proxy.030
     404812: WithWithDoor 4x3_proxy.031
+    404814: Corner Filler
+    404816: Corner Filler_proxy
+    404818: Corner Filler_proxy.001
+    404820: Corner Filler_proxy.002
+    404822: Corner Filler_proxy.003
+    404824: Wall 1x3_proxy
+    404826: Wall 1x3_proxy.001
+    404828: Wall 1x3_proxy.003
+    404830: Wall 4x3_proxy
+    404832: Wall 4x3_proxy.001
+    404834: Wall 4x3_proxy.010
+    404836: WallWithDoor
     2300000: Ground 2x2_proxy
     2300002: Ground 2x2_proxy.001
     2300004: Ground 2x2_proxy.002
@@ -7221,6 +7245,16 @@ ModelImporter:
     2304798: WithWithDoor 4x3_proxy.029
     2304800: WithWithDoor 4x3_proxy.030
     2304802: WithWithDoor 4x3_proxy.031
+    2304804: Corner Filler_proxy
+    2304806: Corner Filler_proxy.001
+    2304808: Corner Filler_proxy.002
+    2304810: Corner Filler_proxy.003
+    2304812: Wall 1x3_proxy
+    2304814: Wall 1x3_proxy.001
+    2304816: Wall 1x3_proxy.003
+    2304818: Wall 4x3_proxy
+    2304820: Wall 4x3_proxy.001
+    2304822: Wall 4x3_proxy.010
     3300000: Ground 2x2_proxy
     3300002: Ground 2x2_proxy.001
     3300004: Ground 2x2_proxy.002
@@ -9623,6 +9657,16 @@ ModelImporter:
     3304798: WithWithDoor 4x3_proxy.029
     3304800: WithWithDoor 4x3_proxy.030
     3304802: WithWithDoor 4x3_proxy.031
+    3304804: Corner Filler_proxy
+    3304806: Corner Filler_proxy.001
+    3304808: Corner Filler_proxy.002
+    3304810: Corner Filler_proxy.003
+    3304812: Wall 1x3_proxy
+    3304814: Wall 1x3_proxy.001
+    3304816: Wall 1x3_proxy.003
+    3304818: Wall 4x3_proxy
+    3304820: Wall 4x3_proxy.001
+    3304822: Wall 4x3_proxy.010
     4300000: Wall 2x3_proxy.019
     4300002: Wall 2x3_proxy.018
     4300004: Wall 2x3_proxy.017
@@ -9978,6 +10022,9 @@ ModelImporter:
     4300704: Wall 2x3_proxy.464
     4300706: Ground 2x2_proxy.1767
     4300708: Ground 2x2_proxy.057
+    4300710: Corner Filler_proxy.003
+    4300712: Wall 1x3_proxy.003
+    4300714: Wall 4x3_proxy.010
     10800000: Hemi
   materials:
     importMaterials: 1

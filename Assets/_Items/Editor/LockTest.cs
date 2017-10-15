@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using NUnit.Framework;
-using Game.Core;
+using Game.Environment;
 
 namespace Game.Core.LockTests{
 	
