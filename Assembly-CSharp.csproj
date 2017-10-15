@@ -82,6 +82,7 @@
      <Compile Include="Assets\_Core\GroundChecker.cs" />
      <Compile Include="Assets\_Core\Lock.cs" />
      <Compile Include="Assets\_Core\SelectionBase.cs" />
+     <Compile Include="Assets\_Core\VectorCalculations.cs" />
      <Compile Include="Assets\_Environment\Furniture Assets\_Cabinets\Cabinet.cs" />
      <Compile Include="Assets\_Environment\Furniture Assets\_Cabinets\ItemPlacementParent.cs" />
      <Compile Include="Assets\_Environment\Furniture Assets\_Doors\Door.cs" />
