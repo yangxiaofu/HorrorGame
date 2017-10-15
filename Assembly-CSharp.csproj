@@ -54,8 +54,12 @@
      <Compile Include="Assets\_Characters\_Enemies\Enemy.cs" />
      <Compile Include="Assets\_Characters\_Enemies\EnemyMovement.cs" />
      <Compile Include="Assets\_Characters\_Enemies\EnemySight.cs" />
+     <Compile Include="Assets\_Characters\_Player\IPlayerEnergy.cs" />
      <Compile Include="Assets\_Characters\_Player\Player.cs" />
      <Compile Include="Assets\_Characters\_Player\PlayerControl.cs" />
+     <Compile Include="Assets\_Characters\_Player\PlayerEnergy.cs" />
+     <Compile Include="Assets\_Characters\_Player\PlayerEnergyController.cs" />
+     <Compile Include="Assets\_Characters\_Player\PlayerEnergyMock.cs" />
      <Compile Include="Assets\_Characters\Character.cs" />
      <Compile Include="Assets\_Characters\CharacterHealth.cs" />
      <Compile Include="Assets\_Characters\CharacterMovement.cs" />

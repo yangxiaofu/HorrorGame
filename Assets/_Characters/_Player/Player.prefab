@@ -566,6 +566,7 @@ GameObject:
   - component: {fileID: 114395610645042812}
   - component: {fileID: 114518048580141594}
   - component: {fileID: 114912681740671600}
+  - component: {fileID: 114911955000279072}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -1518,13 +1519,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1513192785292046}
-  m_LocalRotation: {x: 0.11387642, y: -0, z: -0, w: 0.9934949}
+  m_LocalRotation: {x: 0.1131172, y: -0.002375605, z: 0.0014956776, w: 0.9935777}
   m_LocalPosition: {x: 0, y: 0.458, z: 0.16700745}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4204514057568564}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 13.078001, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 12.990001, y: -0.25800002, z: 0.143}
 --- !u!4 &4250419657698620
 Transform:
   m_ObjectHideFlags: 1
@@ -1691,7 +1692,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1478101941135492}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 268, y: 5.821589e-18, z: 142.8}
+  m_LocalPosition: {x: 266.13, y: 0.66, z: 141.86}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4337840111951646}
@@ -1748,13 +1749,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1684666371766712}
-  m_LocalRotation: {x: 0.11387642, y: -0, z: -0, w: 0.9934949}
+  m_LocalRotation: {x: 0.1131172, y: -0.002375605, z: 0.0014956776, w: 0.9935777}
   m_LocalPosition: {x: 0, y: 1.251, z: 0.16700745}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4204514057568564}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 13.078001, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 12.990001, y: -0.25800002, z: 0.143}
 --- !u!4 &4400278540982386
 Transform:
   m_ObjectHideFlags: 1
@@ -2445,7 +2446,7 @@ Light:
   m_SpotAngle: 45.7
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 1
+    m_Type: 2
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -2558,6 +2559,17 @@ MonoBehaviour:
   _currentHealth: 100
   _startingHealth: 100
   _secondsBeforeDeathDisappear: 2
+--- !u!114 &114911955000279072
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1478101941135492}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4df21805ea6c04013b54629cd35bcb27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114912681740671600
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2570,8 +2582,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _items: []
-  _keys:
-  - passCode: 1234
+  _keys: []
 --- !u!136 &136601956127036016
 CapsuleCollider:
   m_ObjectHideFlags: 1

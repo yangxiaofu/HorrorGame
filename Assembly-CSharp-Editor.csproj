@@ -51,6 +51,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\_Characters\_Player\Editor\PlayerEnergyTests.cs" />
      <Compile Include="Assets\_Core\CrossPlatformInput\Editor\CrossPlatformInput\CrossPlatformInputInitialize.cs" />
      <Compile Include="Assets\_Items\Editor\LockTest.cs" />
      <None Include="Assets\_Environment\Water\Water\Water4\Shaders\FXWater4Simple.shader" />
