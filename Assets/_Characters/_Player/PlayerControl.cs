@@ -6,11 +6,19 @@ using UnityEngine.Assertions;
 using Game.Characters;
 
 namespace Game.Core{
-	public class PlayerControl : MonoBehaviour {
+	public class PlayerControl : MonoBehaviour, IPlayerControl {
 
 		[Header("Movement Control")]
 		[SerializeField] float _forwardSpeed = 3f;
+		public float forwardSpeed{
+			get{return _forwardSpeed;}
+			set{_forwardSpeed = value;}
+		}
 		[SerializeField] float _backwardSpeed = 2f;	
+		public float backwardSpeed{
+			get{return _backwardSpeed;}
+			set{_backwardSpeed = value;}
+		}
 		[SerializeField] float _groundDistance = 0.2f;
 
 		[Tooltip("This is the layer mask for which the camera raycater will hit. ")]
@@ -19,6 +27,7 @@ namespace Game.Core{
 		[Tooltip("Adjusting this impacts the minimum energy level that impacts the player movement.")]
 		[Range(0, 1)]
 		[SerializeField] float _minimumEnergyFactor = 0.1f;
+		public float minimumEnergyFactor{get{return _minimumEnergyFactor;}}
 		[Header("Animator Variables")]
 		[SerializeField] AnimatorOverrideController _animOC;
 		[SerializeField] Avatar _avatar;
@@ -28,19 +37,32 @@ namespace Game.Core{
 		[SerializeField] float _radius = 0.3f;
 		[SerializeField] float _height = 1.6f;
 		float _speed = 0f;
+		public float speed{
+			get{return _speed;}
+			set{_speed = value;}
+		}
 		Rigidbody _body;
 		Animator _anim;
+
+		public Animator anim{
+			get{return _anim;}
+		}
 		Vector3 _inputs = Vector3.zero;
+		public Vector3 inputs{
+			get{return _inputs;}
+			set{_inputs = value;}
+		}
+
 		bool _isGrounded = true;
 		Transform _groundChecker;
 		float _angleFromSightPosition;
-		CameraRaycaster _cameraRaycaster;
+		public float angleFromSightPosition{
+			get{return _angleFromSightPosition;}
+		}
+        CameraRaycaster _cameraRaycaster;
 		Flashlight _flashlight;
-		const string HORIZONTAL_AXIS = "Horizontal";
-		const string VERTICAL_AXIS = "Vertical";
-		const string WALK_FORWARD = "Walk";
-		const string WALK_BACKWARD = "Walk_Backward";
-
+		PlayerMovementController _controller;
+		
 		void Awake()
         {
             AddAnimatorComponent();
@@ -59,6 +81,8 @@ namespace Game.Core{
 
 			_flashlight = GetComponentInChildren<Flashlight>();
 			Assert.IsNotNull(_flashlight);
+
+			_controller = new PlayerMovementController(this);
 		}
 
 		void Update()
@@ -83,11 +107,7 @@ namespace Game.Core{
 			);
 
 			_angleFromSightPosition = vectorCalculator.GetAngle() * vectorCalculator.GetSign();
-
-			print("Angle from Sign Position " + _angleFromSightPosition);
         }
-
-
 
         void FixedUpdate(){
 			_body.MovePosition(_body.position + _inputs * _speed * Time.fixedDeltaTime);
@@ -108,54 +128,8 @@ namespace Game.Core{
         }
 
         private void ScanForDirectionInputs(){
-            _inputs = Vector3.zero;
-            _inputs.x = Input.GetAxis(HORIZONTAL_AXIS);
-            _inputs.z = Input.GetAxis(VERTICAL_AXIS);
-
-			//TODO: Scan for straffing and walking backwards.  Detect the forward osition and get the engle to determine the animation that it needs. 
-			if (_inputs != Vector3.zero)
-            {
-                float angleOfForwardWalking = 45f;
-                float angleofBackwardWalking = 135f;
-                float anyNumberAboveZero = 10f;
-                float energyFactor = GetEnergyFactor();
-
-                if (_angleFromSightPosition < angleOfForwardWalking)
-                {	
-                    _anim.SetFloat(WALK_FORWARD, anyNumberAboveZero);
-                    _speed = _forwardSpeed * energyFactor;
-					_anim.speed = _speed / 5; //Walk animation speed.
-                }
-                else if (_angleFromSightPosition > angleofBackwardWalking)
-                {
-                    _anim.SetFloat(WALK_BACKWARD, anyNumberAboveZero);
-                    _speed = _backwardSpeed * energyFactor;
-                }
-            }
-            else if (_inputs == Vector3.zero){
-				float stoppingValue = 0f;
-				_anim.SetFloat(WALK_FORWARD, stoppingValue);
-				_anim.SetFloat(WALK_BACKWARD, stoppingValue);
-				_anim.speed = 1;
-			}
+			_controller.ScanForDirectionInput();   
         }
-
-        private float GetEnergyFactor()
-        {
-            var energyLevel = GetComponent<PlayerEnergy>();
-            var energyFactor = energyLevel.energyAsPercentage;
-			
-			float maximumEnergyFactor = 1;
-
-			energyFactor = Mathf.Clamp(
-				energyFactor, 
-				_minimumEnergyFactor, 
-				maximumEnergyFactor
-			);
-
-            return energyFactor;
-        }
-
 
         private void AddRigidBodyComponent()
         {
@@ -190,6 +164,10 @@ namespace Game.Core{
 			cc.height = _height;
         }
 
+        public PlayerEnergy GetPlayerEnergyComponent()
+        {
+			return GetComponent<PlayerEnergy>();
+        }
     }
 }
 
