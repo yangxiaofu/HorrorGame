@@ -3,14 +3,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Assertions;
+using Game.Characters;
 
 namespace Game.Core{
 	public class PlayerControl : MonoBehaviour {
-	
 		[SerializeField] float _forwardSpeed = 3f;
 		[SerializeField] float _backwardSpeed = 2f;	
 		[SerializeField] float _groundDistance = 0.2f;
 		[SerializeField] LayerMask _ground;
+
+		[Tooltip("Adjusting this impacts the minimum energy level that impacts the player movement.")]
+		[Range(0, 1)]
+		[SerializeField] float _minimumEnergyFactor = 0.1f;
 		float _speed = 0f;
 		Rigidbody _body;
 		Animator _anim;
@@ -51,9 +55,11 @@ namespace Game.Core{
         private void UpdateAngleFromForwardPosition()
         {
          	var forwardPosition = transform.forward;
-
+			var valueToKeepPlayerOnPlane = 0;
 			Vector3 movementDirection = new Vector3(
-				_inputs.x, 0, _inputs.z
+				_inputs.x, 
+				valueToKeepPlayerOnPlane, 
+				_inputs.z
 			);
 
 			_angleFromSightPosition = Vector3.Angle(
@@ -87,19 +93,45 @@ namespace Game.Core{
 
 			//TODO: Scan for straffing and walking backwards.  Detect the forward osition and get the engle to determine the animation that it needs. 
 			if (_inputs != Vector3.zero)
-			{
-				if (_angleFromSightPosition < 45f){ //TODO: Remove Magic Numbers
-					_anim.SetFloat(WALK_FORWARD, 0.2f);
-					_speed = _forwardSpeed;
-				} else if (_angleFromSightPosition > 135f){
-					_anim.SetFloat(WALK_BACKWARD, 0.2f);
-					_speed = _backwardSpeed;
-				}
-			} else if (_inputs == Vector3.zero){
-				_anim.SetFloat(WALK_FORWARD, 0);
-				_anim.SetFloat(WALK_BACKWARD, 0);
+            {
+                float angleOfForwardWalking = 45f;
+                float angleofBackwardWalking = 135f;
+                float anyNumberAboveZero = 10f;
+                float energyFactor = GetEnergyFactor();
+
+                if (_angleFromSightPosition < angleOfForwardWalking)
+                {
+                    _anim.SetFloat(WALK_FORWARD, anyNumberAboveZero);
+                    _speed = _forwardSpeed * energyFactor;
+                }
+                else if (_angleFromSightPosition > angleofBackwardWalking)
+                {
+                    _anim.SetFloat(WALK_BACKWARD, anyNumberAboveZero);
+                    _speed = _backwardSpeed * energyFactor;
+                }
+            }
+            else if (_inputs == Vector3.zero){
+				float stoppingValue = 0f;
+				_anim.SetFloat(WALK_FORWARD, stoppingValue);
+				_anim.SetFloat(WALK_BACKWARD, stoppingValue);
 			}
         }
-	}
+
+        private float GetEnergyFactor()
+        {
+            var energyLevel = GetComponent<PlayerEnergy>();
+            var energyFactor = energyLevel.energyAsPercentage;
+			
+			float maximumEnergyFactor = 1;
+
+			energyFactor = Mathf.Clamp(
+				energyFactor, 
+				_minimumEnergyFactor, 
+				maximumEnergyFactor
+			);
+
+            return energyFactor;
+        }
+    }
 }
 

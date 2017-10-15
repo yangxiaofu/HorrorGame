@@ -35,7 +35,8 @@ namespace Game.Characters{
 			_controller.ReduceEnergy(energyToReduce);
 		}
 
-		public void IncreaseEnergy(float energyToAdd){
+		public void IncreaseEnergy(float energyToAdd)
+		{
 			_controller.IncreaseEnergy(energyToAdd);
 		}
 	
