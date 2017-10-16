@@ -18,7 +18,7 @@ namespace Game.Core{
 
 		public float GetSign() //TODO: Broken right now. The sign isn't consistent.  
 		{
-			return Mathf.Sign(Vector3.Cross(vec2, vec1).z);
+			return Mathf.Sign(Vector3.Cross(vec2, vec1).y);
 		}
 	}
 }

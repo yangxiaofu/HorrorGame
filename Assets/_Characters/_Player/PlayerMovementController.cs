@@ -27,9 +27,7 @@ namespace Game.Core{
 		}
 
 		public void UpdateMovementDirection(float angleFromSightPosition)
-		{
-			Debug.Log("Angle From Sight Position " + angleFromSightPosition);
-			
+		{	
 			if (_playerControl.inputs != Vector3.zero)
             {
                 if (angleFromSightPosition < _angleContraintForForwardWalking && angleFromSightPosition > -_angleContraintForForwardWalking)

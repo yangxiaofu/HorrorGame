@@ -137,12 +137,10 @@ namespace Game.Core{
                 _anim.SetFloat(WALK_BACKWARD, stoppingValue);
                 _anim.speed = 1;
             } else if (_controller.movementDirection == PlayerMovementController.MovementDirection.RIGHT){
-
 				//TODO: Strafe Right Animations.
-				print("Strafe Right");
+                Debug.LogWarning("Need to write the strafe Right animation");
 			} else if (_controller.movementDirection == PlayerMovementController.MovementDirection.LEFT){
-				print("Strafe Left");
-				//TODO: Strafe Left Animations.
+                Debug.LogWarning("Need to write the strafe left animation");
 			} else {
 				Debug.LogError("You need to create the movement direction in the PlayerMovementController.");
 			}
@@ -167,10 +165,6 @@ namespace Game.Core{
         private float GetAngleFromSightPosition()
         {
         	var forwardDirection = transform.forward;
-			Debug.Log("Forward Direction " + forwardDirection);
-			Debug.Log("controller input " + _inputs);
-			//NOTES: THE INPUTS SEEM TO BE IN THE RIGHT DIRECTION. 
-			
 			var valueToKeepPlayerOnPlane = 0;
 			Vector3 movementDirection = new Vector3(
 				_inputs.x, 
