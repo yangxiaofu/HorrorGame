@@ -58,6 +58,7 @@
      <Compile Include="Assets\_Characters\_Player\IPlayerEnergy.cs" />
      <Compile Include="Assets\_Characters\_Player\Player.cs" />
      <Compile Include="Assets\_Characters\_Player\PlayerControl.cs" />
+     <Compile Include="Assets\_Characters\_Player\PlayerControlMock.cs" />
      <Compile Include="Assets\_Characters\_Player\PlayerEnergy.cs" />
      <Compile Include="Assets\_Characters\_Player\PlayerEnergyController.cs" />
      <Compile Include="Assets\_Characters\_Player\PlayerEnergyMock.cs" />
