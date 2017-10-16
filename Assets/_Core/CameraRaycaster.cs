@@ -14,6 +14,9 @@ namespace Game.Core{
 		const int ENEMY_BIT = 9;
 		const int GROUND_BIT = 10;
 
+		Vector3 _mousePosition;
+		public Vector3 mousePosition {get{return _mousePosition;}}
+
 		public delegate void MouseOverEnemy(Enemy enemy);
 		public event MouseOverEnemy OnMouseOverEnemy;
 
@@ -26,11 +29,17 @@ namespace Game.Core{
 			Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 			
 			if (Physics.Raycast(ray, out hit, _rayCastDistance, (1<<INTERACTABLE_ITEM_BIT|1<<ENEMY_BIT|1<<GROUND_BIT)))
-			{
-				RaycastForEnemy(hit);
-				RaycastForGround(hit);
-			}
-		}
+            {
+                RaycastForEnemy(hit);
+                RaycastForGround(hit);
+                UpdateMousePosition(hit);
+            }
+        }
+
+        private void UpdateMousePosition(RaycastHit hit)
+        {
+            _mousePosition = hit.point;
+        }
 
         private void RaycastForGround(RaycastHit hit)
         {

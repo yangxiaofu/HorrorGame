@@ -11,7 +11,8 @@ namespace Game.Core{
 
 		[Header("Movement Control")]
 		[SerializeField] float _forwardSpeed = 3f;
-		[SerializeField] float _backwardSpeed = 2f;	
+		[SerializeField] float _backwardSpeed = 2f;
+        [SerializeField] float _strafeSpeed = 1f;	
 		[SerializeField] float _groundDistance = 0.2f;
 
 		[Tooltip("This is the layer mask for which the camera raycater will hit. ")]
@@ -31,8 +32,11 @@ namespace Game.Core{
 		[SerializeField] float _height = 1.6f;
 
 		[Header("Movement Angles")]
+        [Tooltip("The angle from the sight view from the front from where the animation changes from a walking animation to a strafing animation.")]
+
 		[SerializeField] float _angleOfForwardWalking = 45f;
-        [SerializeField] float _angleOfBackwardWalking = 135f;
+        [Tooltip("The angle from the sight view at the front where the animation changes from strafing to a backward animation.")]
+        [SerializeField] float _angleOfBackwardWalking = 110f;
 		float _speed = 0f;
 		Rigidbody _body;
 		Animator _anim;
@@ -41,17 +45,22 @@ namespace Game.Core{
 			get{return _inputs;}
 			set{_inputs = value;}
 		}
-
 		bool _isGrounded = true;
 		Transform _groundChecker;
         CameraRaycaster _cameraRaycaster;
 		Flashlight _flashlight;
 		PlayerMovementController _controller;
 
-		const string WALK_FORWARD = "Walk_Forward";
-		const string WALK_BACKWARD = "Walk_Backward";
-		const string HORIZONTAL_AXIS = "Horizontal";
-		const string VERTICAL_AXIS = "Vertical";
+       
+
+        public delegate void HealthKeyDown();
+        public event HealthKeyDown OnHealthKeyDown;
+
+        enum MovementState {
+            FORWARD, BACKWARD, LEFT, RIGHT, IDLE
+        }
+
+        MovementState _movementState;
 		
 		void Awake()
         {
@@ -104,10 +113,23 @@ namespace Game.Core{
             UpdateControllerInput();
             _controller.UpdateMovementDirection(GetAngleFromSightPosition());
             UpdateMovementAnimation();
+            ScanKeyButtonPresses();
+        }
+
+        private void ScanKeyButtonPresses()
+        {
+            if (Input.GetKeyDown(KeyCode.Q))
+            {
+                if (OnHealthKeyDown != null) 
+                    OnHealthKeyDown();
+            }
         }
 
         private void UpdateControllerInput()
         {
+            const string HORIZONTAL_AXIS = "Horizontal";
+		    const string VERTICAL_AXIS = "Vertical";
+            
             _inputs = new Vector3(Input.GetAxis(HORIZONTAL_AXIS), 0, Input.GetAxis(VERTICAL_AXIS));
         }
 
@@ -116,33 +138,56 @@ namespace Game.Core{
 			_body.MovePosition(_body.position + _inputs * _speed * Time.fixedDeltaTime);
 		}
 
+        /// <summary>
+        /// Callback for setting up animation IK (inverse kinematics).
+        /// </summary>
+        /// <param name="layerIndex">Index of the layer on which the IK solver is called.</param>
+        void OnAnimatorIK(int layerIndex)
+        {
+            _anim.SetIKPosition(AvatarIKGoal.RightHand, _cameraRaycaster.mousePosition);
+            _anim.SetIKPositionWeight(AvatarIKGoal.RightHand, 1);    
+        }
+
         private void UpdateMovementAnimation()
         {
-            float anyNumberAboveZero = 10f;
-            if (_controller.movementDirection == PlayerMovementController.MovementDirection.FORWARD)
+            const string IS_IDLE = "isIdle";
+            const string ANIMATION_STATE_FORWARD = "WalkForward";
+            const string ANIMATION_STATE_BACKWARD = "WalkBackward";
+            const string ANIMATION_STATE_STRAFE_LEFT = "Strafe Left";
+            const string ANIMATION_STATE_STRAFE_RIGHT = "Strafe Right";
+
+            if (_controller.movementDirection == PlayerMovementController.MovementDirection.FORWARD && _movementState != MovementState.FORWARD)
             {
-                _anim.SetFloat(WALK_FORWARD, anyNumberAboveZero);
+                _anim.SetBool(IS_IDLE, false);
+                _movementState = MovementState.FORWARD;
+                _anim.Play(ANIMATION_STATE_FORWARD);
                 _speed = _forwardSpeed * GetEnergyFactor();
-                _anim.speed = _speed / 5; //Walk 
             }
-            else if (_controller.movementDirection == PlayerMovementController.MovementDirection.BACKWARD)
+            else if (_controller.movementDirection == PlayerMovementController.MovementDirection.BACKWARD && _movementState != MovementState.BACKWARD)
             {
-                _anim.SetFloat(WALK_BACKWARD, anyNumberAboveZero);
-                _speed = _backwardSpeed * GetEnergyFactor();
+                _anim.SetBool(IS_IDLE, false);
+                _movementState = MovementState.BACKWARD;
+                _anim.Play(ANIMATION_STATE_BACKWARD);
+                _speed = _backwardSpeed;
             }
-            else if (_controller.movementDirection == PlayerMovementController.MovementDirection.IDLE)
+            else if (_controller.movementDirection == PlayerMovementController.MovementDirection.IDLE && _movementState != MovementState.IDLE)
             {
-                float stoppingValue = 0f;
-                _anim.SetFloat(WALK_FORWARD, stoppingValue);
-                _anim.SetFloat(WALK_BACKWARD, stoppingValue);
-                _anim.speed = 1;
-            } else if (_controller.movementDirection == PlayerMovementController.MovementDirection.RIGHT){
-				//TODO: Strafe Right Animations.
-                Debug.LogWarning("Need to write the strafe Right animation");
-			} else if (_controller.movementDirection == PlayerMovementController.MovementDirection.LEFT){
-                Debug.LogWarning("Need to write the strafe left animation");
-			} else {
-				Debug.LogError("You need to create the movement direction in the PlayerMovementController.");
+                _anim.SetBool(IS_IDLE, true);
+                _movementState = MovementState.IDLE;
+            } 
+            else if (_controller.movementDirection == PlayerMovementController.MovementDirection.RIGHT && _movementState != MovementState.RIGHT)
+            {
+                _anim.SetBool(IS_IDLE, false);
+                _movementState = MovementState.RIGHT;
+                _anim.Play(ANIMATION_STATE_STRAFE_RIGHT);
+                _speed = _strafeSpeed;
+			} 
+            else if (_controller.movementDirection == PlayerMovementController.MovementDirection.LEFT && _movementState != MovementState.LEFT)
+            {
+                _anim.SetBool(IS_IDLE, false);
+                _anim.Play(ANIMATION_STATE_STRAFE_LEFT);
+                _movementState = MovementState.LEFT;
+                _speed = _strafeSpeed;
 			}
         }
 
@@ -161,6 +206,7 @@ namespace Game.Core{
 
             return energyFactor;
         }
+
 
         private float GetAngleFromSightPosition()
         {
@@ -224,4 +270,3 @@ namespace Game.Core{
         }
     }
 }
-

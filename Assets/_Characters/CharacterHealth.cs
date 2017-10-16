@@ -28,7 +28,7 @@ namespace Game.Characters{
 			yield return null;
 		}
 
-		public void Heal(float heal){
+		protected void Heal(float heal){
 			_currentHealth += heal;
 			Mathf.Clamp(_currentHealth, 0, _startingHealth);
 		}

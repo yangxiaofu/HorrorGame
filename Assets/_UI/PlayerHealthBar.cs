@@ -17,7 +17,7 @@ namespace Game.UI{
         // Update is called once per frame
         void Update()
         {
-            float percentage = _player.GetComponent<CharacterHealth>().healthAsPercentage;
+            float percentage = _player.GetComponent<PlayerHealth>().healthAsPercentage;
             UpdateUIBar(percentage);
         }
 

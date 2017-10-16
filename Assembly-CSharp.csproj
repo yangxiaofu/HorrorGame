@@ -62,6 +62,7 @@
      <Compile Include="Assets\_Characters\_Player\PlayerEnergy.cs" />
      <Compile Include="Assets\_Characters\_Player\PlayerEnergyController.cs" />
      <Compile Include="Assets\_Characters\_Player\PlayerEnergyMock.cs" />
+     <Compile Include="Assets\_Characters\_Player\PlayerHealth.cs" />
      <Compile Include="Assets\_Characters\_Player\PlayerMovementController.cs" />
      <Compile Include="Assets\_Characters\Character.cs" />
      <Compile Include="Assets\_Characters\CharacterHealth.cs" />
