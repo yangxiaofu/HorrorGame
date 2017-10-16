@@ -16,9 +16,8 @@ namespace Game.Core{
 			return Vector3.Angle(vec1, vec2);
 		}
 
-		public float GetSign()
+		public float GetSign() //TODO: Broken right now. The sign isn't consistent.  
 		{
-			var angle = GetAngle();
 			return Mathf.Sign(Vector3.Cross(vec2, vec1).z);
 		}
 	}

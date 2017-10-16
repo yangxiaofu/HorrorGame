@@ -15,11 +15,11 @@ namespace Game.Characters.Tests{
 			var currentEnergy = 100f;
 			var startingEnergy = 100f;
 
-			var pe = new PlayerEnergyMock(currentEnergy, startingEnergy);
-			var sut = new PlayerEnergyController(pe);
+			var mock = new PlayerEnergyMock(currentEnergy, startingEnergy);
+			var sut = new PlayerEnergyController(mock);
 
 			sut.ReduceEnergy(energyToReduce);
-			Assert.AreEqual(energyToReduce, pe.currentEnergy);
+			Assert.AreEqual(energyToReduce, mock.currentEnergy);
 		}
 
 		[Test] 
@@ -30,11 +30,11 @@ namespace Game.Characters.Tests{
 			var startingEnergy = 100f;
 			var minimumEnergyAfterReduction = 0;
 
-			var pe = new PlayerEnergyMock(currentEnergy, startingEnergy);
-			var sut = new PlayerEnergyController(pe);
+			var mock = new PlayerEnergyMock(currentEnergy, startingEnergy);
+			var sut = new PlayerEnergyController(mock);
 
 			sut.ReduceEnergy(energyToReduce);
-			Assert.AreEqual(minimumEnergyAfterReduction, pe.currentEnergy);
+			Assert.AreEqual(minimumEnergyAfterReduction, mock.currentEnergy);
 		}
 
 
@@ -45,11 +45,11 @@ namespace Game.Characters.Tests{
 			var currentEnergy = 5f;
 			var startingEnergy = 100f;
 
-			var pe = new PlayerEnergyMock(currentEnergy, startingEnergy);
-			var sut = new PlayerEnergyController(pe);
+			var mock = new PlayerEnergyMock(currentEnergy, startingEnergy);
+			var sut = new PlayerEnergyController(mock);
 
 			sut.IncreaseEnergy(energyToAdd);
-			Assert.AreEqual(energyToAdd + currentEnergy, pe.currentEnergy);
+			Assert.AreEqual(energyToAdd + currentEnergy, mock.currentEnergy);
 		}
 
 		[Test] 
@@ -60,11 +60,11 @@ namespace Game.Characters.Tests{
 			var startingEnergy = 100f;
 			var maxEnergyLevel = 100f;
 
-			var pe = new PlayerEnergyMock(currentEnergy, startingEnergy);
-			var sut = new PlayerEnergyController(pe);
+			var mock = new PlayerEnergyMock(currentEnergy, startingEnergy);
+			var sut = new PlayerEnergyController(mock);
 
 			sut.IncreaseEnergy(energyToAdd);
-			Assert.AreEqual(maxEnergyLevel, pe.currentEnergy);
+			Assert.AreEqual(maxEnergyLevel, mock.currentEnergy);
 		}
 	}
 }

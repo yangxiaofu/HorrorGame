@@ -166,7 +166,11 @@ namespace Game.Core{
 
         private float GetAngleFromSightPosition()
         {
-         	var forwardDirection = transform.forward;
+        	var forwardDirection = transform.forward;
+			Debug.Log("Forward Direction " + forwardDirection);
+			Debug.Log("controller input " + _inputs);
+			//NOTES: THE INPUTS SEEM TO BE IN THE RIGHT DIRECTION. 
+			
 			var valueToKeepPlayerOnPlane = 0;
 			Vector3 movementDirection = new Vector3(
 				_inputs.x, 
@@ -216,7 +220,7 @@ namespace Game.Core{
             _anim.runtimeAnimatorController = _animOC;
             _anim.avatar = _avatar;
         }
-		
+
         private void AddCapsuleCollider()
         {
 			var cc = gameObject.AddComponent<CapsuleCollider>();
