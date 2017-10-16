@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 namespace Game.Items{
-	[CreateAssetMenu(menuName = "Game/Item")]
 	public abstract class ItemConfig : ScriptableObject {
 		[Header("Item General")]
 		[SerializeField] GameObject _itemPrefab;

@@ -10,6 +10,15 @@ namespace Game.Items
 		[SerializeField] ItemConfig _item;
 		Player _player;
 
+        void Awake()
+        {
+            if (!GetComponent<BoxCollider>())
+            {
+                var bc = this.gameObject.AddComponent<BoxCollider>();
+                bc.isTrigger = true;
+            }
+        }
+
 		void Start()
 		{
 			_player = GameObject.FindObjectOfType<Player>();

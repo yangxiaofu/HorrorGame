@@ -1,11 +1,9 @@
 fileFormatVersion: 2
-guid: 21cf5335cbc364ed194535449ef80671
-labels:
-- ItemPrefabs
-timeCreated: 1507950483
+guid: ba54dce8d04884c44874efe3f45a386a
+timeCreated: 1508124686
 licenseType: Free
 NativeFormatImporter:
-  mainObjectFileID: 100100000
+  mainObjectFileID: 11400000
   userData: 
   assetBundleName: 
   assetBundleVariant: 

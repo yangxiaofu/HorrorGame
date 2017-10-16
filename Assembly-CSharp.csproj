@@ -100,6 +100,7 @@
      <Compile Include="Assets\_Environment\Water\Water\Water\Scripts\Water.cs" />
      <Compile Include="Assets\_Environment\Water\Water\Water\Scripts\WaterBase.cs" />
      <Compile Include="Assets\_Environment\Water\Water\Water\Scripts\WaterTile.cs" />
+     <Compile Include="Assets\_Items\_Food\FoodConfig.cs" />
      <Compile Include="Assets\_Items\_Key\Key.cs" />
      <Compile Include="Assets\_Items\_Key\KeyConfig.cs" />
      <Compile Include="Assets\_Items\Inventory.cs" />

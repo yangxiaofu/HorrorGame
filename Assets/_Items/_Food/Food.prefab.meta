@@ -1,8 +1,6 @@
 fileFormatVersion: 2
-guid: 21cf5335cbc364ed194535449ef80671
-labels:
-- ItemPrefabs
-timeCreated: 1507950483
+guid: 4bb681f97c6f640a6977342f361b245c
+timeCreated: 1508124794
 licenseType: Free
 NativeFormatImporter:
   mainObjectFileID: 100100000
