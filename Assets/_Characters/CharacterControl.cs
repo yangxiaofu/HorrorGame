@@ -38,7 +38,11 @@ namespace Game.Characters{
 		public enum AnimationState {
             FORWARD, BACKWARD, LEFT, RIGHT, IDLE, ATTACK
         }
-        [SerializeField] protected AnimationState _animationState;
+        public AnimationState _animationState;
+		public AnimationState animationState{
+			get{return _animationState;}
+			set{_animationState = value;}
+		}
 
 		protected void AddAnimatorComponent()
         {

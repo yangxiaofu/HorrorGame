@@ -52,8 +52,11 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\_Characters\_Enemies\Enemy.cs" />
+     <Compile Include="Assets\_Characters\_Enemies\EnemyAnimationController.cs" />
      <Compile Include="Assets\_Characters\_Enemies\EnemyControl.cs" />
+     <Compile Include="Assets\_Characters\_Enemies\EnemyControlMock.cs" />
      <Compile Include="Assets\_Characters\_Enemies\EnemySight.cs" />
+     <Compile Include="Assets\_Characters\_Enemies\IEnemyControl.cs" />
      <Compile Include="Assets\_Characters\_Player\IPlayerControl.cs" />
      <Compile Include="Assets\_Characters\_Player\IPlayerEnergy.cs" />
      <Compile Include="Assets\_Characters\_Player\ItemGrip.cs" />

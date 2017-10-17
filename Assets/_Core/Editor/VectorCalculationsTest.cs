@@ -46,7 +46,7 @@ namespace Game.Core.Tests{
 
 		[Test]
 		public void T03aGetSign_ReturnNegativeSign(){
-			var vec1 = new Vector3(0, 1, 0);
+			var vec1 = new Vector3(0, 0, 1);
 			var vec2 = new Vector3(-1, 0, 0);
 
 			var sut = new VectorCalculations(vec1, vec2);
@@ -56,7 +56,7 @@ namespace Game.Core.Tests{
 		[Test]
 		public void T03bGetSign_ReturnNegativeSign(){
 			var vec1 = new Vector3(1, 0, 0);
-			var vec2 = new Vector3(1, 2, 0);
+			var vec2 = new Vector3(1, 0, 2);
 
 			var sut = new VectorCalculations(vec1, vec2);
 			Assert.AreEqual(-1, sut.GetSign());
@@ -64,8 +64,8 @@ namespace Game.Core.Tests{
 
 		[Test]
 		public void T03cGetSign_ReturnNegativeSign(){
-			var vec1 = new Vector3(0, -10, 0);
-			var vec2 = new Vector3(1, -3, 0);
+			var vec1 = new Vector3(0, 0, -10);
+			var vec2 = new Vector3(1, 0, -3);
 
 			var sut = new VectorCalculations(vec1, vec2);
 			Assert.AreEqual(-1, sut.GetSign());

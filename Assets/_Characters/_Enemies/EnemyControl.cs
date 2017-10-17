@@ -4,11 +4,14 @@ using UnityEngine;
 using UnityEngine.AI;
 
 namespace Game.Characters{
-	public class EnemyControl : CharacterControl {
-		const string ANIMATION_STATE_ATTACK = "Attack";
+	public class EnemyControl : CharacterControl, IEnemyControl {
 		const string DEFAULT_ATTACK = "DEFAULT_ATTACK";
-		NavMeshAgent agent;
+		const string ANIMATION_STATE_ATTACK = "Attack";
+		NavMeshAgent _agent;
+		
 		Transform _target;
+		public Transform target{get{return _target;}}
+		EnemyAnimationController _enemyAnimationController;
 		void Awake()
         {
             AddNavMeshAgentComponent();
@@ -16,57 +19,60 @@ namespace Game.Characters{
             AddRigidBodyComponent();
 			AddAnimatorComponent();
         }
+		void Start()
+		{
+			_enemyAnimationController = new EnemyAnimationController(this);
+		}
+        void Update () 
+		{
+			_enemyAnimationController.UpdateAnimationState();
 
-        private void AddNavMeshAgentComponent()
+			if (_enemyAnimationController.animationState == CharacterControl.AnimationState.ATTACK)
+			{
+				_anim.Play(ANIMATION_STATE_ATTACK);
+				_agent.isStopped = true;					
+				float delay = _animOC[DEFAULT_ATTACK].length;
+				StartCoroutine(SetBacktoForwardState(delay)); 
+			} 
+			else if (_enemyAnimationController.animationState == CharacterControl.AnimationState.FORWARD)
+			{
+				_anim.Play(ANIMATION_STATE_FORWARD);
+				_anim.SetBool(IS_IDLE, false);	
+				_agent.isStopped = false;
+				_agent.SetDestination(_target.position);
+			} 
+			else if (_enemyAnimationController.animationState == CharacterControl.AnimationState.IDLE)
+			{
+				_anim.SetBool(IS_IDLE, true);
+			}
+		}
+
+		void FixedUpdate()
+		{
+			MoveBodyPosition();
+		}
+		private void AddNavMeshAgentComponent()
         {
-            agent = this.gameObject.AddComponent<NavMeshAgent>();
-            agent.speed = _forwardSpeed;
+            _agent = this.gameObject.AddComponent<NavMeshAgent>();
+            _agent.speed = _forwardSpeed;
         }
 
-        void Update () {
-			if (_target != null)
-            {
-				if (_animationState == AnimationState.ATTACK){
-					_animationState = AnimationState.ATTACK;
-					_anim.Play(ANIMATION_STATE_ATTACK);
-					float delay = _animOC[DEFAULT_ATTACK].length;
-
-					StartCoroutine(SetBacktoForwardState(delay));
-				} else {
-					_anim.SetBool(IS_IDLE, false);
-					_animationState = AnimationState.FORWARD;
-					_anim.Play(ANIMATION_STATE_FORWARD);
-					agent.SetDestination(_target.position);
-				}
-            }
-            else if (_target == null && _animationState != AnimationState.IDLE)
-			{
-				SetIdleAnimation();
-			} 
-		}
-
-		IEnumerator SetBacktoForwardState(float delay){
+		IEnumerator SetBacktoForwardState(float delay)
+		{
 			yield return new WaitForSeconds(delay);
 			_animationState = AnimationState.FORWARD;
+			_agent.isStopped = false;
 			yield return null;
 		}
-
 		public void SetState(AnimationState animationState)
 		{
 			_animationState = animationState;
-		}
-
-        void FixedUpdate()
-		{
-			MoveBodyPosition();
 		}
 
 		public void SetTarget(Transform target)
         {
             _target = target;
         }
-
-		
 	}
 }
 
