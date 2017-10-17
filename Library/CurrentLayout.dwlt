@@ -20,7 +20,7 @@ MonoBehaviour:
   m_ShowMode: 4
   m_Title: 
   m_RootView: {fileID: 2}
-  m_MinSize: {x: 950, y: 300}
+  m_MinSize: {x: 950, y: 392}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &2
 MonoBehaviour:
@@ -105,10 +105,10 @@ MonoBehaviour:
     y: 30
     width: 1920
     height: 1030
-  m_MinSize: {x: 683, y: 492}
-  m_MaxSize: {x: 14004, y: 14042}
+  m_MinSize: {x: 679, y: 342}
+  m_MaxSize: {x: 12004, y: 8042}
   vertical: 1
-  controlID: 58
+  controlID: 84
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -129,10 +129,10 @@ MonoBehaviour:
     y: 0
     width: 1920
     height: 1030
-  m_MinSize: {x: 683, y: 492}
-  m_MaxSize: {x: 14004, y: 14042}
+  m_MinSize: {x: 679, y: 342}
+  m_MaxSize: {x: 12004, y: 8042}
   vertical: 0
-  controlID: 59
+  controlID: 85
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -151,12 +151,12 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 1546
+    width: 1643
     height: 1030
-  m_MinSize: {x: 406, y: 492}
-  m_MaxSize: {x: 10002, y: 14042}
+  m_MinSize: {x: 404, y: 342}
+  m_MaxSize: {x: 8004, y: 8042}
   vertical: 1
-  controlID: 60
+  controlID: 86
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -175,10 +175,10 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 1546
-    height: 739
-  m_MinSize: {x: 406, y: 221}
-  m_MaxSize: {x: 8006, y: 4021}
+    width: 1643
+    height: 876
+  m_MinSize: {x: 404, y: 221}
+  m_MaxSize: {x: 8004, y: 4021}
   vertical: 0
   controlID: 61
 --- !u!114 &9
@@ -197,10 +197,10 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 224
-    height: 739
-  m_MinSize: {x: 202, y: 221}
-  m_MaxSize: {x: 4002, y: 4021}
+    width: 359
+    height: 876
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 14}
   m_Panes:
   - {fileID: 14}
@@ -220,10 +220,10 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
-    x: 224
+    x: 359
     y: 0
-    width: 1322
-    height: 739
+    width: 1284
+    height: 876
   m_MinSize: {x: 204, y: 221}
   m_MaxSize: {x: 4004, y: 4021}
   m_ActualView: {fileID: 16}
@@ -248,19 +248,19 @@ MonoBehaviour:
   m_Position:
     serializedVersion: 2
     x: 0
-    y: 739
-    width: 1546
-    height: 291
-  m_MinSize: {x: 232, y: 271}
-  m_MaxSize: {x: 10002, y: 10021}
-  m_ActualView: {fileID: 19}
+    y: 876
+    width: 1643
+    height: 154
+  m_MinSize: {x: 102, y: 121}
+  m_MaxSize: {x: 4002, y: 4021}
+  m_ActualView: {fileID: 17}
   m_Panes:
   - {fileID: 19}
   - {fileID: 20}
   - {fileID: 18}
   - {fileID: 17}
-  m_Selected: 0
-  m_LastSelected: 1
+  m_Selected: 3
+  m_LastSelected: 0
 --- !u!114 &12
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -275,20 +275,20 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
-    x: 1546
+    x: 1643
     y: 0
-    width: 374
+    width: 277
     height: 1030
-  m_MinSize: {x: 277, y: 71}
-  m_MaxSize: {x: 4002, y: 4021}
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 21}
   m_Panes:
   - {fileID: 21}
-  - {fileID: 22}
   - {fileID: 23}
+  - {fileID: 22}
   - {fileID: 24}
   m_Selected: 0
-  m_LastSelected: 1
+  m_LastSelected: 3
 --- !u!114 &13
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -311,22 +311,22 @@ MonoBehaviour:
   m_DepthBufferBits: 32
   m_Pos:
     serializedVersion: 2
-    x: 226
+    x: 361
     y: 49
-    width: 1318
-    height: 718
+    width: 1280
+    height: 855
   m_MaximizeOnPlay: 0
   m_Gizmos: 0
-  m_Stats: 0
+  m_Stats: 1
   m_SelectedSizes: 00000000000000000000000000000000000000000000000000000000000000000000000000000000
   m_TargetDisplay: 0
   m_ZoomArea:
     m_HRangeLocked: 0
     m_VRangeLocked: 0
-    m_HBaseRangeMin: -659
-    m_HBaseRangeMax: 659
-    m_VBaseRangeMin: -350.5
-    m_VBaseRangeMax: 350.5
+    m_HBaseRangeMin: -640
+    m_HBaseRangeMax: 640
+    m_VBaseRangeMin: -419
+    m_VBaseRangeMax: 419
     m_HAllowExceedBaseRangeMin: 1
     m_HAllowExceedBaseRangeMax: 1
     m_VAllowExceedBaseRangeMin: 1
@@ -343,25 +343,25 @@ MonoBehaviour:
       serializedVersion: 2
       x: 0
       y: 17
-      width: 1318
-      height: 701
+      width: 1280
+      height: 838
     m_Scale: {x: 1, y: 1}
-    m_Translation: {x: 659, y: 350.5}
+    m_Translation: {x: 640, y: 419}
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
-      x: -659
-      y: -350.5
-      width: 1318
-      height: 701
+      x: -640
+      y: -419
+      width: 1280
+      height: 838
     m_MinimalGUI: 1
   m_defaultScale: 1
   m_TargetTexture: {fileID: 0}
   m_CurrentColorSpace: 0
-  m_LastWindowPixelSize: {x: 1318, y: 718}
+  m_LastWindowPixelSize: {x: 1280, y: 855}
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
   m_LowResolutionForAspectRatios: 01000000000100000100
@@ -388,14 +388,14 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 19
-    width: 222
-    height: 718
+    y: 49
+    width: 357
+    height: 855
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 
-    m_LastClickedID: 0
-    m_ExpandedIDs: 16d1feff94c4ffff96c4ffff96faffff000000000c580000
+    m_SelectedIDs: 1456ccff
+    m_LastClickedID: -3385836
+    m_ExpandedIDs: d076c6ffb896c6ff760cccff8849ccff944cccff0857ccff0a57ccff5661ccfffebfccff8ed1ccff92d1ccff9ad1ccff9ed1ccffa6d1ccffaad1ccffb2d1ccffb6d1ccffbed1ccffc2d1ccffc6d1ccffcad1ccffced1ccffd2d1ccffdad1ccffe2d1ccffe6d1ccffeed1ccfff2d1ccfffad1ccfffed1ccff06d2ccff0ad2ccff12d2ccff16d2ccff1ad2ccff1ed2ccff22d2ccff26d2ccff2ad2ccff2ed2ccff32d2ccff3ad2ccff3ed2ccff42d2ccff4ad2ccff4ed2ccff52d2ccff56d2ccff5ad2ccff54d3ccffc64fddff42f5f0ff58f5f0ff6ef5f0ff82f5f0ff86f5f0ff9ef5f0ffa8f5f0ff16f6f0ff40f6f0ff42f6f0ffee0df1ff5410f1ffc04cf1ff1afcffff00000000acd70200ec7d1500367e1500587e1500a27e1500e27e15005e7f1500de7f1500f07f15001c80150026801500
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -440,10 +440,10 @@ MonoBehaviour:
   m_DepthBufferBits: 0
   m_Pos:
     serializedVersion: 2
-    x: 249
+    x: 361
     y: 49
-    width: 1249
-    height: 520
+    width: 1280
+    height: 738
 --- !u!114 &16
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -466,19 +466,19 @@ MonoBehaviour:
   m_DepthBufferBits: 32
   m_Pos:
     serializedVersion: 2
-    x: 226
-    y: 19
-    width: 1318
-    height: 718
+    x: 361
+    y: 49
+    width: 1280
+    height: 855
   m_SceneLighting: 1
-  lastFramingTime: 364.144819021225
+  lastFramingTime: 29258.45061403513
   m_2DMode: 0
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 272.78857, y: -0.5957031, z: 197.83691}
+    m_Target: {x: 294.85794, y: -51.822372, z: 64.58439}
     speed: 2
-    m_Value: {x: 272.78857, y: -0.5957031, z: 197.83691}
+    m_Value: {x: 294.85794, y: -51.822372, z: 64.58439}
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -501,17 +501,17 @@ MonoBehaviour:
       speed: 2
       m_Value: 0
   m_Rotation:
-    m_Target: {x: -0.18761851, y: 0.28556338, z: -0.057113018, w: -0.93807966}
+    m_Target: {x: 0.49147704, y: 0.2642656, z: -0.15948895, w: 0.8143571}
     speed: 2
-    m_Value: {x: -0.18761829, y: 0.28556305, z: -0.05711295, w: -0.9380785}
+    m_Value: {x: 0.49147698, y: 0.26426557, z: -0.15948893, w: 0.814357}
   m_Size:
-    m_Target: 6.2017837
+    m_Target: 344.6679
     speed: 2
-    m_Value: 6.2017837
+    m_Value: 344.6679
   m_Ortho:
-    m_Target: 1
+    m_Target: 0
     speed: 2
-    m_Value: 1
+    m_Value: 0
   m_LastSceneViewRotation: {x: 0.45600566, y: -0.17542605, z: 0.092199616, w: 0.8676312}
   m_LastSceneViewOrtho: 1
   m_ReplacementShader: {fileID: 0}
@@ -541,9 +541,9 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 541
-    width: 1390
-    height: 517
+    y: 925
+    width: 1641
+    height: 133
   m_ViewPositions:
     m_KeySerializationHelper:
     - {fileID: 1107626369804204700, guid: 859e8357646aa40319bb4016acfee25c, type: 2}
@@ -553,9 +553,9 @@ MonoBehaviour:
     - {fileID: 1107016438351107546, guid: c000bcd271b51400dba5035a0c7977b7, type: 2}
     m_ValueSerializationHelper:
     - {x: 911.60004, y: 40.4}
-    - {x: 869.2, y: 281}
-    - {x: 904.2, y: 242.80002}
-    - {x: 835.2, y: 333.40002}
+    - {x: 818.60004, y: 223.8}
+    - {x: 1092.8, y: 229.00009}
+    - {x: 818.60004, y: 229.6}
     - {x: 857.2, y: 208.20003}
   m_PreviewAnimator: {fileID: 0}
   m_AnimatorController: {fileID: 0}
@@ -567,7 +567,7 @@ MonoBehaviour:
   m_AutoLiveLink: 1
   m_MiniTool: 0
   m_SerializedLocked: 0
-  m_CurrentEditor: 1
+  m_CurrentEditor: 0
   m_LayerEditor:
     m_SelectedLayerIndex: 0
 --- !u!114 &18
@@ -593,9 +593,9 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 541
-    width: 1390
-    height: 517
+    y: 497
+    width: 1558
+    height: 561
   m_AnimEditor: {fileID: 0}
   m_Locked: 0
 --- !u!114 &19
@@ -621,9 +621,9 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 758
-    width: 1544
-    height: 270
+    y: 808
+    width: 1641
+    height: 250
   m_SearchFilter:
     m_NameFilter: 
     m_ClassNames: []
@@ -636,19 +636,19 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/_Environment/Refridgerator
+    - Assets/_Characters/_Enemies
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets/_Environment/Refridgerator
+  - Assets/_Characters/_Enemies
   m_LastFoldersGridSize: 16
   m_LastProjectPath: /Users/fudaviddong/Documents/SpyGame/SpyGame
   m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 421}
-    m_SelectedIDs: fe280000
-    m_LastClickedID: 10494
-    m_ExpandedIDs: 0000000084260000a42600004c290000a0290000a6290000582a00007c2a0000a02a0000d82a0000282b0000502b0000802b0000002c0000a62c0000d22d00007ea0000080a0000082a0000084a0000086a0000088a000008aa000008ca000008ea0000000ca9a3bffffff7f
+    scrollPos: {x: 0, y: 3}
+    m_SelectedIDs: 9c290000
+    m_LastClickedID: 10652
+    m_ExpandedIDs: 00000000762600009826000040290000942900009a2900004c2a00008e2a0000942a0000cc2a0000002b0000622b0000e42b00008e2c0000ba2d00004ca000004ea0000050a0000052a0000054a0000056a0000058a000005aa000005ca000008a9d0d008eb4120006b512004cfb160000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -676,7 +676,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 0000000084260000a42600004c290000a0290000a6290000582a00007c2a0000a02a0000d82a0000282b0000502b0000802b0000002c0000a62c0000d22d00007ea0000080a0000082a0000084a0000086a0000088a000008aa000008ca000008ea00000
+    m_ExpandedIDs: 00000000762600009826000040290000942900009a2900004c2a0000702a0000942a0000cc2a0000002b0000322b0000622b0000e42b00008e2c0000ba2d00004ca000004ea0000050a0000052a0000054a0000056a0000058a000005aa000005ca00000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -701,24 +701,24 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 
-    m_LastClickedInstanceID: 0
+    m_SelectedInstanceIDs: 944cccff
+    m_LastClickedInstanceID: -3388268
     m_HadKeyboardFocusLastEvent: 1
-    m_ExpandedInstanceIDs: c6230000964100006c410000e835000076520000125200006a4b000074480000b0370000dea8ffffea410000c892fdffa2570000843b0000284e0000ee64faff4ceb0000146b01000000000088ee0f00ec7203007e7203005c77ecff4a2a0000e82c0000
+    m_ExpandedInstanceIDs: c6230000964100006c410000e835000076520000125200006a4b000074480000b0370000dea8ffffea410000c892fdffa2570000843b0000284e0000ee64faff4ceb0000146b01000000000088ee0f00ec7203007e7203005c77ecff4a2a0000e82c0000442a0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: 
-      m_OriginalName: 
+      m_Name: MeleeWeaponBehaviour
+      m_OriginalName: MeleeWeaponBehaviour
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 0
+      m_UserData: 1726050
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 11
+      m_OriginalEventType: 0
       m_IsRenamingFilename: 1
       m_ClientGUIView: {fileID: 11}
     m_CreateAssetUtility:
@@ -754,9 +754,9 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 906
-    width: 1544
-    height: 125
+    y: 808
+    width: 1641
+    height: 250
 --- !u!114 &21
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -779,9 +779,9 @@ MonoBehaviour:
   m_DepthBufferBits: 0
   m_Pos:
     serializedVersion: 2
-    x: 1548
-    y: 19
-    width: 372
+    x: 1645
+    y: 49
+    width: 275
     height: 1009
   m_ScrollPosition: {x: 0, y: 0}
   m_InspectorMode: 0
@@ -883,9 +883,9 @@ MonoBehaviour:
     - id: '[/Users/fudaviddong/Documents/SpyGame/SpyGame/Library/ScriptAssemblies/Assembly-CSharp-Editor.dll][suite]'
       name: Assembly-CSharp-Editor.dll
       fullName: /Users/fudaviddong/Documents/SpyGame/SpyGame/Library/ScriptAssemblies/Assembly-CSharp-Editor.dll
-      resultStatus: 1
-      duration: 2.14042
-      messages: 
+      resultStatus: 2
+      duration: 0.344028
+      messages: One or more child tests had errors
       output: 
       stacktrace: 
       notRunnable: 0
@@ -894,9 +894,9 @@ MonoBehaviour:
     - id: '[Game][suite]'
       name: Game
       fullName: Game
-      resultStatus: 1
-      duration: 2.062194
-      messages: 
+      resultStatus: 2
+      duration: 0.24814
+      messages: One or more child tests had errors
       output: 
       stacktrace: 
       notRunnable: 0
@@ -906,7 +906,7 @@ MonoBehaviour:
       name: Characters
       fullName: Game.Characters
       resultStatus: 1
-      duration: 1.108526
+      duration: 1.34958
       messages: 
       output: 
       stacktrace: 
@@ -917,7 +917,7 @@ MonoBehaviour:
       name: Tests
       fullName: Game.Characters.Tests
       resultStatus: 1
-      duration: 1.051625
+      duration: 1.277876
       messages: 
       output: 
       stacktrace: 
@@ -928,7 +928,7 @@ MonoBehaviour:
       name: PlayerEnergyTests
       fullName: Game.Characters.Tests.PlayerEnergyTests
       resultStatus: 1
-      duration: 0.411485
+      duration: 0.437672
       messages: 
       output: 
       stacktrace: 
@@ -939,7 +939,7 @@ MonoBehaviour:
       name: T01PlayerEnergyController_ReduceEnergy_ReturnsNewReducedEnergy
       fullName: Game.Characters.Tests.PlayerEnergyTests.T01PlayerEnergyController_ReduceEnergy_ReturnsNewReducedEnergy
       resultStatus: 1
-      duration: 0.057802
+      duration: 0.067878
       messages: 
       output: 
       stacktrace: 
@@ -950,7 +950,7 @@ MonoBehaviour:
       name: T02PlayerEnergyController_ReduceEnergy_ReturnsZero
       fullName: Game.Characters.Tests.PlayerEnergyTests.T02PlayerEnergyController_ReduceEnergy_ReturnsZero
       resultStatus: 1
-      duration: 0.027157
+      duration: 0.031663
       messages: 
       output: 
       stacktrace: 
@@ -961,7 +961,7 @@ MonoBehaviour:
       name: T03PlayerEnergyController_IncreaseEnergy_ReturnsNewCurrentEnergy
       fullName: Game.Characters.Tests.PlayerEnergyTests.T03PlayerEnergyController_IncreaseEnergy_ReturnsNewCurrentEnergy
       resultStatus: 1
-      duration: 0.041802
+      duration: 0.016534
       messages: 
       output: 
       stacktrace: 
@@ -972,7 +972,7 @@ MonoBehaviour:
       name: T04PlayerEnergyController_IncreaseEnergy_ReturnsNoMoreThanMaxEnergy
       fullName: Game.Characters.Tests.PlayerEnergyTests.T04PlayerEnergyController_IncreaseEnergy_ReturnsNoMoreThanMaxEnergy
       resultStatus: 1
-      duration: 0.032264
+      duration: 0.037129
       messages: 
       output: 
       stacktrace: 
@@ -983,7 +983,7 @@ MonoBehaviour:
       name: PlayerMovementControllerTests
       fullName: Game.Characters.Tests.PlayerMovementControllerTests
       resultStatus: 1
-      duration: 0.481527
+      duration: 0.735162
       messages: 
       output: 
       stacktrace: 
@@ -994,7 +994,7 @@ MonoBehaviour:
       name: T01UpdateMovementDirection_ReturnsIdle
       fullName: Game.Characters.Tests.PlayerMovementControllerTests.T01UpdateMovementDirection_ReturnsIdle
       resultStatus: 1
-      duration: 0.0731
+      duration: 0.036605
       messages: 
       output: 
       stacktrace: 
@@ -1005,7 +1005,7 @@ MonoBehaviour:
       name: T02aUpdateMovementDirection_ReturnsForward
       fullName: Game.Characters.Tests.PlayerMovementControllerTests.T02aUpdateMovementDirection_ReturnsForward
       resultStatus: 1
-      duration: 0.007491
+      duration: 0.031201
       messages: 
       output: 
       stacktrace: 
@@ -1016,7 +1016,7 @@ MonoBehaviour:
       name: T02bUpdateMovementDirection_ReturnsForward
       fullName: Game.Characters.Tests.PlayerMovementControllerTests.T02bUpdateMovementDirection_ReturnsForward
       resultStatus: 1
-      duration: 0.024974
+      duration: 0.030574
       messages: 
       output: 
       stacktrace: 
@@ -1027,7 +1027,7 @@ MonoBehaviour:
       name: T03aUpdateMovementDirection_ReturnsBackward
       fullName: Game.Characters.Tests.PlayerMovementControllerTests.T03aUpdateMovementDirection_ReturnsBackward
       resultStatus: 1
-      duration: 0.02085
+      duration: 0.035162
       messages: 
       output: 
       stacktrace: 
@@ -1038,7 +1038,7 @@ MonoBehaviour:
       name: T03bUpdateMovementDirection_ReturnsBackward
       fullName: Game.Characters.Tests.PlayerMovementControllerTests.T03bUpdateMovementDirection_ReturnsBackward
       resultStatus: 1
-      duration: 0.036038
+      duration: 0.02304
       messages: 
       output: 
       stacktrace: 
@@ -1049,7 +1049,7 @@ MonoBehaviour:
       name: T04aUpdateMovementDirection_ReturnsLeft
       fullName: Game.Characters.Tests.PlayerMovementControllerTests.T04aUpdateMovementDirection_ReturnsLeft
       resultStatus: 1
-      duration: 0.028459
+      duration: 0.035459
       messages: 
       output: 
       stacktrace: 
@@ -1060,7 +1060,7 @@ MonoBehaviour:
       name: T04bUpdateMovementDirection_ReturnsLeft
       fullName: Game.Characters.Tests.PlayerMovementControllerTests.T04bUpdateMovementDirection_ReturnsLeft
       resultStatus: 1
-      duration: 0.020348
+      duration: 0.036096
       messages: 
       output: 
       stacktrace: 
@@ -1071,7 +1071,7 @@ MonoBehaviour:
       name: T05aUpdateMovementDirection_ReturnsRight
       fullName: Game.Characters.Tests.PlayerMovementControllerTests.T05aUpdateMovementDirection_ReturnsRight
       resultStatus: 1
-      duration: 0.020777
+      duration: 0.022153
       messages: 
       output: 
       stacktrace: 
@@ -1082,7 +1082,7 @@ MonoBehaviour:
       name: T05bUpdateMovementDirection_ReturnsRight
       fullName: Game.Characters.Tests.PlayerMovementControllerTests.T05bUpdateMovementDirection_ReturnsRight
       resultStatus: 1
-      duration: 0.032119
+      duration: 0.035846
       messages: 
       output: 
       stacktrace: 
@@ -1092,9 +1092,9 @@ MonoBehaviour:
     - id: '[Game.Core][suite]'
       name: Core
       fullName: Game.Core
-      resultStatus: 1
-      duration: 0.838383
-      messages: 
+      resultStatus: 2
+      duration: 0.169803
+      messages: One or more child tests had errors
       output: 
       stacktrace: 
       notRunnable: 0
@@ -1104,7 +1104,7 @@ MonoBehaviour:
       name: LockTests
       fullName: Game.Core.LockTests
       resultStatus: 1
-      duration: 0.445798
+      duration: 0.320496
       messages: 
       output: 
       stacktrace: 
@@ -1115,7 +1115,7 @@ MonoBehaviour:
       name: LockTest
       fullName: Game.Core.LockTests.LockTest
       resultStatus: 1
-      duration: 0.396422
+      duration: 0.268223
       messages: 
       output: 
       stacktrace: 
@@ -1126,7 +1126,7 @@ MonoBehaviour:
       name: T01UnlockDoor_ReturnsDoorUnlocked
       fullName: Game.Core.LockTests.LockTest.T01UnlockDoor_ReturnsDoorUnlocked
       resultStatus: 1
-      duration: 0.002519
+      duration: 0.004686
       messages: 
       output: 
       stacktrace: 
@@ -1137,7 +1137,7 @@ MonoBehaviour:
       name: T02UnLockDoor_ReturnsDoorLocked
       fullName: Game.Core.LockTests.LockTest.T02UnLockDoor_ReturnsDoorLocked
       resultStatus: 1
-      duration: 0.043481
+      duration: 0.031293
       messages: 
       output: 
       stacktrace: 
@@ -1148,7 +1148,7 @@ MonoBehaviour:
       name: T03LockDoor_ReturnsDoorLocked
       fullName: Game.Core.LockTests.LockTest.T03LockDoor_ReturnsDoorLocked
       resultStatus: 1
-      duration: 0.045153
+      duration: 0.031535
       messages: 
       output: 
       stacktrace: 
@@ -1159,7 +1159,7 @@ MonoBehaviour:
       name: T04LockDoor_ReturnsDoorUnLocked
       fullName: Game.Core.LockTests.LockTest.T04LockDoor_ReturnsDoorUnLocked
       resultStatus: 1
-      duration: 0.041512
+      duration: 0.030353
       messages: 
       output: 
       stacktrace: 
@@ -1169,9 +1169,9 @@ MonoBehaviour:
     - id: '[Game.Core.Tests][suite]'
       name: Tests
       fullName: Game.Core.Tests
-      resultStatus: 1
-      duration: 0.263248
-      messages: 
+      resultStatus: 2
+      duration: 0.095507
+      messages: One or more child tests had errors
       output: 
       stacktrace: 
       notRunnable: 0
@@ -1180,9 +1180,9 @@ MonoBehaviour:
     - id: '[Assembly-CSharp-Editor.dll][Game.Core.Tests.VectorCalculationsTest][suite]'
       name: VectorCalculationsTest
       fullName: Game.Core.Tests.VectorCalculationsTest
-      resultStatus: 1
-      duration: 0.248216
-      messages: 
+      resultStatus: 2
+      duration: 0.066226
+      messages: One or more child tests had errors
       output: 
       stacktrace: 
       notRunnable: 0
@@ -1192,7 +1192,7 @@ MonoBehaviour:
       name: T01GetAngle_Return90Degrees
       fullName: Game.Core.Tests.VectorCalculationsTest.T01GetAngle_Return90Degrees
       resultStatus: 1
-      duration: 0.002846
+      duration: 0.004845
       messages: 
       output: 
       stacktrace: 
@@ -1203,7 +1203,7 @@ MonoBehaviour:
       name: T02aGetSign_ReturnPositionSign
       fullName: Game.Core.Tests.VectorCalculationsTest.T02aGetSign_ReturnPositionSign
       resultStatus: 1
-      duration: 0.003804
+      duration: 0.031907
       messages: 
       output: 
       stacktrace: 
@@ -1214,7 +1214,7 @@ MonoBehaviour:
       name: T02bGetSign_ReturnPositionSign
       fullName: Game.Core.Tests.VectorCalculationsTest.T02bGetSign_ReturnPositionSign
       resultStatus: 1
-      duration: 0.003346
+      duration: 0.016207
       messages: 
       output: 
       stacktrace: 
@@ -1225,7 +1225,7 @@ MonoBehaviour:
       name: T02cGetSign_ReturnPositionSign
       fullName: Game.Core.Tests.VectorCalculationsTest.T02cGetSign_ReturnPositionSign
       resultStatus: 1
-      duration: 0.012401
+      duration: 0.036228
       messages: 
       output: 
       stacktrace: 
@@ -1235,43 +1235,57 @@ MonoBehaviour:
     - id: '[Assembly-CSharp-Editor.dll][Game.Core.Tests.VectorCalculationsTest.T03aGetSign_ReturnNegativeSign]'
       name: T03aGetSign_ReturnNegativeSign
       fullName: Game.Core.Tests.VectorCalculationsTest.T03aGetSign_ReturnNegativeSign
-      resultStatus: 1
-      duration: 0.005381
-      messages: 
+      resultStatus: 2
+      duration: 0.004495
+      messages: "  Expected: -1\n  But was:  1.0f\n"
       output: 
-      stacktrace: 
+      stacktrace: 'at Game.Core.Tests.VectorCalculationsTest.T03aGetSign_ReturnNegativeSign
+        () [0x00046] in /Users/fudaviddong/Documents/SpyGame/SpyGame/Assets/_Core/Editor/VectorCalculationsTest.cs:53
+
+'
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
     - id: '[Assembly-CSharp-Editor.dll][Game.Core.Tests.VectorCalculationsTest.T03bGetSign_ReturnNegativeSign]'
       name: T03bGetSign_ReturnNegativeSign
       fullName: Game.Core.Tests.VectorCalculationsTest.T03bGetSign_ReturnNegativeSign
-      resultStatus: 1
-      duration: 0.026687
-      messages: 
+      resultStatus: 2
+      duration: 0.032122
+      messages: "  Expected: -1\n  But was:  1.0f\n"
       output: 
-      stacktrace: 
+      stacktrace: 'at Game.Core.Tests.VectorCalculationsTest.T03bGetSign_ReturnNegativeSign
+        () [0x00046] in /Users/fudaviddong/Documents/SpyGame/SpyGame/Assets/_Core/Editor/VectorCalculationsTest.cs:62
+
+'
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
     - id: '[Assembly-CSharp-Editor.dll][Game.Core.Tests.VectorCalculationsTest.T03cGetSign_ReturnNegativeSign]'
       name: T03cGetSign_ReturnNegativeSign
       fullName: Game.Core.Tests.VectorCalculationsTest.T03cGetSign_ReturnNegativeSign
-      resultStatus: 1
-      duration: 0.021404
-      messages: 
+      resultStatus: 2
+      duration: 0.032883
+      messages: "  Expected: -1\n  But was:  1.0f\n"
       output: 
-      stacktrace: 
+      stacktrace: 'at Game.Core.Tests.VectorCalculationsTest.T03cGetSign_ReturnNegativeSign
+        () [0x00046] in /Users/fudaviddong/Documents/SpyGame/SpyGame/Assets/_Core/Editor/VectorCalculationsTest.cs:71
+
+'
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
-    m_ResultText: Game (2.062s)
-    m_ResultStacktrace: 
+    m_ResultText: "T03aGetSign_ReturnNegativeSign (0.004s)\n---\nExpected: -1\n  But
+      was:  1.0f\n---\nat Game.Core.Tests.VectorCalculationsTest.T03aGetSign_ReturnNegativeSign
+      () [0x00046] in /Users/fudaviddong/Documents/SpyGame/SpyGame/Assets/_Core/Editor/VectorCalculationsTest.cs:53"
+    m_ResultStacktrace: 'at Game.Core.Tests.VectorCalculationsTest.T03aGetSign_ReturnNegativeSign
+      () [0x00046] in /Users/fudaviddong/Documents/SpyGame/SpyGame/Assets/_Core/Editor/VectorCalculationsTest.cs:53
+
+'
     m_TestListState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 70c3482d
-      m_LastClickedID: 759743344
-      m_ExpandedIDs: 10afdb809c022c9890bafab05d4dbcdbfadaffdc768d16e6012a13eb43dd82f7bbecbdfd485ee4ffd38dbc020f3d640afea50d2570c3482dd869962fc9678435760da9429743fd51e8c4db5dffffff7f
+      m_SelectedIDs: b13427b3
+      m_LastClickedID: -1289276239
+      m_ExpandedIDs: 10afdb8036c3218e9c022c9890bafab0ddd6e1d85d4dbcdbfadaffdc768d16e6012a13eb43dd82f7bbecbdfd485ee4ffd38dbc020f3d640aa3d39421fea50d2570c3482dd869962fc9678435760da9429743fd51e8c4db5dffffff7f
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -1311,10 +1325,10 @@ MonoBehaviour:
   m_DepthBufferBits: 0
   m_Pos:
     serializedVersion: 2
-    x: 1504
-    y: 94
-    width: 416
-    height: 936
+    x: 1548
+    y: 49
+    width: 372
+    height: 1009
 --- !u!114 &24
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -1337,7 +1351,7 @@ MonoBehaviour:
   m_DepthBufferBits: 0
   m_Pos:
     serializedVersion: 2
-    x: 1394
-    y: 94
-    width: 526
-    height: 937
+    x: 1645
+    y: 49
+    width: 275
+    height: 1009

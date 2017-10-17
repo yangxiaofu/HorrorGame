@@ -52,7 +52,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\_Characters\_Enemies\Enemy.cs" />
-     <Compile Include="Assets\_Characters\_Enemies\EnemyMovement.cs" />
+     <Compile Include="Assets\_Characters\_Enemies\EnemyControl.cs" />
      <Compile Include="Assets\_Characters\_Enemies\EnemySight.cs" />
      <Compile Include="Assets\_Characters\_Player\IPlayerControl.cs" />
      <Compile Include="Assets\_Characters\_Player\IPlayerEnergy.cs" />
@@ -66,8 +66,8 @@
      <Compile Include="Assets\_Characters\_Player\PlayerHealth.cs" />
      <Compile Include="Assets\_Characters\_Player\PlayerMovementController.cs" />
      <Compile Include="Assets\_Characters\Character.cs" />
+     <Compile Include="Assets\_Characters\CharacterControl.cs" />
      <Compile Include="Assets\_Characters\CharacterHealth.cs" />
-     <Compile Include="Assets\_Characters\CharacterMovement.cs" />
      <Compile Include="Assets\_Core\CameraArm.cs" />
      <Compile Include="Assets\_Core\CameraRaycaster.cs" />
      <Compile Include="Assets\_Core\CrossPlatformInput\Scripts\AxisTouchButton.cs" />
@@ -105,7 +105,15 @@
      <Compile Include="Assets\_Items\_Food\FoodConfig.cs" />
      <Compile Include="Assets\_Items\_Key\Key.cs" />
      <Compile Include="Assets\_Items\_Key\KeyConfig.cs" />
+     <Compile Include="Assets\_Items\_Weapons\_MeleeWeapon\MeleeWeapon.cs" />
+     <Compile Include="Assets\_Items\_Weapons\_MeleeWeapon\MeleeWeaponBehaviour.cs" />
+     <Compile Include="Assets\_Items\_Weapons\_RangeWeapon\ProjectileSocket.cs" />
+     <Compile Include="Assets\_Items\_Weapons\_RangeWeapon\RangeWeapon.cs" />
+     <Compile Include="Assets\_Items\_Weapons\_RangeWeapon\RangeWeaponBehaviour.cs" />
      <Compile Include="Assets\_Items\_Weapons\Projectile.cs" />
+     <Compile Include="Assets\_Items\_Weapons\WeaponBehaviour.cs" />
+     <Compile Include="Assets\_Items\_Weapons\WeaponConfig.cs" />
+     <Compile Include="Assets\_Items\_Weapons\WeaponSystem.cs" />
      <Compile Include="Assets\_Items\Inventory.cs" />
      <Compile Include="Assets\_Items\ItemConfig.cs" />
      <Compile Include="Assets\_Items\ItemPickup.cs" />

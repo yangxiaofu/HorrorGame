@@ -4,9 +4,11 @@ using UnityEngine;
 using UnityEngine.Assertions;
 
 namespace Game.Characters{
+	[SelectionBase]
+	[RequireComponent(typeof(EnemyControl))]
 	public class Enemy : Character{
 		EnemySight _sight;
-		CharacterMovement _characterMovement;
+		EnemyControl _enemyControl;
 		Player _player;
 		void Start(){
 
@@ -14,13 +16,18 @@ namespace Game.Characters{
 			Assert.IsNotNull(_player);
 
 			_sight = GetComponentInChildren<EnemySight>();
-			Assert.IsNotNull(_sight);
+			
+			Assert.IsNotNull(
+				_sight, 
+				"You need to add the player sight into the transform of the player."
+			);
+
 			_sight.Setup(this.transform);
 
-			_characterMovement = GetComponent<CharacterMovement>();
-			Assert.IsNotNull(_characterMovement);
-
 			_sight.OnPlayerSeen += OnPlayerSeen;
+
+			_enemyControl = GetComponent<EnemyControl>();
+			Assert.IsNotNull(_enemyControl, "There is no enemy control scrip on the game object of " + name);
 		}
 
 		void Update()
@@ -34,13 +41,13 @@ namespace Game.Characters{
 
             if (distanceFromPlayer > _sight.sightDistance)
             {
-                _characterMovement.SetTarget(null);
+                _enemyControl.SetTarget(null);
             }
         }
 
         void OnPlayerSeen(Player player)
 		{
-			_characterMovement.SetTarget(player.transform);
+			_enemyControl.SetTarget(player.transform);
 		}
 
 		void OnDrawGizmos()

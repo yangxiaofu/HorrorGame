@@ -4,32 +4,19 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Assertions;
 using Game.Characters;
+using Game.Items;
 
 namespace Game.Core{
 
-	public class PlayerControl : MonoBehaviour, IPlayerControl {
+	public class PlayerControl : CharacterControl{
 
-		[Header("Movement Control")]
-		[SerializeField] float _forwardSpeed = 3f;
+		[Header("Player Specific")]
 		[SerializeField] float _backwardSpeed = 2f;
         [SerializeField] float _strafeSpeed = 1f;	
-		[SerializeField] float _groundDistance = 0.2f;
-
-		[Tooltip("This is the layer mask for which the camera raycater will hit. ")]
-		[SerializeField] LayerMask _ground;
 
 		[Tooltip("Adjusting this impacts the minimum energy level that impacts the player movement.")]
 		[Range(0, 1)]
 		[SerializeField] float _minimumEnergyFactor = 0.1f;
-
-		[Header("Animator Variables")]
-		[SerializeField] AnimatorOverrideController _animOC;
-		[SerializeField] Avatar _avatar;
-
-		[Header("Capsule Collider")]
-		[SerializeField] Vector3 _center = new Vector3(0, 0.8f, 0);
-		[SerializeField] float _radius = 0.3f;
-		[SerializeField] float _height = 1.6f;
 
 		[Header("Movement Angles")]
         [Tooltip("The angle from the sight view from the front from where the animation changes from a walking animation to a strafing animation.")]
@@ -37,14 +24,7 @@ namespace Game.Core{
 		[SerializeField] float _angleOfForwardWalking = 45f;
         [Tooltip("The angle from the sight view at the front where the animation changes from strafing to a backward animation.")]
         [SerializeField] float _angleOfBackwardWalking = 110f;
-		float _speed = 0f;
-		Rigidbody _body;
-		Animator _anim;
-		Vector3 _inputs = Vector3.zero;
-		public Vector3 inputs{
-			get{return _inputs;}
-			set{_inputs = value;}
-		}
+
 		Transform _groundChecker;
         CameraRaycaster _cameraRaycaster;
 		Flashlight _flashlight;
@@ -52,11 +32,9 @@ namespace Game.Core{
 
         public delegate void HealthKeyDown();
         public event HealthKeyDown OnHealthKeyDown;
-
         enum MovementState {
             FORWARD, BACKWARD, LEFT, RIGHT, IDLE
         }
-
         MovementState _movementState;
 		
 		void Awake()
@@ -68,12 +46,12 @@ namespace Game.Core{
 
         void Start()
         {
-            SetupComponentVariables();
-            RegisterToNotifiers();
-            SetupPlayerMovementController();
+            SetupComponentVariables(); //Player specific
+            RegisterToNotifiers();  //Player Specific
+            SetupPlayerMovementController(); //Player Specific
         }
 
-        private void SetupPlayerMovementController()
+        private void SetupPlayerMovementController()//Player Specific
         {
             _controller = new PlayerMovementController(this,
 				new WalkAngleRestrictionArgs(
@@ -83,7 +61,7 @@ namespace Game.Core{
 			);
         }
 
-        private void SetupComponentVariables()
+        private void SetupComponentVariables()//Player specific
         {
             _groundChecker = GetComponentInChildren<GroundChecker>().transform;
 
@@ -98,27 +76,24 @@ namespace Game.Core{
                 _flashlight, 
                 "You must carry a flashlight as a child of the player game object."
             );
-            
         }
 
-        private void RegisterToNotifiers()
+        private void RegisterToNotifiers()//Player Specific
         {
             _cameraRaycaster = FindObjectOfType<CameraRaycaster>();
             Assert.IsNotNull(_cameraRaycaster);
             _cameraRaycaster.OnMouseOverGround += ApplyFaceDirectionToPlayer;
-
-            
         }
 
         void Update()
         {
             UpdateControllerInput();
             _controller.UpdateMovementDirection(GetAngleFromSightPosition());
-            UpdateMovementAnimation();
-            ScanKeyButtonPresses();
+            UpdateMovementAnimation();//Player Specific
+            ScanKeyButtonPresses();//Player Specific
         }
 
-        private void ScanKeyButtonPresses()
+        private void ScanKeyButtonPresses()//Player Specific
         {
             if (Input.GetKeyDown(KeyCode.Q))
             {
@@ -127,7 +102,7 @@ namespace Game.Core{
             }
         }
 
-        private void UpdateControllerInput()
+        private void UpdateControllerInput()//Player Specific
         {
             const string HORIZONTAL_AXIS = "Horizontal";
 		    const string VERTICAL_AXIS = "Vertical";
@@ -136,21 +111,19 @@ namespace Game.Core{
         }
 
         void FixedUpdate()
-		{
-			_body.MovePosition(_body.position + _inputs * _speed * Time.fixedDeltaTime);
-		}
+        {
+            MoveBodyPosition(); //CharacterControl
+        }
 
-        /// <summary>
-        /// Callback for setting up animation IK (inverse kinematics).
-        /// </summary>
-        /// <param name="layerIndex">Index of the layer on which the IK solver is called.</param>
-        void OnAnimatorIK(int layerIndex)
+       
+
+        void OnAnimatorIK(int layerIndex)//Player Specific
         {
             _anim.SetIKPosition(AvatarIKGoal.RightHand, _cameraRaycaster.mousePosition);
             _anim.SetIKPositionWeight(AvatarIKGoal.RightHand, 1);    
         }
 
-        private void UpdateMovementAnimation()
+        private void UpdateMovementAnimation()//Player Specific
         {
             const string IS_IDLE = "isIdle";
             const string ANIMATION_STATE_FORWARD = "WalkForward";
@@ -208,8 +181,6 @@ namespace Game.Core{
 
             return energyFactor;
         }
-
-
         private float GetAngleFromSightPosition()
         {
         	var forwardDirection = transform.forward;
@@ -229,38 +200,6 @@ namespace Game.Core{
         private void ApplyFaceDirectionToPlayer(Vector3 mousePosOnGround)
         {
 			transform.forward = mousePosOnGround - transform.position;
-        }
-
-        private void AddRigidBodyComponent()
-        {
-            _body = gameObject.AddComponent<Rigidbody>();
-			_body.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
-			
-        }
-
-        private void AddAnimatorComponent()
-        {
-            Assert.IsNotNull(
-				_animOC,
-				"Please add the player animation Override Controller referenced in the PlayerControl component"
-			);
-
-            Assert.IsNotNull(
-                _avatar,
-                "Add the player avatar into PlayerControl component on Player"
-            );
-
-            _anim = gameObject.AddComponent<Animator>();
-            _anim.runtimeAnimatorController = _animOC;
-            _anim.avatar = _avatar;
-        }
-
-        private void AddCapsuleCollider()
-        {
-			var cc = gameObject.AddComponent<CapsuleCollider>();
-			cc.center = _center;
-			cc.radius = _radius;
-			cc.height = _height;
         }
     }
 }

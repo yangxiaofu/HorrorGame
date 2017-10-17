@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2367efc4e24f42b3b6bb41bf2a76f57, type: 3}
+  m_Name: Pistol
+  m_EditorClassIdentifier: 
+  _itemPrefab: {fileID: 1943603163552356, guid: 573f7ce5f47a945e1ad7549afa24c9a3,
+    type: 2}
+  _weaponGripTransform: {fileID: 4758368059935064, guid: 69f3bc7695cbd4bc99f9f63550caac1d,
+    type: 2}
+  _animation: {fileID: 7400000, guid: ac4675c4d1758a342a4abd7f9d49697f, type: 3}
+  _projectilePrefab: {fileID: 1185728981465958, guid: 0057643342cd34e5dbc582f74ef5bd8f,
+    type: 2}
+  _projectileSocket: {fileID: 0}

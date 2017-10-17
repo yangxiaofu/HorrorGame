@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Game.Core{
+namespace Game.Characters{
 
     public class PlayerControlMock : IPlayerControl
     {

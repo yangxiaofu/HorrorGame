@@ -11,9 +11,6 @@ namespace Game.Characters{
 	public class Player : Character{
 		[SerializeField] float _meleeWeaponDamage = 10f;
 		[SerializeField] float _pickupDistance = 2f;
-
-		[Header("Refactor Later")]
-		[SerializeField] GameObject _projectile;
 		public float pickupDistance{get{return _pickupDistance;}}
 		CameraRaycaster _cameraRaycaster;
 
@@ -26,16 +23,7 @@ namespace Game.Characters{
 
 			_cameraRaycaster.OnMouseOverEnemy += OnMouseOverEnemy;
 
-			Assert.IsNotNull(_projectile);
-		}
-
-		void Update(){
-			if (Input.GetKeyDown(KeyCode.Space)){
-				var itemGrip = GetComponentInChildren<ItemGrip>();
-				var projectileObj = Instantiate(_projectile, itemGrip.transform.position, Quaternion.identity) as GameObject;
-				var direction = (_cameraRaycaster.mousePosition - itemGrip.transform.position).normalized;
-				projectileObj.GetComponent<Rigidbody>().velocity = direction * _projectile.GetComponent<Projectile>().speed;
-			}
+			
 		}
 
         private void OnMouseOverEnemy(Enemy enemy)

@@ -2,8 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-
-namespace Game.Core{
+namespace Game.Characters{
 
 	public class PlayerMovementController {
 		private readonly float _angleContraintForForwardWalking = 0;
