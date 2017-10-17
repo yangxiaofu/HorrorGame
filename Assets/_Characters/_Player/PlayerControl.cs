@@ -51,8 +51,6 @@ namespace Game.Core{
 		Flashlight _flashlight;
 		PlayerMovementController _controller;
 
-       
-
         public delegate void HealthKeyDown();
         public event HealthKeyDown OnHealthKeyDown;
 
@@ -96,8 +94,12 @@ namespace Game.Core{
             );
 
             _flashlight = GetComponentInChildren<Flashlight>();
-            Assert.IsNotNull(_flashlight, "You must carry a flashlight as a child of the player game object.");
-            //TODO: Set the location of the flashlight. 
+
+            Assert.IsNotNull(
+                _flashlight, 
+                "You must carry a flashlight as a child of the player game object."
+            );
+            
         }
 
         private void RegisterToNotifiers()
@@ -105,6 +107,8 @@ namespace Game.Core{
             _cameraRaycaster = FindObjectOfType<CameraRaycaster>();
             Assert.IsNotNull(_cameraRaycaster);
             _cameraRaycaster.OnMouseOverGround += ApplyFaceDirectionToPlayer;
+
+            
         }
 
         void Update()
@@ -129,7 +133,7 @@ namespace Game.Core{
         {
             const string HORIZONTAL_AXIS = "Horizontal";
 		    const string VERTICAL_AXIS = "Vertical";
-            
+
             _inputs = new Vector3(Input.GetAxis(HORIZONTAL_AXIS), 0, Input.GetAxis(VERTICAL_AXIS));
         }
 

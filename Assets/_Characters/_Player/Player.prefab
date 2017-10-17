@@ -663,6 +663,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1527730959838378
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4222338196651310}
+  - component: {fileID: 114670719978769204}
+  m_Layer: 0
+  m_Name: ItemGrip
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1530523301425902
 GameObject:
   m_ObjectHideFlags: 1
@@ -1396,7 +1412,8 @@ Transform:
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.072496675, y: 0.020219762, z: -0.0038000573}
   m_LocalScale: {x: 1, y: 1.0000002, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 4222338196651310}
   m_Father: {fileID: 4629183184626228}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1510,6 +1527,19 @@ Transform:
   m_Father: {fileID: 4084971738039504}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4222338196651310
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1527730959838378}
+  m_LocalRotation: {x: 0.000000022351736, y: 0.7071067, z: 0.0000001452863, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4122293711558656}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 90.00001, z: 0}
 --- !u!4 &4235673599105236
 Transform:
   m_ObjectHideFlags: 1
@@ -1689,7 +1719,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1478101941135492}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 266.13, y: 0.66, z: 141.86}
+  m_LocalPosition: {x: 266.13, y: 0.122, z: 141.86}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4337840111951646}
@@ -2471,6 +2501,8 @@ MonoBehaviour:
   _meleeAttackRadius: 0.94
   _meleeWeaponDamage: 100
   _pickupDistance: 1.49
+  _projectile: {fileID: 1185728981465958, guid: 0057643342cd34e5dbc582f74ef5bd8f,
+    type: 2}
 --- !u!114 &114321649311362562
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2531,6 +2563,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5305464091ad0457187e14db95aaefe8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114670719978769204
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1527730959838378}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64c26a86f99434ecc861e9331fd1ef29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &114911955000279072

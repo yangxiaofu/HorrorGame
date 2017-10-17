@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Assertions;
 using Game.Core;
+using Game.Items;
 using System;
 
 namespace Game.Characters{
@@ -10,6 +11,9 @@ namespace Game.Characters{
 	public class Player : Character{
 		[SerializeField] float _meleeWeaponDamage = 10f;
 		[SerializeField] float _pickupDistance = 2f;
+
+		[Header("Refactor Later")]
+		[SerializeField] GameObject _projectile;
 		public float pickupDistance{get{return _pickupDistance;}}
 		CameraRaycaster _cameraRaycaster;
 
@@ -21,6 +25,17 @@ namespace Game.Characters{
 			);
 
 			_cameraRaycaster.OnMouseOverEnemy += OnMouseOverEnemy;
+
+			Assert.IsNotNull(_projectile);
+		}
+
+		void Update(){
+			if (Input.GetKeyDown(KeyCode.Space)){
+				var itemGrip = GetComponentInChildren<ItemGrip>();
+				var projectileObj = Instantiate(_projectile, itemGrip.transform.position, Quaternion.identity) as GameObject;
+				var direction = (_cameraRaycaster.mousePosition - itemGrip.transform.position).normalized;
+				projectileObj.GetComponent<Rigidbody>().velocity = direction * _projectile.GetComponent<Projectile>().speed;
+			}
 		}
 
         private void OnMouseOverEnemy(Enemy enemy)
@@ -30,12 +45,16 @@ namespace Game.Characters{
 
 				if (distanceFromEnemy <= _meleeAttackRadius)
 				{
+					//TODO: Perform the attack animation.
 					enemy.GetComponent<CharacterHealth>().TakeDamage(_meleeWeaponDamage);
 				} else {
-					print("You are too far from the enemy.");
+					//TODO: Shoot the enemy.
+					
 				}
 				
 			}
+
+			
         }
     }
 }
