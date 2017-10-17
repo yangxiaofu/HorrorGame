@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Assertions;
@@ -10,6 +11,8 @@ namespace Game.Characters{
 		EnemySight _sight;
 		EnemyControl _enemyControl;
 		Player _player;
+		Animator _anim;
+		
 		void Start(){
 
 			_player = FindObjectOfType<Player>();
@@ -28,11 +31,23 @@ namespace Game.Characters{
 
 			_enemyControl = GetComponent<EnemyControl>();
 			Assert.IsNotNull(_enemyControl, "There is no enemy control scrip on the game object of " + name);
+
+			_anim = GetComponent<Animator>();  //Added in the enemy Control method. //TODO: Refactor from enemy control into player later. 
 		}
 
 		void Update()
         {
             ScanForPlayerWithinSightRadius();
+			ScanForPlayerInAttackRadius();
+        }
+
+        private void ScanForPlayerInAttackRadius()
+        {
+			var distanceFromPlayer = Vector3.Distance(_player.transform.position, this.transform.position);
+			if (distanceFromPlayer < _meleeAttackRadius)
+			{
+				_enemyControl.SetState(CharacterControl.AnimationState.ATTACK);	
+			}
         }
 
         private void ScanForPlayerWithinSightRadius()

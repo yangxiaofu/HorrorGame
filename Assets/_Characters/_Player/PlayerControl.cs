@@ -117,38 +117,36 @@ namespace Game.Core{
 
         private void UpdateMovementAnimation()//Player Specific
         {
-
-
-            if (_controller.movementDirection == PlayerMovementController.MovementDirection.FORWARD && _movementState != MovementState.FORWARD)
+            if (_controller.movementDirection == PlayerMovementController.MovementDirection.FORWARD && _animationState != AnimationState.FORWARD)
             {
                 _anim.SetBool(IS_IDLE, false);
-                _movementState = MovementState.FORWARD;
+                _animationState = AnimationState.FORWARD;
                 _anim.Play(ANIMATION_STATE_FORWARD);
                 _speed = _forwardSpeed * GetEnergyFactor();
             }
-            else if (_controller.movementDirection == PlayerMovementController.MovementDirection.BACKWARD && _movementState != MovementState.BACKWARD)
+            else if (_controller.movementDirection == PlayerMovementController.MovementDirection.BACKWARD && _animationState != AnimationState.BACKWARD)
             {
                 _anim.SetBool(IS_IDLE, false);
-                _movementState = MovementState.BACKWARD;
+                _animationState = AnimationState.BACKWARD;
                 _anim.Play(ANIMATION_STATE_BACKWARD);
                 _speed = _backwardSpeed;
             }
-            else if (_controller.movementDirection == PlayerMovementController.MovementDirection.IDLE && _movementState != MovementState.IDLE)
+            else if (_controller.movementDirection == PlayerMovementController.MovementDirection.IDLE && _animationState != AnimationState.IDLE)
             {
                 SetIdleAnimation();
             } 
-            else if (_controller.movementDirection == PlayerMovementController.MovementDirection.RIGHT && _movementState != MovementState.RIGHT)
+            else if (_controller.movementDirection == PlayerMovementController.MovementDirection.RIGHT && _animationState != AnimationState.RIGHT)
             {
                 _anim.SetBool(IS_IDLE, false);
-                _movementState = MovementState.RIGHT;
+                _animationState = AnimationState.RIGHT;
                 _anim.Play(ANIMATION_STATE_STRAFE_RIGHT);
                 _speed = _strafeSpeed;
 			} 
-            else if (_controller.movementDirection == PlayerMovementController.MovementDirection.LEFT && _movementState != MovementState.LEFT)
+            else if (_controller.movementDirection == PlayerMovementController.MovementDirection.LEFT && _animationState != AnimationState.LEFT)
             {
                 _anim.SetBool(IS_IDLE, false);
                 _anim.Play(ANIMATION_STATE_STRAFE_LEFT);
-                _movementState = MovementState.LEFT;
+                _animationState = AnimationState.LEFT;
                 _speed = _strafeSpeed;
 			}
         }

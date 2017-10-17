@@ -35,10 +35,10 @@ namespace Game.Characters{
         protected const string ANIMATION_STATE_STRAFE_LEFT = "Strafe Left";
         protected const string ANIMATION_STATE_STRAFE_RIGHT = "Strafe Right";
 
-		protected enum MovementState {
-            FORWARD, BACKWARD, LEFT, RIGHT, IDLE
+		public enum AnimationState {
+            FORWARD, BACKWARD, LEFT, RIGHT, IDLE, ATTACK
         }
-        protected MovementState _movementState;
+        [SerializeField] protected AnimationState _animationState;
 
 		protected void AddAnimatorComponent()
         {
@@ -60,7 +60,7 @@ namespace Game.Characters{
 		protected void SetIdleAnimation()
         {
             _anim.SetBool(IS_IDLE, true);
-            _movementState = MovementState.IDLE;
+            _animationState = AnimationState.IDLE;
         }
 
 		protected void AddCapsuleCollider()

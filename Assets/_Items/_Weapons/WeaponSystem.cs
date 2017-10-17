@@ -39,13 +39,17 @@ namespace Game.Items{
 
         private void ScanForCharacterAttack()
         {
-			if (_equippedWeapon == null) return;
 			
 			if (Input.GetKeyDown(KeyCode.Space))
 			{
-				_playerControl.animOC[DEFAULT_ATTACK] = _equippedWeapon.GetAnimation();
-				_equippedWeapon.UseWeapon();
-				_anim.Play(ANIMATION_STATE_ATTACK);
+				if (_equippedWeapon != null){
+					_playerControl.animOC[DEFAULT_ATTACK] = _equippedWeapon.GetAnimation();
+					_equippedWeapon.UseWeapon();
+					_anim.Play(ANIMATION_STATE_ATTACK);
+				} else {
+					print("Do Melee Attack with no weapon.");
+				}
+			
 			}
         }
 
@@ -63,6 +67,7 @@ namespace Game.Items{
 		private void DestroyItemsInWeaponGrip()
 		{
 			_equippedWeaponGrip = GetComponentInChildren<ItemGrip>();
+			Assert.IsNotNull(_equippedWeaponGrip, "You must attach an item grip component to the child of the gripping game object on the character. " + this.name);
 
 			foreach (Transform child in _equippedWeaponGrip.transform)
 			{
