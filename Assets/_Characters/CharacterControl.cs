@@ -79,7 +79,6 @@ namespace Game.Characters{
         {
             _body = gameObject.AddComponent<Rigidbody>();
 			_body.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
-			
         }
 
 		protected void MoveBodyPosition()

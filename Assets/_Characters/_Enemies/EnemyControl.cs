@@ -7,6 +7,7 @@ namespace Game.Characters{
 	public class EnemyControl : CharacterControl, IEnemyControl {
 		[Range(0, 1)]
 		[SerializeField] float _hitSuccessPercentage = .50f;
+		[SerializeField] float _hitDamage = 50f;
 		const string DEFAULT_ATTACK = "DEFAULT_ATTACK";
 		const string ANIMATION_STATE_ATTACK = "Attack";
 		NavMeshAgent _agent;
@@ -24,28 +25,49 @@ namespace Game.Characters{
 		{
 			_enemyAnimationController = new EnemyAnimationController(this);
 		}
-        void Update () 
-		{
-			_enemyAnimationController.UpdateAnimationState();
+        void Update ()
+        {
+            if (EnemyIsDead())
+            {
+                _agent.isStopped = true;
+                return;
+            }
 
-			if (_enemyAnimationController.animationState == CharacterControl.AnimationState.ATTACK)
-			{
-				_anim.Play(ANIMATION_STATE_ATTACK);
-				_agent.isStopped = true;					
-				float delay = _animOC[DEFAULT_ATTACK].length;
-				StartCoroutine(SetBacktoForwardState(delay)); 
-			} 
-			else if (_enemyAnimationController.animationState == CharacterControl.AnimationState.FORWARD)
-			{
-				_anim.Play(ANIMATION_STATE_FORWARD);
-				_anim.SetBool(IS_IDLE, false);	
-				_agent.isStopped = false;
-				_agent.SetDestination(_target.position);
-			} 
-			else if (_enemyAnimationController.animationState == CharacterControl.AnimationState.IDLE)
-			{
-				_anim.SetBool(IS_IDLE, true);
-			}
+            if (_target != null && TargetIsDead()) return;
+
+            _enemyAnimationController.UpdateAnimationState();
+			
+            UpdateAnimation();
+        }
+
+        private void UpdateAnimation()
+        {
+            if (_enemyAnimationController.animationState == CharacterControl.AnimationState.ATTACK)
+            {
+                _anim.Play(ANIMATION_STATE_ATTACK);
+                _agent.isStopped = true;
+                float delay = _animOC[DEFAULT_ATTACK].length;
+                StartCoroutine(SetBacktoForwardState(delay));
+            }
+            else if (_enemyAnimationController.animationState == CharacterControl.AnimationState.FORWARD)
+            {
+                _anim.Play(ANIMATION_STATE_FORWARD);
+                _anim.SetBool(IS_IDLE, false);
+                _agent.isStopped = false;
+                _agent.SetDestination(_target.position);
+            }
+            else if (_enemyAnimationController.animationState == CharacterControl.AnimationState.IDLE)
+            {
+                _anim.SetBool(IS_IDLE, true);
+            }
+        }
+
+        bool EnemyIsDead(){
+			return (GetComponent(typeof(Character)) as Character).isDead;
+		}
+
+		bool TargetIsDead(){
+			return (_target.GetComponent(typeof(Character)) as Character).isDead;
 		}
 
 		void Hit()
@@ -53,9 +75,8 @@ namespace Game.Characters{
 			//Calculate Hit Percentage on teh player.
 			if (UnityEngine.Random.Range(0f, 1f) < _hitSuccessPercentage)
 			{
-				
-				_target.GetComponent<CharacterHealth>().TakeDamage(10);	
-				//TODO: Do Hit Sounds.
+				if (_target == null) return;
+				_target.GetComponent<CharacterHealth>().TakeDamage(_hitDamage);//TODO: Refactor the magic number out. 
 			} 
 			else 
 			{

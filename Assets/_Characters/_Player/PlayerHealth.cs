@@ -9,7 +9,8 @@ namespace Game.Characters{
 	public class PlayerHealth : CharacterHealth {
 
 		// Use this for initialization
-		void Start () {
+		void Start () 
+		{
 			GetComponent<PlayerControl>().OnHealthKeyDown += HealPlayer;
 		}
 
@@ -19,7 +20,7 @@ namespace Game.Characters{
             Heal(10);
         }
 
-      
+
 	}
 }
 

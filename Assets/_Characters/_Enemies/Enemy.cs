@@ -74,6 +74,11 @@ namespace Game.Characters{
 				GetComponentInChildren<EnemySight>().sightDistance
 			);
 		}
-	}
+
+        public override void RemoveCharacter()
+        {
+            Destroy(this.gameObject);
+        }
+    }
 
 }

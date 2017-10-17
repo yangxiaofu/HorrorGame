@@ -7,27 +7,27 @@ namespace Game.Characters{
 		[SerializeField] float _currentHealth = 100f;
 		[SerializeField] float _startingHealth = 100f;
 		[SerializeField] float _secondsBeforeDeathDisappear = 2f;
-		public float healthAsPercentage{
+		public float healthAsPercentage
+		{
 			get{return _currentHealth / _startingHealth;}
 		}
 
-		public void TakeDamage(float damage){
+		public void TakeDamage(float damage)
+		{
 			_currentHealth -= damage;
 			_currentHealth = Mathf.Clamp(_currentHealth, 0, _startingHealth);
 
-			if (_currentHealth <= 0){
-				StartCoroutine(KillCharacter(_secondsBeforeDeathDisappear));
+			if (_currentHealth <= 0)
+			{
+				var character = GetComponent(typeof(Character)) as Character;
+				StartCoroutine(character.KillCharacter(_secondsBeforeDeathDisappear));
 			}
 		}
 
-		IEnumerator KillCharacter(float delay){
-			yield return new WaitForSeconds(delay);
-
-			Destroy(this.gameObject);
-
-			yield return null;
+		public void ResetHealth()
+		{
+			_currentHealth = _startingHealth;
 		}
-
 		protected void Heal(float heal){
 			_currentHealth += heal;
 			Mathf.Clamp(_currentHealth, 0, _startingHealth);

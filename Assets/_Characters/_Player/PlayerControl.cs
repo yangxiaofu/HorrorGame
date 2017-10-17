@@ -84,10 +84,20 @@ namespace Game.Core{
 
         void Update()
         {
+            if ((GetComponent(typeof(Character)) as Character).isDead)
+            {
+                return;
+            }
+
             UpdateControllerInput();
             _controller.UpdateMovementDirection(GetAngleFromSightPosition());
             UpdateMovementAnimation();//Player Specific
             ScanKeyButtonPresses();//Player Specific
+        }
+
+        public void Reset()
+        {
+            _anim.Play("Idle");
         }
 
         private void ScanKeyButtonPresses()//Player Specific
