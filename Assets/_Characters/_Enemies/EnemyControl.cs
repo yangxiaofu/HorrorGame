@@ -27,11 +27,19 @@ namespace Game.Characters{
         void Update () {
 			if (_target != null)
             {
-                agent.SetDestination(_target.position);
+                _anim.SetBool(IS_IDLE, false);
+            	_movementState = MovementState.FORWARD;
+            	_anim.Play(ANIMATION_STATE_FORWARD);
+            	agent.SetDestination(_target.position);
             }
+            else {
+				SetIdleAnimation();
+			}
 		}
 
-		 void FixedUpdate()
+        
+
+        void FixedUpdate()
 		{
 			MoveBodyPosition();
 		}

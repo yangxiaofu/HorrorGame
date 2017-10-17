@@ -32,10 +32,7 @@ namespace Game.Core{
 
         public delegate void HealthKeyDown();
         public event HealthKeyDown OnHealthKeyDown;
-        enum MovementState {
-            FORWARD, BACKWARD, LEFT, RIGHT, IDLE
-        }
-        MovementState _movementState;
+        
 		
 		void Awake()
         {
@@ -101,7 +98,6 @@ namespace Game.Core{
                     OnHealthKeyDown();
             }
         }
-
         private void UpdateControllerInput()//Player Specific
         {
             const string HORIZONTAL_AXIS = "Horizontal";
@@ -109,14 +105,10 @@ namespace Game.Core{
 
             _inputs = new Vector3(Input.GetAxis(HORIZONTAL_AXIS), 0, Input.GetAxis(VERTICAL_AXIS));
         }
-
         void FixedUpdate()
         {
             MoveBodyPosition(); //CharacterControl
         }
-
-       
-
         void OnAnimatorIK(int layerIndex)//Player Specific
         {
             _anim.SetIKPosition(AvatarIKGoal.RightHand, _cameraRaycaster.mousePosition);
@@ -125,11 +117,7 @@ namespace Game.Core{
 
         private void UpdateMovementAnimation()//Player Specific
         {
-            const string IS_IDLE = "isIdle";
-            const string ANIMATION_STATE_FORWARD = "WalkForward";
-            const string ANIMATION_STATE_BACKWARD = "WalkBackward";
-            const string ANIMATION_STATE_STRAFE_LEFT = "Strafe Left";
-            const string ANIMATION_STATE_STRAFE_RIGHT = "Strafe Right";
+
 
             if (_controller.movementDirection == PlayerMovementController.MovementDirection.FORWARD && _movementState != MovementState.FORWARD)
             {
@@ -147,8 +135,7 @@ namespace Game.Core{
             }
             else if (_controller.movementDirection == PlayerMovementController.MovementDirection.IDLE && _movementState != MovementState.IDLE)
             {
-                _anim.SetBool(IS_IDLE, true);
-                _movementState = MovementState.IDLE;
+                SetIdleAnimation();
             } 
             else if (_controller.movementDirection == PlayerMovementController.MovementDirection.RIGHT && _movementState != MovementState.RIGHT)
             {
@@ -165,7 +152,6 @@ namespace Game.Core{
                 _speed = _strafeSpeed;
 			}
         }
-
         private float GetEnergyFactor()
         {
             var energyLevel = GetComponent<PlayerEnergy>();

@@ -29,7 +29,16 @@ namespace Game.Characters{
 		protected Rigidbody _body;
 		protected Animator _anim;
 
+		protected const string IS_IDLE = "isIdle";
+        protected const string ANIMATION_STATE_FORWARD = "WalkForward";
+    	protected const string ANIMATION_STATE_BACKWARD = "WalkBackward";
+        protected const string ANIMATION_STATE_STRAFE_LEFT = "Strafe Left";
+        protected const string ANIMATION_STATE_STRAFE_RIGHT = "Strafe Right";
 
+		protected enum MovementState {
+            FORWARD, BACKWARD, LEFT, RIGHT, IDLE
+        }
+        protected MovementState _movementState;
 
 		protected void AddAnimatorComponent()
         {
@@ -46,6 +55,12 @@ namespace Game.Characters{
             _anim = gameObject.AddComponent<Animator>();
             _anim.runtimeAnimatorController = _animOC;
             _anim.avatar = _avatar;
+        }
+
+		protected void SetIdleAnimation()
+        {
+            _anim.SetBool(IS_IDLE, true);
+            _movementState = MovementState.IDLE;
         }
 
 		protected void AddCapsuleCollider()
