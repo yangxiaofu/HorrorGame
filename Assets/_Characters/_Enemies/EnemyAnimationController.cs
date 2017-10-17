@@ -22,8 +22,10 @@ namespace Game.Characters{
 				else if (_enemyControl.animationState == CharacterControl.AnimationState.FORWARD)
 				{
 					_animationState = CharacterControl.AnimationState.FORWARD;
-				} else {
-					System.Console.WriteLine("Do NOthing");
+				} 
+				else 
+				{
+					Debug.Log("Do Nothing");	
 				}
             }
             else if (_enemyControl.target == null && _enemyControl.animationState != CharacterControl.AnimationState.IDLE)
