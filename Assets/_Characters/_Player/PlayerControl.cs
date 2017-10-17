@@ -45,7 +45,6 @@ namespace Game.Core{
 			get{return _inputs;}
 			set{_inputs = value;}
 		}
-		bool _isGrounded = true;
 		Transform _groundChecker;
         CameraRaycaster _cameraRaycaster;
 		Flashlight _flashlight;
@@ -113,7 +112,6 @@ namespace Game.Core{
 
         void Update()
         {
-            CheckIfGrounded();
             UpdateControllerInput();
             _controller.UpdateMovementDirection(GetAngleFromSightPosition());
             UpdateMovementAnimation();
@@ -233,14 +231,6 @@ namespace Game.Core{
 			transform.forward = mousePosOnGround - transform.position;
         }
 
-		private void CheckIfGrounded(){
-            _isGrounded = Physics.CheckSphere(
-				_groundChecker.position, 
-				_groundDistance, 
-				_ground, 
-				QueryTriggerInteraction.Ignore
-			);
-        }
         private void AddRigidBodyComponent()
         {
             _body = gameObject.AddComponent<Rigidbody>();
