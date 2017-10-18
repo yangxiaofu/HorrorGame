@@ -51,12 +51,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\_Characters\_Enemies\Enemy.cs" />
-     <Compile Include="Assets\_Characters\_Enemies\EnemyAnimationController.cs" />
-     <Compile Include="Assets\_Characters\_Enemies\EnemyControl.cs" />
-     <Compile Include="Assets\_Characters\_Enemies\EnemyControlMock.cs" />
-     <Compile Include="Assets\_Characters\_Enemies\EnemySight.cs" />
-     <Compile Include="Assets\_Characters\_Enemies\IEnemyControl.cs" />
+     <Compile Include="Assets\_Characters\_Enemies\Scripts\Enemy.cs" />
+     <Compile Include="Assets\_Characters\_Enemies\Scripts\EnemyAnimationController.cs" />
+     <Compile Include="Assets\_Characters\_Enemies\Scripts\EnemyControl.cs" />
+     <Compile Include="Assets\_Characters\_Enemies\Scripts\EnemyControlMock.cs" />
+     <Compile Include="Assets\_Characters\_Enemies\Scripts\EnemySight.cs" />
+     <Compile Include="Assets\_Characters\_Enemies\Scripts\IEnemyControl.cs" />
      <Compile Include="Assets\_Characters\_Player\IPlayerControl.cs" />
      <Compile Include="Assets\_Characters\_Player\IPlayerEnergy.cs" />
      <Compile Include="Assets\_Characters\_Player\ItemGrip.cs" />
@@ -68,11 +68,17 @@
      <Compile Include="Assets\_Characters\_Player\PlayerEnergyMock.cs" />
      <Compile Include="Assets\_Characters\_Player\PlayerHealth.cs" />
      <Compile Include="Assets\_Characters\_Player\PlayerMovementController.cs" />
-     <Compile Include="Assets\_Characters\Character.cs" />
-     <Compile Include="Assets\_Characters\CharacterControl.cs" />
-     <Compile Include="Assets\_Characters\CharacterHealth.cs" />
-     <Compile Include="Assets\_Core\CameraArm.cs" />
-     <Compile Include="Assets\_Core\CameraRaycaster.cs" />
+     <Compile Include="Assets\_Characters\Scripts\Character.cs" />
+     <Compile Include="Assets\_Characters\Scripts\CharacterControl.cs" />
+     <Compile Include="Assets\_Characters\Scripts\CharacterHealth.cs" />
+     <Compile Include="Assets\_Core\_Scripts\CameraArm.cs" />
+     <Compile Include="Assets\_Core\_Scripts\CameraRaycaster.cs" />
+     <Compile Include="Assets\_Core\_Scripts\Flashlight.cs" />
+     <Compile Include="Assets\_Core\_Scripts\GroundChecker.cs" />
+     <Compile Include="Assets\_Core\_Scripts\Lock.cs" />
+     <Compile Include="Assets\_Core\_Scripts\SelectionBase.cs" />
+     <Compile Include="Assets\_Core\_Scripts\StartPoint.cs" />
+     <Compile Include="Assets\_Core\_Scripts\VectorCalculations.cs" />
      <Compile Include="Assets\_Core\CrossPlatformInput\Scripts\AxisTouchButton.cs" />
      <Compile Include="Assets\_Core\CrossPlatformInput\Scripts\ButtonHandler.cs" />
      <Compile Include="Assets\_Core\CrossPlatformInput\Scripts\CrossPlatformInputManager.cs" />
@@ -86,17 +92,11 @@
      <Compile Include="Assets\_Core\CrossPlatformInput\Scripts\TiltInput.cs" />
      <Compile Include="Assets\_Core\CrossPlatformInput\Scripts\TouchPad.cs" />
      <Compile Include="Assets\_Core\CrossPlatformInput\Scripts\VirtualInput.cs" />
-     <Compile Include="Assets\_Core\Flashlight.cs" />
-     <Compile Include="Assets\_Core\GroundChecker.cs" />
-     <Compile Include="Assets\_Core\Lock.cs" />
-     <Compile Include="Assets\_Core\SelectionBase.cs" />
-     <Compile Include="Assets\_Core\StartPoint.cs" />
-     <Compile Include="Assets\_Core\VectorCalculations.cs" />
-     <Compile Include="Assets\_Environment\Furniture Assets\_Cabinets\Cabinet.cs" />
-     <Compile Include="Assets\_Environment\Furniture Assets\_Cabinets\ItemPlacementParent.cs" />
-     <Compile Include="Assets\_Environment\Furniture Assets\_Doors\Door.cs" />
-     <Compile Include="Assets\_Environment\InteractableItem.cs" />
-     <Compile Include="Assets\_Environment\WallWithDoor.cs" />
+     <Compile Include="Assets\_Environment\_Furniture Assets\_Cabinets\Cabinet.cs" />
+     <Compile Include="Assets\_Environment\_Furniture Assets\_Cabinets\ItemPlacementParent.cs" />
+     <Compile Include="Assets\_Environment\_Furniture Assets\_Doors\Door.cs" />
+     <Compile Include="Assets\_Environment\_Scripts\InteractableItem.cs" />
+     <Compile Include="Assets\_Environment\_Scripts\WallWithDoor.cs" />
      <Compile Include="Assets\_Environment\Water\Water (Basic)\Scripts\WaterBasic.cs" />
      <Compile Include="Assets\_Environment\Water\Water\Water\Scripts\Displace.cs" />
      <Compile Include="Assets\_Environment\Water\Water\Water\Scripts\GerstnerDisplace.cs" />
@@ -109,6 +109,9 @@
      <Compile Include="Assets\_Items\_Food\FoodConfig.cs" />
      <Compile Include="Assets\_Items\_Key\Key.cs" />
      <Compile Include="Assets\_Items\_Key\KeyConfig.cs" />
+     <Compile Include="Assets\_Items\_Scripts\Inventory.cs" />
+     <Compile Include="Assets\_Items\_Scripts\ItemConfig.cs" />
+     <Compile Include="Assets\_Items\_Scripts\ItemPickup.cs" />
      <Compile Include="Assets\_Items\_Weapons\_MeleeWeapon\MeleeWeapon.cs" />
      <Compile Include="Assets\_Items\_Weapons\_MeleeWeapon\MeleeWeaponBehaviour.cs" />
      <Compile Include="Assets\_Items\_Weapons\_RangeWeapon\ProjectileSocket.cs" />
@@ -118,9 +121,6 @@
      <Compile Include="Assets\_Items\_Weapons\WeaponBehaviour.cs" />
      <Compile Include="Assets\_Items\_Weapons\WeaponConfig.cs" />
      <Compile Include="Assets\_Items\_Weapons\WeaponSystem.cs" />
-     <Compile Include="Assets\_Items\Inventory.cs" />
-     <Compile Include="Assets\_Items\ItemConfig.cs" />
-     <Compile Include="Assets\_Items\ItemPickup.cs" />
      <Compile Include="Assets\_UI\Bar.cs" />
      <Compile Include="Assets\_UI\EnergyBar.cs" />
      <Compile Include="Assets\_UI\PlayerHealthBar.cs" />

@@ -25,7 +25,6 @@ namespace Game.Characters{
 			_cameraRaycaster.OnMouseOverEnemy += OnMouseOverEnemy;	
 		}
 
-
         private void OnMouseOverEnemy(Enemy enemy)
         {
 			if (Input.GetMouseButtonDown(0))
