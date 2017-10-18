@@ -13,7 +13,6 @@ namespace Game.Characters{
 		[SerializeField] float _pickupDistance = 2f;
 		public float pickupDistance{get{return _pickupDistance;}}
 		CameraRaycaster _cameraRaycaster;
-
 		void Start()
 		{
 			_cameraRaycaster = FindObjectOfType<CameraRaycaster>();
