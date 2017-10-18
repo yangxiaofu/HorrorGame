@@ -52,6 +52,8 @@ namespace Game.Characters{
 			var characterhealth = GetComponent(typeof(CharacterHealth)) as CharacterHealth;
 			characterhealth.ResetHealth();
 
+			GetComponent<Rigidbody>().Sleep();
+
 			GetComponent<PlayerControl>().Reset();
 			
 			_isDead = false;

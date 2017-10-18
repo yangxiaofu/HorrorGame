@@ -193,6 +193,8 @@ namespace Game.Core{
 
         private void ApplyFaceDirectionToPlayer(Vector3 mousePosOnGround)
         {
+            if ((GetComponent(typeof(Character)) as Character).isDead) return;
+            
 			transform.forward = mousePosOnGround - transform.position;
         }
     }
