@@ -4,12 +4,15 @@ using UnityEngine;
 using UnityEngine.Assertions;
 using UnityEngine.EventSystems;
 using Game.Items;
+using Game.Core;
 using System;
 
 namespace Game.Environment{
 	public class Cabinet : InteractableItem, IPointerClickHandler {
+
 		[Header("Cabinet Specific")]
 		[SerializeField] ItemConfig _itemInCabinet;
+		[SerializeField] CabinetLock _doorLock;
 		
 		private bool cabinetContainsItem
 		{
@@ -45,6 +48,7 @@ namespace Game.Environment{
         {
 			if (IsWithinInteractionRangeOfPlayer())
             {
+				
                 PerformDoorInteraction();
 				float _addItemDelay = 2f; //TODO: Consider making this changeable for designer.  Or on click on the actual item.
                 ScanForItemInCabinet(_addItemDelay);
@@ -55,6 +59,11 @@ namespace Game.Environment{
 				print("You are too far away from " + name);
 			}
         }
+
+		protected void Unlock(string keyCode)
+		{
+			_doorLock.UnlockDoor(keyCode);
+		}
 
         private void ScanForItemInCabinet(float delay)
         {
@@ -87,6 +96,39 @@ namespace Game.Environment{
 			DrawGizmos();			
 		}
 
-	}
+        protected override void PerformDoorInteraction()
+        {
+             if (!_doorLock.isLocked)
+            {
+                //Animate the door open. 
+				
+                OpenDoor();
+            }
+            else
+            {
+                var inventory = _player.GetComponent<Inventory>();
+
+                Assert.IsNotNull(
+                    inventory,
+                    "You need to attach an inventory component to the player."
+                );
+
+                var key = inventory.FindKey(_doorLock.passCode);
+
+                if (key == null)
+                {
+                    print("You do not have the keys to this door.");
+                    //Player the door locking sound.
+
+                    //TODO: Do some type of UI that tells the player that you do not have the keys. 
+                }
+                else
+                {
+                    Unlock(key.passCode);
+                    OpenDoor();
+                }
+            }
+        }
+    }
 
 }

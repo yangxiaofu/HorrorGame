@@ -7,14 +7,12 @@ using Game.Characters;
 using Game.Items;
 
 namespace Game.Environment{
-	public class InteractableItem : MonoBehaviour
+	public abstract class InteractableItem : MonoBehaviour
 	{
 		[Header("Interactable Item Parameters")]
 		[SerializeField] protected float _closeDistanceFromPlayer = 2f;
 		[SerializeField] float _maxInteractionDistanceFromPlayer = 2f;
-		[SerializeField] protected Lock _doorLock;
 		[SerializeField] protected AnimatorOverrideController _animOC;
-		
 		protected Animator _anim;
 		protected const string OPEN_DOOR = "OpenDoor";
 		protected Player _player;
@@ -41,16 +39,7 @@ namespace Game.Environment{
 			return distanceFromPlayer >= _closeDistanceFromPlayer;
 		}
 
-		protected void Unlock(string keyCode)
-		{
-			_doorLock.UnlockDoor(keyCode);
-		}
-
-
-		protected void LockDoor(string keyCode)
-		{
-			_doorLock.LockDoor(keyCode);
-		}
+		
 
 		protected void OpenDoor()
 		{
@@ -72,44 +61,12 @@ namespace Game.Environment{
 			);
         }
 
-		protected void PerformDoorInteraction()
-        {
-            if (!_doorLock.isLocked)
-            {
-                //Animate the door open. 
-                OpenDoor();
-            }
-            else
-            {
-                var inventory = _player.GetComponent<Inventory>();
-
-                Assert.IsNotNull(
-                    inventory,
-                    "You need to attach an inventory component to the player."
-                );
-
-                var key = inventory.FindKey(_doorLock.passCode);
-
-                if (key == null)
-                {
-                    print("You do not have the keys to this door.");
-                    //Player the door locking sound.
-
-                    //TODO: Do some type of UI that tells the player that you do not have the keys. 
-                }
-                else
-                {
-                    Unlock(key.passCode);
-                    OpenDoor();
-                }
-            }
-        }
-
         protected void DrawGizmos()
         {
             Gizmos.color = Color.grey;
             Gizmos.DrawWireSphere(this.transform.position, _closeDistanceFromPlayer);
         }
+		protected abstract void PerformDoorInteraction();
     }
 }
 

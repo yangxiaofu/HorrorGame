@@ -4,18 +4,19 @@ using UnityEngine;
 using NUnit.Framework;
 using Game.Environment;
 
-namespace Game.Core.LockTests{
-	
+namespace Game.Core.LockTests
+{
+	[Category("Door Lock")]
 	[TestFixture]	
-	public class LockTest {
-
+	public class DoorLockTest
+	{
 		[Test]
 		public void T01UnlockDoor_ReturnsDoorUnlocked()
 		{
 			string doorPassCode = "1234";
 			string keyPassCode = "1234";
 
-			Lock myLock = new Lock(doorPassCode, true);
+			DoorLock myLock = new DoorLock(doorPassCode, true, true);
 			myLock.UnlockDoor(keyPassCode);
 
 			Assert.AreEqual(false, myLock.isLocked);
@@ -27,7 +28,7 @@ namespace Game.Core.LockTests{
 			string doorPassCode = "1234";
 			string keyPassCode = "123";
 
-			Lock myLock = new Lock(doorPassCode, true);
+			DoorLock myLock = new DoorLock(doorPassCode, true, true);
 			myLock.UnlockDoor(keyPassCode);
 
 			Assert.AreEqual(true, myLock.isLocked);
@@ -39,7 +40,7 @@ namespace Game.Core.LockTests{
 			string doorPassCode = "1234";
 			string keyPassCode = "1234";
 
-			Lock myLock = new Lock(doorPassCode, false);
+			DoorLock myLock = new DoorLock(doorPassCode, false, false);
 			myLock.LockDoor(keyPassCode);
 
 			Assert.AreEqual(true, myLock.isLocked);
@@ -51,13 +52,11 @@ namespace Game.Core.LockTests{
 			string doorPassCode = "1234";
 			string keyPassCode = "134";
 
-			Lock myLock = new Lock(doorPassCode, false);
+			DoorLock myLock = new DoorLock(doorPassCode, false, false);
 			myLock.LockDoor(keyPassCode);
 
 			Assert.AreEqual(false, myLock.isLocked);
 		}
-
-
 	}
 
 }

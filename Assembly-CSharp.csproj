@@ -75,7 +75,9 @@
      <Compile Include="Assets\_Core\_Scripts\CameraRaycaster.cs" />
      <Compile Include="Assets\_Core\_Scripts\Flashlight.cs" />
      <Compile Include="Assets\_Core\_Scripts\GroundChecker.cs" />
-     <Compile Include="Assets\_Core\_Scripts\Lock.cs" />
+     <Compile Include="Assets\_Core\_Scripts\Lock\CabinetLock.cs" />
+     <Compile Include="Assets\_Core\_Scripts\Lock\DoorLock.cs" />
+     <Compile Include="Assets\_Core\_Scripts\Lock\Lock.cs" />
      <Compile Include="Assets\_Core\_Scripts\SelectionBase.cs" />
      <Compile Include="Assets\_Core\_Scripts\StartPoint.cs" />
      <Compile Include="Assets\_Core\_Scripts\VectorCalculations.cs" />
