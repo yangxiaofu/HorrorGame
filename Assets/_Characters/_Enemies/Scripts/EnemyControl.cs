@@ -21,8 +21,8 @@ namespace Game.Characters{
 		void Start()
 		{
 			_enemyAnimationController = new EnemyAnimationController(this);
-			_anim = GetComponent<Animator>();
-			_body = GetComponent<Rigidbody>();
+			GetAnimatorComponent();
+			GetRigidBodyComponent();
 		}
 
         public bool TargetIsDead()

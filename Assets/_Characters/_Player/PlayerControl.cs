@@ -14,18 +14,18 @@ namespace Game.Core{
 		[SerializeField] float _backwardSpeed = 2f;
         [SerializeField] float _strafeSpeed = 1f;	
 
-
 		[Header("Movement Angles")]
         [Tooltip("The angle from the sight view from the front from where the animation changes from a walking animation to a strafing animation.")]
 
 		[SerializeField] float _angleOfForwardWalking = 45f;
         [Tooltip("The angle from the sight view at the front where the animation changes from strafing to a backward animation.")]
         [SerializeField] float _angleOfBackwardWalking = 110f;
-
 		Transform _groundChecker;
         CameraRaycaster _cameraRaycaster;
 		Flashlight _flashlight;
 		PlayerMovementController _controller;
+        const string HORIZONTAL_AXIS = "Horizontal";
+        const string VERTICAL_AXIS = "Vertical";
 
         public delegate void EnergyKeyDown(float energyToIncrease);
         public event EnergyKeyDown OnEnergyKeyDown;
@@ -35,24 +35,34 @@ namespace Game.Core{
             SetupComponentVariables(); //Player specific
             RegisterToNotifiers();  //Player Specific
             SetupPlayerMovementController(); //Player Specific
-            _body = GetComponent<Rigidbody>();
+            GetRigidBodyComponent();
+            GetAnimatorComponent();
         }
-
 
         void Update()
         {
-            if ((GetComponent<Player>().isDead))
-            {
-                _speed = 0;
-                return;
-            }
+            if (PlayerIsDead()) return;
 
             UpdateControllerInput();
-            _controller.UpdateMovementDirection(GetAngleFromSightPosition());
-            UpdateMovementAnimation();//Player Specific
-            ScanForFoodButtonPress();//Player Specific
+            UpdateMovementDirection();
+            UpdateMovementAnimation();
+            ScanForFoodButtonPress();
         }
 
+        private void UpdateMovementDirection()
+        {
+            _controller.UpdateMovementDirection(GetAngleFromSightPosition());
+        }
+
+        private bool PlayerIsDead()
+        {
+            if (GetComponent<Player>().isDead){
+                _speed = 0;
+                return true;
+            } else {
+                return false;
+            }
+        }
 
         private void SetupPlayerMovementController()//Player Specific
         {
@@ -80,7 +90,7 @@ namespace Game.Core{
                 "You must carry a flashlight as a child of the player game object."
             );
 
-            _anim = GetComponent<Animator>();
+
         }
 
         private void RegisterToNotifiers()//Player Specific
@@ -107,15 +117,11 @@ namespace Game.Core{
                     {
                         OnEnergyKeyDown(food.energyBoost);
                     }
-                    
                 }
             }
         }
         private void UpdateControllerInput()//Player Specific
         {
-            const string HORIZONTAL_AXIS = "Horizontal";
-		    const string VERTICAL_AXIS = "Vertical";
-
             _inputs = new Vector3(Input.GetAxis(HORIZONTAL_AXIS), 0, Input.GetAxis(VERTICAL_AXIS));
         }
         void FixedUpdate()

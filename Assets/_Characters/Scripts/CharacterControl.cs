@@ -27,7 +27,7 @@ namespace Game.Characters{
 		public enum AnimationState {
             FORWARD, BACKWARD, LEFT, RIGHT, IDLE, ATTACK
         }
-        [SerializeField] protected AnimationState _animationState;
+        protected AnimationState _animationState;
 		public AnimationState animationState{
 			get{return _animationState;}
 		}
@@ -42,6 +42,17 @@ namespace Game.Characters{
         {
             _body.MovePosition(_body.position + _inputs * _speed * Time.fixedDeltaTime);
         }
+
+		protected void GetRigidBodyComponent()
+        {
+            _body = GetComponent<Rigidbody>();
+        }
+
+		protected void GetAnimatorComponent()
+        {
+			_anim = GetComponent<Animator>();
+        }
+
        
 	}
 }
