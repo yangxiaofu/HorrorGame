@@ -8,8 +8,9 @@ namespace Game.Core{
     public class DoorLock : Lock
     {
 		[SerializeField] bool _frontLocked = false;
+		public bool frontLocked {get{return _frontLocked;}}
 		[SerializeField] bool _backLocked = false;
-
+		public bool backLocked {get{return _backLocked;}}
 		
 		public DoorLock(string passCode, bool frontLocked, bool backLocked)
 		{
@@ -19,7 +20,7 @@ namespace Game.Core{
 		}
 
 		bool _locked = false;
-		public bool isLocked
+		public bool isLockedOnBothSides
 		{
 			get{
 				return _frontLocked == true && _backLocked == true;

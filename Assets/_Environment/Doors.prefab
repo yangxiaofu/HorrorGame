@@ -1792,10 +1792,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _closeDistanceFromPlayer: 2
   _maxInteractionDistanceFromPlayer: 2
-  _doorLock:
-    _keyCode: 0000
-    _locked: 0
   _animOC: {fileID: 22100000, guid: 18b038fdbfaa44c4996219ad70cb1428, type: 2}
+  _doorLock:
+    _passCode: 
+    _frontLocked: 0
+    _backLocked: 0
 --- !u!114 &114075239399567002
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1809,10 +1810,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _closeDistanceFromPlayer: 2
   _maxInteractionDistanceFromPlayer: 2
-  _doorLock:
-    _keyCode: 0000
-    _locked: 0
   _animOC: {fileID: 22100000, guid: 18b038fdbfaa44c4996219ad70cb1428, type: 2}
+  _doorLock:
+    _passCode: 
+    _frontLocked: 0
+    _backLocked: 0
 --- !u!114 &114229660525240354
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1826,10 +1828,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _closeDistanceFromPlayer: 2
   _maxInteractionDistanceFromPlayer: 2
-  _doorLock:
-    _keyCode: 0000
-    _locked: 0
   _animOC: {fileID: 22100000, guid: 18b038fdbfaa44c4996219ad70cb1428, type: 2}
+  _doorLock:
+    _passCode: 
+    _frontLocked: 0
+    _backLocked: 0
 --- !u!114 &114239275523672076
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1843,10 +1846,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _closeDistanceFromPlayer: 2
   _maxInteractionDistanceFromPlayer: 2
-  _doorLock:
-    _keyCode: 1111
-    _locked: 1
   _animOC: {fileID: 22100000, guid: 18b038fdbfaa44c4996219ad70cb1428, type: 2}
+  _doorLock:
+    _passCode: 
+    _frontLocked: 0
+    _backLocked: 0
 --- !u!114 &114323341793694298
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1860,10 +1864,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _closeDistanceFromPlayer: 2
   _maxInteractionDistanceFromPlayer: 2
-  _doorLock:
-    _keyCode: 0000
-    _locked: 1
   _animOC: {fileID: 22100000, guid: 18b038fdbfaa44c4996219ad70cb1428, type: 2}
+  _doorLock:
+    _passCode: 
+    _frontLocked: 0
+    _backLocked: 0
 --- !u!114 &114330293516038318
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1877,10 +1882,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _closeDistanceFromPlayer: 2
   _maxInteractionDistanceFromPlayer: 2
-  _doorLock:
-    _keyCode: 0000
-    _locked: 0
   _animOC: {fileID: 22100000, guid: 18b038fdbfaa44c4996219ad70cb1428, type: 2}
+  _doorLock:
+    _passCode: 
+    _frontLocked: 0
+    _backLocked: 0
 --- !u!114 &114401958104230562
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1894,10 +1900,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _closeDistanceFromPlayer: 2
   _maxInteractionDistanceFromPlayer: 2
-  _doorLock:
-    _keyCode: 0000
-    _locked: 0
   _animOC: {fileID: 22100000, guid: 18b038fdbfaa44c4996219ad70cb1428, type: 2}
+  _doorLock:
+    _passCode: 
+    _frontLocked: 0
+    _backLocked: 0
 --- !u!114 &114563084485887756
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1911,10 +1918,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _closeDistanceFromPlayer: 2
   _maxInteractionDistanceFromPlayer: 2
-  _doorLock:
-    _keyCode: 0000
-    _locked: 0
   _animOC: {fileID: 22100000, guid: 18b038fdbfaa44c4996219ad70cb1428, type: 2}
+  _doorLock:
+    _passCode: 
+    _frontLocked: 0
+    _backLocked: 0
 --- !u!114 &114583904299270250
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1928,10 +1936,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _closeDistanceFromPlayer: 2
   _maxInteractionDistanceFromPlayer: 2
-  _doorLock:
-    _keyCode: 0000
-    _locked: 0
   _animOC: {fileID: 22100000, guid: 18b038fdbfaa44c4996219ad70cb1428, type: 2}
+  _doorLock:
+    _passCode: 
+    _frontLocked: 1
+    _backLocked: 0
 --- !u!114 &114689656391770316
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1945,10 +1954,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _closeDistanceFromPlayer: 2
   _maxInteractionDistanceFromPlayer: 2
-  _doorLock:
-    _keyCode: 1234
-    _locked: 1
   _animOC: {fileID: 22100000, guid: 18b038fdbfaa44c4996219ad70cb1428, type: 2}
+  _doorLock:
+    _passCode: 
+    _frontLocked: 0
+    _backLocked: 0
 --- !u!114 &114735300420787674
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1962,10 +1972,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _closeDistanceFromPlayer: 2
   _maxInteractionDistanceFromPlayer: 2
-  _doorLock:
-    _keyCode: 0000
-    _locked: 1
   _animOC: {fileID: 22100000, guid: 18b038fdbfaa44c4996219ad70cb1428, type: 2}
+  _doorLock:
+    _passCode: 
+    _frontLocked: 0
+    _backLocked: 0
 --- !u!114 &114766818033299070
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1979,10 +1990,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _closeDistanceFromPlayer: 2
   _maxInteractionDistanceFromPlayer: 2
-  _doorLock:
-    _keyCode: 0000
-    _locked: 0
   _animOC: {fileID: 22100000, guid: 18b038fdbfaa44c4996219ad70cb1428, type: 2}
+  _doorLock:
+    _passCode: 
+    _frontLocked: 0
+    _backLocked: 0
 --- !u!114 &114799981625265666
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1996,10 +2008,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _closeDistanceFromPlayer: 2
   _maxInteractionDistanceFromPlayer: 2
-  _doorLock:
-    _keyCode: 0000
-    _locked: 0
   _animOC: {fileID: 22100000, guid: 18b038fdbfaa44c4996219ad70cb1428, type: 2}
+  _doorLock:
+    _passCode: 
+    _frontLocked: 0
+    _backLocked: 0
 --- !u!114 &114911983231324442
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2013,10 +2026,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _closeDistanceFromPlayer: 2
   _maxInteractionDistanceFromPlayer: 2
-  _doorLock:
-    _keyCode: 0000
-    _locked: 0
   _animOC: {fileID: 22100000, guid: 18b038fdbfaa44c4996219ad70cb1428, type: 2}
+  _doorLock:
+    _passCode: 
+    _frontLocked: 0
+    _backLocked: 0
 --- !u!114 &114979420396693972
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2030,7 +2044,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _closeDistanceFromPlayer: 2
   _maxInteractionDistanceFromPlayer: 2
-  _doorLock:
-    _keyCode: 0000
-    _locked: 0
   _animOC: {fileID: 22100000, guid: 18b038fdbfaa44c4996219ad70cb1428, type: 2}
+  _doorLock:
+    _passCode: 
+    _frontLocked: 0
+    _backLocked: 0

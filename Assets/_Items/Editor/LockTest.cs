@@ -19,7 +19,7 @@ namespace Game.Core.LockTests
 			DoorLock myLock = new DoorLock(doorPassCode, true, true);
 			myLock.UnlockDoor(keyPassCode);
 
-			Assert.AreEqual(false, myLock.isLocked);
+			Assert.AreEqual(false, myLock.isLockedOnBothSides);
 		}
 
 		[Test]
@@ -31,7 +31,7 @@ namespace Game.Core.LockTests
 			DoorLock myLock = new DoorLock(doorPassCode, true, true);
 			myLock.UnlockDoor(keyPassCode);
 
-			Assert.AreEqual(true, myLock.isLocked);
+			Assert.AreEqual(true, myLock.isLockedOnBothSides);
 		}
 
 		[Test]
@@ -43,7 +43,7 @@ namespace Game.Core.LockTests
 			DoorLock myLock = new DoorLock(doorPassCode, false, false);
 			myLock.LockDoor(keyPassCode);
 
-			Assert.AreEqual(true, myLock.isLocked);
+			Assert.AreEqual(true, myLock.isLockedOnBothSides);
 		}
 
 		[Test]
@@ -55,7 +55,7 @@ namespace Game.Core.LockTests
 			DoorLock myLock = new DoorLock(doorPassCode, false, false);
 			myLock.LockDoor(keyPassCode);
 
-			Assert.AreEqual(false, myLock.isLocked);
+			Assert.AreEqual(false, myLock.isLockedOnBothSides);
 		}
 	}
 

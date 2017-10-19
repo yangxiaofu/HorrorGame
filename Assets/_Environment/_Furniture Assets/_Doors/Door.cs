@@ -37,15 +37,11 @@ namespace Game.Environment{
 
         void Update()
         {
-			if (_doorLock.isLocked == false && PlayerIsFarAwayFromDoor())
+			if (_doorLock.isLockedOnBothSides == false && PlayerIsFarAwayFromDoor())
 			{
                 _boxCollider.enabled = true;
 				CloseDoor();
 			}
-		}
-
-        public void DetectPlayer(){
-
         }
 
         public void OnPointerClick(PointerEventData eventData)
@@ -56,9 +52,72 @@ namespace Game.Environment{
                 PerformDoorInteraction();
             } else {
 				print("You are too far away from " + name);
-			}
-            
+			}   
         }
+
+        private DoorDetection.DoorSide GetPlayerSideOn(){
+            var dd = new DoorDetection(this, _player);
+            return dd.PlayerSideOn() == DoorDetection.DoorSide.Front ? DoorDetection.DoorSide.Front : DoorDetection.DoorSide.Back;
+        }
+
+        protected override void PerformDoorInteraction() //TODO: Unit Testing for this should occur. 
+        {
+            if (_doorLock.isLockedOnBothSides)
+            { //IF BOTH SIDES LOCKED.
+                AttemptUnlock();
+            }
+            else 
+            {   
+                //IF ONE SIDE IS LOCKED OR NO SIDES ARE LOCKED.
+                if (GetPlayerSideOn()== DoorDetection.DoorSide.Front && !_doorLock.frontLocked)
+                {
+                    OpenDoor();
+                } 
+                else if (GetPlayerSideOn() == DoorDetection.DoorSide.Back && !_doorLock.backLocked)
+                {
+                    OpenDoor();
+                } 
+                else 
+                {
+                    AttemptUnlock();
+                }
+            }
+        }
+
+        private void AttemptUnlock()
+        {
+            var inventory = _player.GetComponent<Inventory>();
+
+            Assert.IsNotNull(
+                inventory,
+                "You need to attach an inventory component to the player."
+            );
+
+            var key = inventory.FindKey(_doorLock.passCode);
+
+            if (key == null)
+            {
+                print("You do not have the keys to this door.");
+                //Player the door locking sound.
+                //TODO: Do some type of UI that tells the player that you do not have the keys. 
+            }
+            else
+            {
+                Unlock(key.passCode);
+                OpenDoor();
+            }
+        }
+
+        public Vector3 GetForwardDirection()
+        {
+            return this.transform.right;
+        }
+
+        public Vector3 GetPosition()
+        {
+            return this.transform.position;
+        }
+
 
         void OnDrawGizmos()
         {
@@ -66,50 +125,7 @@ namespace Game.Environment{
 
             Gizmos.color = Color.black;
             Gizmos.DrawRay(this.transform.position, this.transform.right * 100f);
-        }
-
-        protected override void PerformDoorInteraction()
-        {
-             if (!_doorLock.isLocked)
-            {
-                //Animate the door open. 
-				
-                OpenDoor();
-            }
-            else
-            {
-                var inventory = _player.GetComponent<Inventory>();
-
-                Assert.IsNotNull(
-                    inventory,
-                    "You need to attach an inventory component to the player."
-                );
-
-                var key = inventory.FindKey(_doorLock.passCode);
-
-                if (key == null)
-                {
-                    print("You do not have the keys to this door.");
-                    //Player the door locking sound.
-
-                    //TODO: Do some type of UI that tells the player that you do not have the keys. 
-                }
-                else
-                {
-                    Unlock(key.passCode);
-                    OpenDoor();
-                }
-            }
-        }
-
-        public Vector3 GetForwardDirection()
-        {
-            return this.transform.forward;
-        }
-
-        public Vector3 GetPosition()
-        {
-            return this.transform.position;
+            
         }
     }
 
