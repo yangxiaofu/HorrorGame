@@ -39,6 +39,12 @@ namespace Game.Characters{
 			);
 		}
 
+        void StepAudio()
+        {
+            _audioSource.clip = _footstepsAudio;
+            _audioSource.Play();
+        }
+
         public override void ResetCharacter()
         {
             _isDead = false;

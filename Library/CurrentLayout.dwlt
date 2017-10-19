@@ -20,7 +20,7 @@ MonoBehaviour:
   m_ShowMode: 4
   m_Title: 
   m_RootView: {fileID: 2}
-  m_MinSize: {x: 950, y: 542}
+  m_MinSize: {x: 950, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &2
 MonoBehaviour:
@@ -43,7 +43,7 @@ MonoBehaviour:
     y: 0
     width: 1920
     height: 1080
-  m_MinSize: {x: 950, y: 542}
+  m_MinSize: {x: 950, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &3
 MonoBehaviour:
@@ -105,10 +105,10 @@ MonoBehaviour:
     y: 30
     width: 1920
     height: 1030
-  m_MinSize: {x: 583, y: 492}
-  m_MaxSize: {x: 14004, y: 14042}
+  m_MinSize: {x: 879, y: 300}
+  m_MaxSize: {x: 10052, y: 8000}
   vertical: 1
-  controlID: 22
+  controlID: 56
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -129,10 +129,10 @@ MonoBehaviour:
     y: 0
     width: 1920
     height: 1030
-  m_MinSize: {x: 583, y: 492}
-  m_MaxSize: {x: 14004, y: 14042}
+  m_MinSize: {x: 879, y: 300}
+  m_MaxSize: {x: 10052, y: 8000}
   vertical: 0
-  controlID: 23
+  controlID: 57
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -151,12 +151,12 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 1569
+    width: 1645
     height: 1030
-  m_MinSize: {x: 306, y: 492}
-  m_MaxSize: {x: 10002, y: 14042}
+  m_MinSize: {x: 604, y: 300}
+  m_MaxSize: {x: 6052, y: 8000}
   vertical: 1
-  controlID: 24
+  controlID: 58
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -175,12 +175,12 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 1569
-    height: 759
-  m_MinSize: {x: 306, y: 221}
-  m_MaxSize: {x: 8006, y: 4021}
+    width: 1645
+    height: 807
+  m_MinSize: {x: 604, y: 200}
+  m_MaxSize: {x: 6052, y: 4000}
   vertical: 0
-  controlID: 25
+  controlID: 59
 --- !u!114 &9
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -197,10 +197,10 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 202
-    height: 759
-  m_MinSize: {x: 202, y: 221}
-  m_MaxSize: {x: 4002, y: 4021}
+    width: 253
+    height: 807
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 15}
   m_Panes:
   - {fileID: 15}
@@ -220,18 +220,18 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
-    x: 202
+    x: 253
     y: 0
-    width: 1367
-    height: 759
-  m_MinSize: {x: 104, y: 121}
-  m_MaxSize: {x: 4004, y: 4021}
-  m_ActualView: {fileID: 13}
+    width: 1392
+    height: 807
+  m_MinSize: {x: 404, y: 121}
+  m_MaxSize: {x: 2052, y: 2069}
+  m_ActualView: {fileID: 16}
   m_Panes:
   - {fileID: 16}
   - {fileID: 14}
   - {fileID: 13}
-  m_Selected: 2
+  m_Selected: 0
   m_LastSelected: 1
 --- !u!114 &11
 MonoBehaviour:
@@ -248,19 +248,19 @@ MonoBehaviour:
   m_Position:
     serializedVersion: 2
     x: 0
-    y: 759
-    width: 1569
-    height: 271
-  m_MinSize: {x: 232, y: 271}
-  m_MaxSize: {x: 10002, y: 10021}
-  m_ActualView: {fileID: 19}
+    y: 807
+    width: 1645
+    height: 223
+  m_MinSize: {x: 100, y: 100}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_ActualView: {fileID: 20}
   m_Panes:
   - {fileID: 19}
   - {fileID: 20}
   - {fileID: 18}
   - {fileID: 17}
-  m_Selected: 0
-  m_LastSelected: 3
+  m_Selected: 1
+  m_LastSelected: 0
 --- !u!114 &12
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -275,12 +275,12 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
-    x: 1569
+    x: 1645
     y: 0
-    width: 351
+    width: 275
     height: 1030
-  m_MinSize: {x: 277, y: 71}
-  m_MaxSize: {x: 4002, y: 4021}
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 21}
   m_Panes:
   - {fileID: 21}
@@ -288,7 +288,7 @@ MonoBehaviour:
   - {fileID: 22}
   - {fileID: 24}
   m_Selected: 0
-  m_LastSelected: 2
+  m_LastSelected: 3
 --- !u!114 &13
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -311,19 +311,19 @@ MonoBehaviour:
   m_DepthBufferBits: 0
   m_Pos:
     serializedVersion: 2
-    x: 204
+    x: 202
     y: 49
-    width: 1363
-    height: 738
+    width: 1365
+    height: 698
   m_SceneLighting: 1
-  lastFramingTime: 17737.865692973137
+  lastFramingTime: 4731.282564043999
   m_2DMode: 0
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 270.84958, y: 1.4162791, z: 167.74837}
+    m_Target: {x: 269.35547, y: -17.3125, z: 180.57422}
     speed: 2
-    m_Value: {x: 270.84958, y: 1.4162791, z: 167.74837}
+    m_Value: {x: 269.35547, y: -17.3125, z: 180.57422}
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -346,17 +346,17 @@ MonoBehaviour:
       speed: 2
       m_Value: 0
   m_Rotation:
-    m_Target: {x: -0.20220564, y: 0.2268055, z: -0.048199177, w: -0.9514991}
+    m_Target: {x: -0.09747307, y: 0.8713886, z: -0.44044557, w: -0.19284394}
     speed: 2
-    m_Value: {x: -0.2022055, y: 0.22680533, z: -0.048199143, w: -0.95149845}
+    m_Value: {x: -0.097473055, y: 0.8713885, z: -0.4404455, w: -0.19284391}
   m_Size:
-    m_Target: 21.752502
+    m_Target: 56.1016
     speed: 2
-    m_Value: 21.752502
+    m_Value: 56.1016
   m_Ortho:
-    m_Target: 0
+    m_Target: 1
     speed: 2
-    m_Value: 0
+    m_Value: 1
   m_LastSceneViewRotation: {x: -0.35208222, y: 0.09927433, z: -0.03763916, w: -0.9299279}
   m_LastSceneViewOrtho: 1
   m_ReplacementShader: {fileID: 0}
@@ -385,22 +385,22 @@ MonoBehaviour:
   m_DepthBufferBits: 32
   m_Pos:
     serializedVersion: 2
-    x: 204
+    x: 236
     y: 49
-    width: 1363
-    height: 738
+    width: 1288
+    height: 714
   m_MaximizeOnPlay: 0
   m_Gizmos: 0
-  m_Stats: 0
+  m_Stats: 1
   m_SelectedSizes: 00000000000000000000000000000000000000000000000000000000000000000000000000000000
   m_TargetDisplay: 0
   m_ZoomArea:
     m_HRangeLocked: 0
     m_VRangeLocked: 0
-    m_HBaseRangeMin: -681.5
-    m_HBaseRangeMax: 681.5
-    m_VBaseRangeMin: -360.5
-    m_VBaseRangeMax: 360.5
+    m_HBaseRangeMin: -644
+    m_HBaseRangeMax: 644
+    m_VBaseRangeMin: -348.5
+    m_VBaseRangeMax: 348.5
     m_HAllowExceedBaseRangeMin: 1
     m_HAllowExceedBaseRangeMax: 1
     m_VAllowExceedBaseRangeMin: 1
@@ -417,25 +417,25 @@ MonoBehaviour:
       serializedVersion: 2
       x: 0
       y: 17
-      width: 1363
-      height: 721
+      width: 1288
+      height: 697
     m_Scale: {x: 1, y: 1}
-    m_Translation: {x: 681.5, y: 360.5}
+    m_Translation: {x: 644, y: 348.5}
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
-      x: -681.5
-      y: -360.5
-      width: 1363
-      height: 721
+      x: -644
+      y: -348.5
+      width: 1288
+      height: 697
     m_MinimalGUI: 1
   m_defaultScale: 1
   m_TargetTexture: {fileID: 0}
   m_CurrentColorSpace: 0
-  m_LastWindowPixelSize: {x: 1363, y: 738}
+  m_LastWindowPixelSize: {x: 1288, y: 714}
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
   m_LowResolutionForAspectRatios: 01000000000100000100
@@ -463,27 +463,27 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 49
-    width: 200
-    height: 738
+    width: 251
+    height: 786
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 7cc3fbff
-    m_LastClickedID: -277636
-    m_ExpandedIDs: 8406fcff2808fcff3e64fcffd6bffcff7620fdffc480fdffc0defdffd858feff6cb4fefff00fffff6a72ffff1afcffff00000000
+    m_SelectedIDs: 3072d8ff
+    m_LastClickedID: -2592208
+    m_ExpandedIDs: c270d8ffb8b3d8ff8cb6d8ffa07af4ff6e7cf4ff667ef4ff1cddf4ffc038f5ffc094f5ff7ceef5ff544af6ffa2a6f6ff2c01f7ff7c5cf7ffeab8f7ffd213f8ffd074f8ff2ccff8ff602df9ffc48df9ff16e9f9ffd845faff36a0faffaefbfaff9e58fbffd0b2fbff0c0dfcff5a67fcffb4c2fcffee1efdffe678fdff0ad2fdff8e2cfeffde87feff0ee6fefffa41ffff12b9ffff1afcffff00000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: 
-      m_OriginalName: 
+      m_Name: Refridgerators
+      m_OriginalName: Refridgerators
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 0
+      m_UserData: -754812
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 11
+      m_OriginalEventType: 0
       m_IsRenamingFilename: 0
       m_ClientGUIView: {fileID: 9}
     m_SearchString: 
@@ -514,10 +514,10 @@ MonoBehaviour:
   m_DepthBufferBits: 0
   m_Pos:
     serializedVersion: 2
-    x: 238
-    y: 94
-    width: 1300
-    height: 799
+    x: 255
+    y: 49
+    width: 1388
+    height: 786
 --- !u!114 &17
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -541,9 +541,9 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 931
-    width: 1538
-    height: 127
+    y: 593
+    width: 1567
+    height: 465
   m_ViewPositions:
     m_KeySerializationHelper:
     - {fileID: 1107626369804204700, guid: 859e8357646aa40319bb4016acfee25c, type: 2}
@@ -555,7 +555,7 @@ MonoBehaviour:
     - {x: 911.60004, y: 40.4}
     - {x: 701.2001, y: 237.6}
     - {x: 1092.8, y: 229.00009}
-    - {x: 882.6001, y: 249.20001}
+    - {x: 1056.2001, y: 139}
     - {x: 857.2, y: 208.20003}
   m_PreviewAnimator: {fileID: 0}
   m_AnimatorController: {fileID: 0}
@@ -621,9 +621,9 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 808
-    width: 1567
-    height: 250
+    y: 784
+    width: 1309
+    height: 274
   m_SearchFilter:
     m_NameFilter: 
     m_ClassNames: []
@@ -636,19 +636,19 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/_Environment/_Furniture Assets/_Doors
+    - Assets/_Characters/_Player/Animations
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets/_Environment/_Furniture Assets/_Doors
+  - Assets/_Characters/_Player/Animations
   m_LastFoldersGridSize: 16
   m_LastProjectPath: /Users/fudaviddong/Documents/SpyGame/SpyGame
   m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: d4440000
-    m_LastClickedID: 17620
-    m_ExpandedIDs: 00000000a2260000102800005e2d0000be2f00009236000000390000323900007e3a0000623d00000841000020410000d4440000e0470000784c00004ea6000050a6000052a6000054a6000056a6000058a600005aa600005ca600005ea600007ea6000000ca9a3bffffff7f
+    m_SelectedIDs: 264c0000
+    m_LastClickedID: 19494
+    m_ExpandedIDs: 000000009a26000008280000562d0000f03300008a360000f8380000763a0000a63a00005c3d0000024100001a410000ce440000da4700002a4c0000724c000050a6000052a6000054a6000056a6000058a600005aa600005ca600005ea6000060a6000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -676,7 +676,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000a2260000102800005e2d0000be2f0000923600000438000000390000323900007e3a0000ee3b0000623d000008410000d4440000e0470000784c00004ea6000050a6000052a6000054a6000056a6000058a600005aa600005ca600005ea60000
+    m_ExpandedIDs: 000000009a26000008280000562d0000b62f00008a360000f83800002a390000763a0000a63a00005c3d0000024100001a410000ce440000da470000724c000050a6000052a6000054a6000056a6000058a600005aa600005ca600005ea6000060a60000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -701,26 +701,26 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 
-    m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 0
-    m_ExpandedInstanceIDs: c6230000964100006c410000e835000076520000125200006a4b000074480000b0370000dea8ffffea410000c892fdffa2570000843b0000284e0000ee64faff4ceb0000146b01000000000088ee0f00ec7203007e7203005c77ecff4a2a0000e82c0000442a000078340000
+    m_SelectedInstanceIDs: 3072d8ff
+    m_LastClickedInstanceID: -2592208
+    m_HadKeyboardFocusLastEvent: 1
+    m_ExpandedInstanceIDs: c6230000964100006c410000e835000076520000125200006a4b0000b0370000dea8ffffea410000c892fdffa2570000843b0000284e0000ee64faff4ceb0000146b01000000000088ee0f00ec7203007e7203005c77ecff4a2a0000e82c0000442a000078340000b0340000a04a0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: CabinetLockTests
-      m_OriginalName: CabinetLockTests
+      m_Name: 
+      m_OriginalName: 
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 43372
+      m_UserData: 0
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 0
+      m_OriginalEventType: 11
       m_IsRenamingFilename: 1
-      m_ClientGUIView: {fileID: 11}
+      m_ClientGUIView: {fileID: 0}
     m_CreateAssetUtility:
       m_EndAction: {fileID: 0}
       m_InstanceID: 0
@@ -728,7 +728,7 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
     m_NewAssetIndexInList: -1
-    m_ScrollPosition: {x: 0, y: 0}
+    m_ScrollPosition: {x: 0, y: 118}
     m_GridSize: 16
   m_DirectoriesAreaWidth: 392
 --- !u!114 &20
@@ -754,9 +754,9 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 603
-    width: 1538
-    height: 455
+    y: 856
+    width: 1643
+    height: 202
 --- !u!114 &21
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -779,9 +779,9 @@ MonoBehaviour:
   m_DepthBufferBits: 0
   m_Pos:
     serializedVersion: 2
-    x: 1571
+    x: 1647
     y: 49
-    width: 349
+    width: 273
     height: 1009
   m_ScrollPosition: {x: 0, y: 0}
   m_InspectorMode: 0
@@ -811,9 +811,9 @@ MonoBehaviour:
   m_DepthBufferBits: 0
   m_Pos:
     serializedVersion: 2
-    x: 1571
+    x: 1313
     y: 49
-    width: 349
+    width: 607
     height: 1009
   m_IsSceneBased: 0
   m_TestTypeToolbarIndex: 1
@@ -884,7 +884,7 @@ MonoBehaviour:
       name: Assembly-CSharp-Editor.dll
       fullName: /Users/fudaviddong/Documents/SpyGame/SpyGame/Library/ScriptAssemblies/Assembly-CSharp-Editor.dll
       resultStatus: 2
-      duration: 0.311382
+      duration: 1.191641
       messages: One or more child tests had errors
       output: 
       stacktrace: 
@@ -895,7 +895,7 @@ MonoBehaviour:
       name: Game
       fullName: Game
       resultStatus: 2
-      duration: 0.223389
+      duration: 1.134278
       messages: One or more child tests had errors
       output: 
       stacktrace: 
@@ -906,7 +906,7 @@ MonoBehaviour:
       name: Characters
       fullName: Game.Characters
       resultStatus: 1
-      duration: 0.144026
+      duration: 0.659671
       messages: 
       output: 
       stacktrace: 
@@ -917,7 +917,7 @@ MonoBehaviour:
       name: Tests
       fullName: Game.Characters.Tests
       resultStatus: 1
-      duration: 0.133263
+      duration: 0.612032
       messages: 
       output: 
       stacktrace: 
@@ -928,7 +928,7 @@ MonoBehaviour:
       name: EnemyAnimationControllerTests
       fullName: Game.Characters.Tests.EnemyAnimationControllerTests
       resultStatus: 1
-      duration: 0.119308
+      duration: 0.316282
       messages: 
       output: 
       stacktrace: 
@@ -939,7 +939,7 @@ MonoBehaviour:
       name: T01UpdateAnimationController_ReturnsForwardDirection
       fullName: Game.Characters.Tests.EnemyAnimationControllerTests.T01UpdateAnimationController_ReturnsForwardDirection
       resultStatus: 1
-      duration: 0.015001
+      duration: 0.030807
       messages: 
       output: 
       stacktrace: 
@@ -950,7 +950,7 @@ MonoBehaviour:
       name: T02UpdateAnimationController_ReturnsIDLE
       fullName: Game.Characters.Tests.EnemyAnimationControllerTests.T02UpdateAnimationController_ReturnsIDLE
       resultStatus: 1
-      duration: 0.008345
+      duration: 0.009794
       messages: 
       output: 
       stacktrace: 
@@ -961,7 +961,7 @@ MonoBehaviour:
       name: T03UpdateAnimationController_ReturnsAttack
       fullName: Game.Characters.Tests.EnemyAnimationControllerTests.T03UpdateAnimationController_ReturnsAttack
       resultStatus: 1
-      duration: 0.003869
+      duration: 0.004252
       messages: 
       output: 
       stacktrace: 
@@ -972,7 +972,7 @@ MonoBehaviour:
       name: PlayerEnergyTests
       fullName: Game.Characters.Tests.PlayerEnergyTests
       resultStatus: 1
-      duration: 0.213536
+      duration: 0.063743
       messages: 
       output: 
       stacktrace: 
@@ -983,7 +983,7 @@ MonoBehaviour:
       name: T01PlayerEnergyController_ReduceEnergy_ReturnsNewReducedEnergy
       fullName: Game.Characters.Tests.PlayerEnergyTests.T01PlayerEnergyController_ReduceEnergy_ReturnsNewReducedEnergy
       resultStatus: 1
-      duration: 0.024558
+      duration: 0.005762
       messages: 
       output: 
       stacktrace: 
@@ -994,7 +994,7 @@ MonoBehaviour:
       name: T02PlayerEnergyController_ReduceEnergy_ReturnsZero
       fullName: Game.Characters.Tests.PlayerEnergyTests.T02PlayerEnergyController_ReduceEnergy_ReturnsZero
       resultStatus: 1
-      duration: 0.009109
+      duration: 0.004601
       messages: 
       output: 
       stacktrace: 
@@ -1005,7 +1005,7 @@ MonoBehaviour:
       name: T03PlayerEnergyController_IncreaseEnergy_ReturnsNewCurrentEnergy
       fullName: Game.Characters.Tests.PlayerEnergyTests.T03PlayerEnergyController_IncreaseEnergy_ReturnsNewCurrentEnergy
       resultStatus: 1
-      duration: 0.00489
+      duration: 0.004025
       messages: 
       output: 
       stacktrace: 
@@ -1016,7 +1016,7 @@ MonoBehaviour:
       name: T04PlayerEnergyController_IncreaseEnergy_ReturnsNoMoreThanMaxEnergy
       fullName: Game.Characters.Tests.PlayerEnergyTests.T04PlayerEnergyController_IncreaseEnergy_ReturnsNoMoreThanMaxEnergy
       resultStatus: 1
-      duration: 0.016463
+      duration: 0.004181
       messages: 
       output: 
       stacktrace: 
@@ -1027,7 +1027,7 @@ MonoBehaviour:
       name: PlayerMovementControllerTests
       fullName: Game.Characters.Tests.PlayerMovementControllerTests
       resultStatus: 1
-      duration: 0.176038
+      duration: 0.176099
       messages: 
       output: 
       stacktrace: 
@@ -1038,7 +1038,7 @@ MonoBehaviour:
       name: T01UpdateMovementDirection_ReturnsIdle
       fullName: Game.Characters.Tests.PlayerMovementControllerTests.T01UpdateMovementDirection_ReturnsIdle
       resultStatus: 1
-      duration: 0.009818
+      duration: 0.008852
       messages: 
       output: 
       stacktrace: 
@@ -1049,7 +1049,7 @@ MonoBehaviour:
       name: T02aUpdateMovementDirection_ReturnsForward
       fullName: Game.Characters.Tests.PlayerMovementControllerTests.T02aUpdateMovementDirection_ReturnsForward
       resultStatus: 1
-      duration: 0.007927
+      duration: 0.008195
       messages: 
       output: 
       stacktrace: 
@@ -1060,7 +1060,7 @@ MonoBehaviour:
       name: T02bUpdateMovementDirection_ReturnsForward
       fullName: Game.Characters.Tests.PlayerMovementControllerTests.T02bUpdateMovementDirection_ReturnsForward
       resultStatus: 1
-      duration: 0.008564
+      duration: 0.007455
       messages: 
       output: 
       stacktrace: 
@@ -1071,7 +1071,7 @@ MonoBehaviour:
       name: T03aUpdateMovementDirection_ReturnsBackward
       fullName: Game.Characters.Tests.PlayerMovementControllerTests.T03aUpdateMovementDirection_ReturnsBackward
       resultStatus: 1
-      duration: 0.00813
+      duration: 0.008102
       messages: 
       output: 
       stacktrace: 
@@ -1082,7 +1082,7 @@ MonoBehaviour:
       name: T03bUpdateMovementDirection_ReturnsBackward
       fullName: Game.Characters.Tests.PlayerMovementControllerTests.T03bUpdateMovementDirection_ReturnsBackward
       resultStatus: 1
-      duration: 0.008171
+      duration: 0.008219
       messages: 
       output: 
       stacktrace: 
@@ -1093,7 +1093,7 @@ MonoBehaviour:
       name: T04aUpdateMovementDirection_ReturnsLeft
       fullName: Game.Characters.Tests.PlayerMovementControllerTests.T04aUpdateMovementDirection_ReturnsLeft
       resultStatus: 1
-      duration: 0.007628
+      duration: 0.008248
       messages: 
       output: 
       stacktrace: 
@@ -1104,7 +1104,7 @@ MonoBehaviour:
       name: T04bUpdateMovementDirection_ReturnsLeft
       fullName: Game.Characters.Tests.PlayerMovementControllerTests.T04bUpdateMovementDirection_ReturnsLeft
       resultStatus: 1
-      duration: 0.007981
+      duration: 0.008401
       messages: 
       output: 
       stacktrace: 
@@ -1115,7 +1115,7 @@ MonoBehaviour:
       name: T05aUpdateMovementDirection_ReturnsRight
       fullName: Game.Characters.Tests.PlayerMovementControllerTests.T05aUpdateMovementDirection_ReturnsRight
       resultStatus: 1
-      duration: 0.007664
+      duration: 0.00805
       messages: 
       output: 
       stacktrace: 
@@ -1126,7 +1126,7 @@ MonoBehaviour:
       name: T05bUpdateMovementDirection_ReturnsRight
       fullName: Game.Characters.Tests.PlayerMovementControllerTests.T05bUpdateMovementDirection_ReturnsRight
       resultStatus: 1
-      duration: 0.00844
+      duration: 0.008172
       messages: 
       output: 
       stacktrace: 
@@ -1137,8 +1137,118 @@ MonoBehaviour:
       name: Core
       fullName: Game.Core
       resultStatus: 2
-      duration: 0.196215
+      duration: 0.423604
       messages: One or more child tests had errors
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+    - id: '[Game.Core.DoorDetectionTests][suite]'
+      name: DoorDetectionTests
+      fullName: Game.Core.DoorDetectionTests
+      resultStatus: 1
+      duration: 0.136059
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+    - id: '[Assembly-CSharp-Editor.dll][Game.Core.DoorDetectionTests.DoorDetectionTests][suite]'
+      name: DoorDetectionTests
+      fullName: Game.Core.DoorDetectionTests.DoorDetectionTests
+      resultStatus: 1
+      duration: 0.124272
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+    - id: '[Assembly-CSharp-Editor.dll][Game.Core.DoorDetectionTests.DoorDetectionTests.T01aSidePlayerIsOn_ReturnsBack]'
+      name: T01aSidePlayerIsOn_ReturnsBack
+      fullName: Game.Core.DoorDetectionTests.DoorDetectionTests.T01aSidePlayerIsOn_ReturnsBack
+      resultStatus: 1
+      duration: 0.004513
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+    - id: '[Assembly-CSharp-Editor.dll][Game.Core.DoorDetectionTests.DoorDetectionTests.T01bSidePlayerIsOn_ReturnsBack]'
+      name: T01bSidePlayerIsOn_ReturnsBack
+      fullName: Game.Core.DoorDetectionTests.DoorDetectionTests.T01bSidePlayerIsOn_ReturnsBack
+      resultStatus: 1
+      duration: 0.004182
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+    - id: '[Assembly-CSharp-Editor.dll][Game.Core.DoorDetectionTests.DoorDetectionTests.T01cSidePlayerIsOn_ReturnsBack]'
+      name: T01cSidePlayerIsOn_ReturnsBack
+      fullName: Game.Core.DoorDetectionTests.DoorDetectionTests.T01cSidePlayerIsOn_ReturnsBack
+      resultStatus: 1
+      duration: 0.003415
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+    - id: '[Assembly-CSharp-Editor.dll][Game.Core.DoorDetectionTests.DoorDetectionTests.T01dSidePlayerIsOn_ReturnsBack]'
+      name: T01dSidePlayerIsOn_ReturnsBack
+      fullName: Game.Core.DoorDetectionTests.DoorDetectionTests.T01dSidePlayerIsOn_ReturnsBack
+      resultStatus: 1
+      duration: 0.004376
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+    - id: '[Assembly-CSharp-Editor.dll][Game.Core.DoorDetectionTests.DoorDetectionTests.T02aSidePlayerIsOn_ReturnsFront]'
+      name: T02aSidePlayerIsOn_ReturnsFront
+      fullName: Game.Core.DoorDetectionTests.DoorDetectionTests.T02aSidePlayerIsOn_ReturnsFront
+      resultStatus: 1
+      duration: 0.004015
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+    - id: '[Assembly-CSharp-Editor.dll][Game.Core.DoorDetectionTests.DoorDetectionTests.T02bSidePlayerIsOn_ReturnsFront]'
+      name: T02bSidePlayerIsOn_ReturnsFront
+      fullName: Game.Core.DoorDetectionTests.DoorDetectionTests.T02bSidePlayerIsOn_ReturnsFront
+      resultStatus: 1
+      duration: 0.004895
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+    - id: '[Assembly-CSharp-Editor.dll][Game.Core.DoorDetectionTests.DoorDetectionTests.T02cSidePlayerIsOn_ReturnsFront]'
+      name: T02cSidePlayerIsOn_ReturnsFront
+      fullName: Game.Core.DoorDetectionTests.DoorDetectionTests.T02cSidePlayerIsOn_ReturnsFront
+      resultStatus: 1
+      duration: 0.004273
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+    - id: '[Assembly-CSharp-Editor.dll][Game.Core.DoorDetectionTests.DoorDetectionTests.T02dSidePlayerIsOn_ReturnsFront]'
+      name: T02dSidePlayerIsOn_ReturnsFront
+      fullName: Game.Core.DoorDetectionTests.DoorDetectionTests.T02dSidePlayerIsOn_ReturnsFront
+      resultStatus: 1
+      duration: 0.004205
+      messages: 
       output: 
       stacktrace: 
       notRunnable: 0
@@ -1148,7 +1258,7 @@ MonoBehaviour:
       name: LockTests
       fullName: Game.Core.LockTests
       resultStatus: 1
-      duration: 0.068952
+      duration: 0.116238
       messages: 
       output: 
       stacktrace: 
@@ -1159,7 +1269,7 @@ MonoBehaviour:
       name: CabinetLockTests
       fullName: Game.Core.LockTests.CabinetLockTests
       resultStatus: 1
-      duration: 0.057525
+      duration: 0.027953
       messages: 
       output: 
       stacktrace: 
@@ -1170,7 +1280,7 @@ MonoBehaviour:
       name: T01UnlockCabinet_ReturnsUnlockedTrue
       fullName: Game.Core.LockTests.CabinetLockTests.T01UnlockCabinet_ReturnsUnlockedTrue
       resultStatus: 1
-      duration: 0.014625
+      duration: 0.005414
       messages: 
       output: 
       stacktrace: 
@@ -1181,7 +1291,7 @@ MonoBehaviour:
       name: T02UnlockCabinet_ReturnLockedTrue
       fullName: Game.Core.LockTests.CabinetLockTests.T02UnlockCabinet_ReturnLockedTrue
       resultStatus: 1
-      duration: 0.003746
+      duration: 0.003795
       messages: 
       output: 
       stacktrace: 
@@ -1192,7 +1302,7 @@ MonoBehaviour:
       name: DoorLockTest
       fullName: Game.Core.LockTests.DoorLockTest
       resultStatus: 1
-      duration: 0.123941
+      duration: 0.059314
       messages: 
       output: 
       stacktrace: 
@@ -1203,7 +1313,7 @@ MonoBehaviour:
       name: T01UnlockDoor_ReturnsDoorUnlocked
       fullName: Game.Core.LockTests.DoorLockTest.T01UnlockDoor_ReturnsDoorUnlocked
       resultStatus: 1
-      duration: 0.026393
+      duration: 0.004548
       messages: 
       output: 
       stacktrace: 
@@ -1214,7 +1324,7 @@ MonoBehaviour:
       name: T02UnLockDoor_ReturnsDoorLocked
       fullName: Game.Core.LockTests.DoorLockTest.T02UnLockDoor_ReturnsDoorLocked
       resultStatus: 1
-      duration: 0.005648
+      duration: 0.003783
       messages: 
       output: 
       stacktrace: 
@@ -1225,7 +1335,7 @@ MonoBehaviour:
       name: T03LockDoor_ReturnsDoorLocked
       fullName: Game.Core.LockTests.DoorLockTest.T03LockDoor_ReturnsDoorLocked
       resultStatus: 1
-      duration: 0.004342
+      duration: 0.004514
       messages: 
       output: 
       stacktrace: 
@@ -1236,7 +1346,7 @@ MonoBehaviour:
       name: T04LockDoor_ReturnsDoorUnLocked
       fullName: Game.Core.LockTests.DoorLockTest.T04LockDoor_ReturnsDoorUnLocked
       resultStatus: 1
-      duration: 0.004519
+      duration: 0.003968
       messages: 
       output: 
       stacktrace: 
@@ -1247,7 +1357,7 @@ MonoBehaviour:
       name: Tests
       fullName: Game.Core.Tests
       resultStatus: 2
-      duration: 0.176076
+      duration: 0.128679
       messages: One or more child tests had errors
       output: 
       stacktrace: 
@@ -1258,7 +1368,7 @@ MonoBehaviour:
       name: VectorCalculationsTest
       fullName: Game.Core.Tests.VectorCalculationsTest
       resultStatus: 2
-      duration: 0.163181
+      duration: 0.115977
       messages: One or more child tests had errors
       output: 
       stacktrace: 
@@ -1269,7 +1379,7 @@ MonoBehaviour:
       name: T01GetAngle_Return90Degrees
       fullName: Game.Core.Tests.VectorCalculationsTest.T01GetAngle_Return90Degrees
       resultStatus: 1
-      duration: 0.006076
+      duration: 0.004299
       messages: 
       output: 
       stacktrace: 
@@ -1280,7 +1390,7 @@ MonoBehaviour:
       name: T02aGetSign_ReturnPositionSign
       fullName: Game.Core.Tests.VectorCalculationsTest.T02aGetSign_ReturnPositionSign
       resultStatus: 1
-      duration: 0.004185
+      duration: 0.003363
       messages: 
       output: 
       stacktrace: 
@@ -1291,7 +1401,7 @@ MonoBehaviour:
       name: T02bGetSign_ReturnPositionSign
       fullName: Game.Core.Tests.VectorCalculationsTest.T02bGetSign_ReturnPositionSign
       resultStatus: 1
-      duration: 0.004158
+      duration: 0.004177
       messages: 
       output: 
       stacktrace: 
@@ -1302,7 +1412,7 @@ MonoBehaviour:
       name: T02cGetSign_ReturnPositionSign
       fullName: Game.Core.Tests.VectorCalculationsTest.T02cGetSign_ReturnPositionSign
       resultStatus: 1
-      duration: 0.00457
+      duration: 0.004267
       messages: 
       output: 
       stacktrace: 
@@ -1313,7 +1423,7 @@ MonoBehaviour:
       name: T03aGetSign_ReturnNegativeSign
       fullName: Game.Core.Tests.VectorCalculationsTest.T03aGetSign_ReturnNegativeSign
       resultStatus: 2
-      duration: 0.011589
+      duration: 0.012904
       messages: "  Expected: -1\n  But was:  1.0f\n"
       output: 
       stacktrace: 'at Game.Core.Tests.VectorCalculationsTest.T03aGetSign_ReturnNegativeSign
@@ -1327,7 +1437,7 @@ MonoBehaviour:
       name: T03bGetSign_ReturnNegativeSign
       fullName: Game.Core.Tests.VectorCalculationsTest.T03bGetSign_ReturnNegativeSign
       resultStatus: 2
-      duration: 0.004786
+      duration: 0.004247
       messages: "  Expected: -1\n  But was:  1.0f\n"
       output: 
       stacktrace: 'at Game.Core.Tests.VectorCalculationsTest.T03bGetSign_ReturnNegativeSign
@@ -1341,7 +1451,7 @@ MonoBehaviour:
       name: T03cGetSign_ReturnNegativeSign
       fullName: Game.Core.Tests.VectorCalculationsTest.T03cGetSign_ReturnNegativeSign
       resultStatus: 2
-      duration: 0.003419
+      duration: 0.004346
       messages: "  Expected: -1\n  But was:  1.0f\n"
       output: 
       stacktrace: 'at Game.Core.Tests.VectorCalculationsTest.T03cGetSign_ReturnNegativeSign
@@ -1351,17 +1461,18 @@ MonoBehaviour:
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
-    m_ResultText: 'VectorCalculationsTest (0.163s)
+    m_ResultText: "T03aGetSign_ReturnNegativeSign (0.013s)\n---\nExpected: -1\n  But
+      was:  1.0f\n---\nat Game.Core.Tests.VectorCalculationsTest.T03aGetSign_ReturnNegativeSign
+      () [0x00046] in /Users/fudaviddong/Documents/SpyGame/SpyGame/Assets/_Core/Editor/VectorCalculationsTest.cs:53"
+    m_ResultStacktrace: 'at Game.Core.Tests.VectorCalculationsTest.T03aGetSign_ReturnNegativeSign
+      () [0x00046] in /Users/fudaviddong/Documents/SpyGame/SpyGame/Assets/_Core/Editor/VectorCalculationsTest.cs:53
 
-      ---
-
-      One or more child tests had errors'
-    m_ResultStacktrace: 
+'
     m_TestListState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: ddd6e1d8
-      m_LastClickedID: -656288035
-      m_ExpandedIDs: 10afdb809c022c98a616509890bafab0ddd6e1d85d4dbcdbfadaffdc768d16e643dd82f7bbecbdfdd38dbc020f3d640aa3d39421fea50d2570c3482dd869962fc96784359c56573dcb92a03d760da9429743fd51e8c4db5dffffff7f
+      m_SelectedIDs: b13427b3
+      m_LastClickedID: -1289276239
+      m_ExpandedIDs: 10afdb80e336ee8736c3218e9c022c98a616509890bafab0ddd6e1d85d4dbcdbfadaffdc768d16e643dd82f7bbecbdfdd38dbc020f3d640aa3d39421fea50d2570c3482dd869962fc96784359c56573d760da9429743fd51e8c4db5dffffff7f
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -1401,9 +1512,9 @@ MonoBehaviour:
   m_DepthBufferBits: 0
   m_Pos:
     serializedVersion: 2
-    x: 1571
+    x: 1313
     y: 49
-    width: 349
+    width: 607
     height: 1009
 --- !u!114 &24
 MonoBehaviour:
@@ -1427,7 +1538,7 @@ MonoBehaviour:
   m_DepthBufferBits: 0
   m_Pos:
     serializedVersion: 2
-    x: 1542
+    x: 1313
     y: 49
-    width: 378
+    width: 607
     height: 1009
