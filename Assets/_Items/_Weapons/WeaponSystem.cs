@@ -56,7 +56,6 @@ namespace Game.Items{
 				} else {
 					print("Do Melee Attack with no weapon.");
 				}
-			
 			}
         }
 

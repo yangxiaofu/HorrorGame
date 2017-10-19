@@ -24,17 +24,17 @@ namespace Game.Characters{
 		void Start(){
 
 			_player = FindObjectOfType<Player>();
-			Assert.IsNotNull(_player);
+			Assert.IsNotNull(
+				_player, 
+				"There is no player in the game scene."
+			);
 
-			_sight = GetComponentInChildren<EnemySight>();
-			
+			_sight = GetComponentInChildren<EnemySight>();	
 			Assert.IsNotNull(
 				_sight, 
 				"You need to add the player sight into the transform of the player."
 			);
-
 			_sight.Setup(this.transform);
-
 			_sight.OnPlayerSeen += OnPlayerSeen;
 
 			_enemyControl = GetComponent<EnemyControl>();
@@ -50,25 +50,19 @@ namespace Game.Characters{
 		}
 		void Hit() //Callback furnction from the animatior.
 		{
-			
 			//Calculate Hit Percentage on teh player.
-			if (UnityEngine.Random.Range(0f, 1f) < _hitSuccessPercentage)
-			{
-				if (_enemyControl.target == null) return;
-				_enemyControl.target.GetComponent<CharacterHealth>().TakeDamage(_hitDamage);//TODO: Refactor the magic number out. 
-			} 
-			else 
-			{
-				//TODO: Do animation where you miss
-				//TODO: Do sounds where you miss the player.
-				print("MISSED THE PLAYER");
-			}
+			if (UnityEngine.Random.Range(0f, 1f) >= _hitSuccessPercentage) return;
 			
+			if (_enemyControl.target == null) return;
+
+			_enemyControl.target.GetComponent<CharacterHealth>().TakeDamage(_hitDamage);
+			 			
 		}
 
 		private void ScanForPlayerInAttackRadius()
         {
 			var distanceFromPlayer = Vector3.Distance(_player.transform.position, this.transform.position);
+			
 			if (distanceFromPlayer < _meleeAttackRadius)
 			{
 				_enemyControl.SetState(CharacterControl.AnimationState.ATTACK);	

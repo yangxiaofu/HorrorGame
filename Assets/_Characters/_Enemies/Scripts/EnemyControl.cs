@@ -25,16 +25,12 @@ namespace Game.Characters{
         
         void Update ()
         {
-            if (EnemyIsDead())
+            if (IsDead() || (_target != null && TargetIsDead()))
             {
                 _agent.isStopped = true;
                 return;
             }
-
-            if (_target != null && TargetIsDead()) {
-                return;
-            }
-				
+            
             _enemyAnimationController.UpdateAnimationState();
             UpdateAnimation();
         }
@@ -103,8 +99,9 @@ namespace Game.Characters{
             _target = target;
         }
 
-        public bool EnemyIsDead(){
-			return (GetComponent(typeof(Character)) as Character).isDead;
+        public bool IsDead()
+        {
+			return GetComponent<Enemy>().isDead;
 		}
 
 	}
