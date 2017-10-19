@@ -2529,6 +2529,9 @@ MonoBehaviour:
   _center: {x: 0, y: 0.8, z: 0}
   _radius: 0.3
   _height: 1.6
+  _footstepsAudio: {fileID: 8300000, guid: 8bc94ec6ed537e743b481638bdcd503d, type: 3}
+  _hitSuccessPercentage: 1
+  _hitDamage: 50
 --- !u!114 &114497918375232894
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2579,9 +2582,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _forwardSpeed: 1
-  _animationState: 0
-  _hitSuccessPercentage: 1
-  _hitDamage: 50
 --- !u!137 &137484637650089474
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

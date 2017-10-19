@@ -21,8 +21,9 @@ namespace Game.Characters{
 		{
 			AddCapsuleCollider();
             AddRigidBodyComponent();
-			AddAnimatorComponent();			
-		}
+			AddAnimatorComponent();
+            AddAudioSource();
+        }
 		void Start()
         {
             FindPlayer();

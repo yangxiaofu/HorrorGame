@@ -8,9 +8,6 @@ namespace Game.Characters{
 		[Header("Character General")]
 		[SerializeField] protected float _meleeAttackRadius = 2f;
 		[SerializeField] AnimationClip _deathAnimationClip;
-		protected bool _isDead = false;
-		public bool isDead{get{return _isDead;}}
-		const string DEATH_TRIGGER = "death";
 
 		[Header("Animator Variables")]
 		[SerializeField] protected AnimatorOverrideController _animOC;
@@ -22,11 +19,31 @@ namespace Game.Characters{
 		[SerializeField] protected float _radius = 0.3f;
 		[SerializeField] protected float _height = 1.6f;
 
+		[Header("Audio")]
+		[SerializeField] AudioClip _footstepsAudio;
+		protected AudioSource _audioSource;
+		protected bool _isDead = false;
+		public bool isDead{get{return _isDead;}}
+		const string DEATH_TRIGGER = "death";
+
 		void OnDrawGizmos()
 		{
 			Gizmos.color = Color.blue;
 			Gizmos.DrawWireSphere(this.transform.position, _meleeAttackRadius);
 		}
+
+        void StepAudio()
+        {
+            _audioSource.clip = _footstepsAudio;
+            _audioSource.Play();
+        }
+
+		protected void AddAudioSource()
+        {
+            _audioSource = this.gameObject.AddComponent<AudioSource>();
+            _audioSource.loop = false;
+            _audioSource.playOnAwake = false;
+        }
 
 		public IEnumerator KillCharacter(float delay)
 		{

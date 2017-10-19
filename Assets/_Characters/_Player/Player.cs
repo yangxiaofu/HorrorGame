@@ -15,11 +15,11 @@ namespace Game.Characters{
 	public class Player : Character, IPlayer{
 		[SerializeField] float _pickupDistance = 2f;
 
-        [Header("Player Audio")]
-		[SerializeField] AudioClip _footstepsAudio;
+        
+		
 		public float pickupDistance{get{return _pickupDistance;}}
         CameraRaycaster _cameraRaycaster;
-		AudioSource _audioSource;
+		
 		
 		void Awake()
         {
@@ -39,11 +39,6 @@ namespace Game.Characters{
 			);
 		}
 
-        void StepAudio()
-        {
-            _audioSource.clip = _footstepsAudio;
-            _audioSource.Play();
-        }
 
         public override void ResetCharacter()
         {
@@ -69,12 +64,7 @@ namespace Game.Characters{
             return this.transform.position;
         }
 
-		private void AddAudioSource()
-        {
-            _audioSource = this.gameObject.AddComponent<AudioSource>();
-            _audioSource.loop = false;
-            _audioSource.playOnAwake = false;
-        }
+
 
     }
 }

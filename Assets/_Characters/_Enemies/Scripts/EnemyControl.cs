@@ -57,6 +57,7 @@ namespace Game.Characters{
 
         private void PlayIdleAnimation()
         {
+            _agent.isStopped = true;
             _anim.SetBool(IS_IDLE, true);
         }
 
@@ -98,6 +99,7 @@ namespace Game.Characters{
 		public void SetTarget(Transform target)
         {
             _target = target;
+            
         }
 	}
 }
