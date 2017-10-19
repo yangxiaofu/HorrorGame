@@ -10,8 +10,7 @@ using Game.Core;
 
 namespace Game.Environment{
     [SelectionBase]
-	public class Door : InteractableItem, IPointerClickHandler{
-
+	public class Door : InteractableItem, IPointerClickHandler, IDoor{
 		[SerializeField]  DoorLock _doorLock;
         BoxCollider _boxCollider;
         Vector3 _frontOfDoor
@@ -25,6 +24,10 @@ namespace Game.Environment{
 			SetupInteractableItemVariables();
 
             _boxCollider = GetComponentInChildren<BoxCollider>();
+
+            _player = FindObjectOfType<Player>();
+            Assert.IsNotNull(_player, "You are missing the player from the game scene.");
+
 		}
 
         protected void Unlock(string keyCode)
@@ -40,6 +43,10 @@ namespace Game.Environment{
 				CloseDoor();
 			}
 		}
+
+        public void DetectPlayer(){
+
+        }
 
         public void OnPointerClick(PointerEventData eventData)
         {
@@ -93,6 +100,16 @@ namespace Game.Environment{
                     OpenDoor();
                 }
             }
+        }
+
+        public Vector3 GetForwardDirection()
+        {
+            return this.transform.forward;
+        }
+
+        public Vector3 GetPosition()
+        {
+            return this.transform.position;
         }
     }
 

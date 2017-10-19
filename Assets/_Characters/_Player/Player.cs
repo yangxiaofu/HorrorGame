@@ -8,11 +8,13 @@ using System;
 
 namespace Game.Characters{
 	[SelectionBase]
-	public class Player : Character{
+	public class Player : Character, IPlayer{
 		[SerializeField] float _meleeWeaponDamage = 10f;
 		[SerializeField] float _pickupDistance = 2f;
 		public float pickupDistance{get{return _pickupDistance;}}
-		CameraRaycaster _cameraRaycaster;
+
+
+        CameraRaycaster _cameraRaycaster;
 		void Start()
 		{
 			_cameraRaycaster = FindObjectOfType<CameraRaycaster>();
@@ -55,6 +57,11 @@ namespace Game.Characters{
 			GetComponent<PlayerControl>().Reset();
 			
 			_isDead = false;
+        }
+
+        public Vector3 GetPosition()
+        {
+            return this.transform.position;
         }
     }
 }

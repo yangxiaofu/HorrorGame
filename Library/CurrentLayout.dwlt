@@ -43,7 +43,7 @@ MonoBehaviour:
     y: 0
     width: 1920
     height: 1080
-  m_MinSize: {x: 950, y: 300}
+  m_MinSize: {x: 950, y: 542}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &3
 MonoBehaviour:
@@ -288,7 +288,7 @@ MonoBehaviour:
   - {fileID: 22}
   - {fileID: 24}
   m_Selected: 0
-  m_LastSelected: 3
+  m_LastSelected: 2
 --- !u!114 &13
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -346,17 +346,17 @@ MonoBehaviour:
       speed: 2
       m_Value: 0
   m_Rotation:
-    m_Target: {x: 0.20220564, y: -0.22680548, z: 0.048199177, w: 0.9514991}
+    m_Target: {x: -0.20220564, y: 0.2268055, z: -0.048199177, w: -0.9514991}
     speed: 2
-    m_Value: {x: 0.2022055, y: -0.22680531, z: 0.048199143, w: 0.95149845}
+    m_Value: {x: -0.2022055, y: 0.22680533, z: -0.048199143, w: -0.95149845}
   m_Size:
-    m_Target: 5.5017824
+    m_Target: 21.752502
     speed: 2
-    m_Value: 5.5017824
+    m_Value: 21.752502
   m_Ortho:
-    m_Target: 1
+    m_Target: 0
     speed: 2
-    m_Value: 1
+    m_Value: 0
   m_LastSceneViewRotation: {x: -0.35208222, y: 0.09927433, z: -0.03763916, w: -0.9299279}
   m_LastSceneViewOrtho: 1
   m_ReplacementShader: {fileID: 0}
@@ -387,7 +387,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 204
     y: 49
-    width: 1437
+    width: 1363
     height: 738
   m_MaximizeOnPlay: 0
   m_Gizmos: 0
@@ -397,8 +397,8 @@ MonoBehaviour:
   m_ZoomArea:
     m_HRangeLocked: 0
     m_VRangeLocked: 0
-    m_HBaseRangeMin: -718.5
-    m_HBaseRangeMax: 718.5
+    m_HBaseRangeMin: -681.5
+    m_HBaseRangeMax: 681.5
     m_VBaseRangeMin: -360.5
     m_VBaseRangeMax: 360.5
     m_HAllowExceedBaseRangeMin: 1
@@ -417,25 +417,25 @@ MonoBehaviour:
       serializedVersion: 2
       x: 0
       y: 17
-      width: 1437
+      width: 1363
       height: 721
     m_Scale: {x: 1, y: 1}
-    m_Translation: {x: 718.5, y: 360.5}
+    m_Translation: {x: 681.5, y: 360.5}
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
-      x: -718.5
+      x: -681.5
       y: -360.5
-      width: 1437
+      width: 1363
       height: 721
     m_MinimalGUI: 1
   m_defaultScale: 1
   m_TargetTexture: {fileID: 0}
   m_CurrentColorSpace: 0
-  m_LastWindowPixelSize: {x: 1437, y: 738}
+  m_LastWindowPixelSize: {x: 1363, y: 738}
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
   m_LowResolutionForAspectRatios: 01000000000100000100
@@ -466,10 +466,10 @@ MonoBehaviour:
     width: 200
     height: 738
   m_TreeViewState:
-    scrollPos: {x: 0, y: 24575}
-    m_SelectedIDs: 18fcffff
-    m_LastClickedID: -1000
-    m_ExpandedIDs: 009bedff089bedff3069eeff3269eeff8abfffff46c0ffff54f2ffff56f2ffff5af2ffff7af9ffff2afafffff8faffff52fbffff68fbffffa2fbffffa4fbffffecfbffff18fcffff1afcffff000000000a4d0000344d00006e4d0000724d0000ec4d0000024e00000a4e00003e4e0000844e0000a64e0000c44e0000184f0000
+    scrollPos: {x: 0, y: 0}
+    m_SelectedIDs: 7cc3fbff
+    m_LastClickedID: -277636
+    m_ExpandedIDs: 8406fcff2808fcff3e64fcffd6bffcff7620fdffc480fdffc0defdffd858feff6cb4fefff00fffff6a72ffff1afcffff00000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -645,24 +645,24 @@ MonoBehaviour:
   m_LastProjectPath: /Users/fudaviddong/Documents/SpyGame/SpyGame
   m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 103}
-    m_SelectedIDs: 0c440000
-    m_LastClickedID: 17420
-    m_ExpandedIDs: 0000000094260000022800004e2d0000ae2f0000e8350000583700005438000086380000cc3900003c3b0000b23c0000444000000c440000fa460000924b00005a8e00005c8e00005e8e0000608e0000628e0000648e0000668e0000688e00006a8e000000ca9a3bffffff7f
+    scrollPos: {x: 0, y: 0}
+    m_SelectedIDs: d4440000
+    m_LastClickedID: 17620
+    m_ExpandedIDs: 00000000a2260000102800005e2d0000be2f00009236000000390000323900007e3a0000623d00000841000020410000d4440000e0470000784c00004ea6000050a6000052a6000054a6000056a6000058a600005aa600005ca600005ea600007ea6000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: _Environment
-      m_OriginalName: _Environment
+      m_Name: 
+      m_OriginalName: 
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 15164
+      m_UserData: 0
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 0
+      m_OriginalEventType: 11
       m_IsRenamingFilename: 1
       m_ClientGUIView: {fileID: 11}
     m_SearchString: 
@@ -676,7 +676,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 0000000094260000022800004e2d0000f82d0000ae2f0000d02f0000c6330000d4350000e83500005438000086380000cc390000b23c0000444000000c440000fa4600004a4b0000924b00005a8e00005c8e00005e8e0000608e0000628e0000648e0000668e0000688e00006a8e0000
+    m_ExpandedIDs: 00000000a2260000102800005e2d0000be2f0000923600000438000000390000323900007e3a0000ee3b0000623d000008410000d4440000e0470000784c00004ea6000050a6000052a6000054a6000056a6000058a600005aa600005ca600005ea60000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -703,22 +703,22 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 1
+    m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c6230000964100006c410000e835000076520000125200006a4b000074480000b0370000dea8ffffea410000c892fdffa2570000843b0000284e0000ee64faff4ceb0000146b01000000000088ee0f00ec7203007e7203005c77ecff4a2a0000e82c0000442a000078340000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: 
-      m_OriginalName: 
+      m_Name: CabinetLockTests
+      m_OriginalName: CabinetLockTests
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 0
+      m_UserData: 43372
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 11
+      m_OriginalEventType: 0
       m_IsRenamingFilename: 1
       m_ClientGUIView: {fileID: 11}
     m_CreateAssetUtility:
@@ -811,10 +811,10 @@ MonoBehaviour:
   m_DepthBufferBits: 0
   m_Pos:
     serializedVersion: 2
-    x: 1514
-    y: 94
-    width: 378
-    height: 936
+    x: 1571
+    y: 49
+    width: 349
+    height: 1009
   m_IsSceneBased: 0
   m_TestTypeToolbarIndex: 1
   m_PlayModeTestListGUI:
@@ -883,9 +883,9 @@ MonoBehaviour:
     - id: '[/Users/fudaviddong/Documents/SpyGame/SpyGame/Library/ScriptAssemblies/Assembly-CSharp-Editor.dll][suite]'
       name: Assembly-CSharp-Editor.dll
       fullName: /Users/fudaviddong/Documents/SpyGame/SpyGame/Library/ScriptAssemblies/Assembly-CSharp-Editor.dll
-      resultStatus: 1
-      duration: 0.177787
-      messages: 
+      resultStatus: 2
+      duration: 0.311382
+      messages: One or more child tests had errors
       output: 
       stacktrace: 
       notRunnable: 0
@@ -894,9 +894,9 @@ MonoBehaviour:
     - id: '[Game][suite]'
       name: Game
       fullName: Game
-      resultStatus: 1
-      duration: 0.155565
-      messages: 
+      resultStatus: 2
+      duration: 0.223389
+      messages: One or more child tests had errors
       output: 
       stacktrace: 
       notRunnable: 0
@@ -1137,7 +1137,7 @@ MonoBehaviour:
       name: Core
       fullName: Game.Core
       resultStatus: 2
-      duration: 0.144387
+      duration: 0.196215
       messages: One or more child tests had errors
       output: 
       stacktrace: 
@@ -1148,62 +1148,95 @@ MonoBehaviour:
       name: LockTests
       fullName: Game.Core.LockTests
       resultStatus: 1
-      duration: 0.072154
+      duration: 0.068952
       messages: 
       output: 
       stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
-    - id: '[Assembly-CSharp-Editor.dll][Game.Core.LockTests.LockTest][suite]'
-      name: LockTest
-      fullName: Game.Core.LockTests.LockTest
+    - id: '[Assembly-CSharp-Editor.dll][Game.Core.LockTests.CabinetLockTests][suite]'
+      name: CabinetLockTests
+      fullName: Game.Core.LockTests.CabinetLockTests
       resultStatus: 1
-      duration: 0.059601
+      duration: 0.057525
       messages: 
       output: 
       stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
-    - id: '[Assembly-CSharp-Editor.dll][Game.Core.LockTests.LockTest.T01UnlockDoor_ReturnsDoorUnlocked]'
+    - id: '[Assembly-CSharp-Editor.dll][Game.Core.LockTests.CabinetLockTests.T01UnlockCabinet_ReturnsUnlockedTrue]'
+      name: T01UnlockCabinet_ReturnsUnlockedTrue
+      fullName: Game.Core.LockTests.CabinetLockTests.T01UnlockCabinet_ReturnsUnlockedTrue
+      resultStatus: 1
+      duration: 0.014625
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+    - id: '[Assembly-CSharp-Editor.dll][Game.Core.LockTests.CabinetLockTests.T02UnlockCabinet_ReturnLockedTrue]'
+      name: T02UnlockCabinet_ReturnLockedTrue
+      fullName: Game.Core.LockTests.CabinetLockTests.T02UnlockCabinet_ReturnLockedTrue
+      resultStatus: 1
+      duration: 0.003746
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+    - id: '[Assembly-CSharp-Editor.dll][Game.Core.LockTests.DoorLockTest][suite]'
+      name: DoorLockTest
+      fullName: Game.Core.LockTests.DoorLockTest
+      resultStatus: 1
+      duration: 0.123941
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+    - id: '[Assembly-CSharp-Editor.dll][Game.Core.LockTests.DoorLockTest.T01UnlockDoor_ReturnsDoorUnlocked]'
       name: T01UnlockDoor_ReturnsDoorUnlocked
-      fullName: Game.Core.LockTests.LockTest.T01UnlockDoor_ReturnsDoorUnlocked
+      fullName: Game.Core.LockTests.DoorLockTest.T01UnlockDoor_ReturnsDoorUnlocked
       resultStatus: 1
-      duration: 0.005329
+      duration: 0.026393
       messages: 
       output: 
       stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
-    - id: '[Assembly-CSharp-Editor.dll][Game.Core.LockTests.LockTest.T02UnLockDoor_ReturnsDoorLocked]'
+    - id: '[Assembly-CSharp-Editor.dll][Game.Core.LockTests.DoorLockTest.T02UnLockDoor_ReturnsDoorLocked]'
       name: T02UnLockDoor_ReturnsDoorLocked
-      fullName: Game.Core.LockTests.LockTest.T02UnLockDoor_ReturnsDoorLocked
+      fullName: Game.Core.LockTests.DoorLockTest.T02UnLockDoor_ReturnsDoorLocked
       resultStatus: 1
-      duration: 0.003537
+      duration: 0.005648
       messages: 
       output: 
       stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
-    - id: '[Assembly-CSharp-Editor.dll][Game.Core.LockTests.LockTest.T03LockDoor_ReturnsDoorLocked]'
+    - id: '[Assembly-CSharp-Editor.dll][Game.Core.LockTests.DoorLockTest.T03LockDoor_ReturnsDoorLocked]'
       name: T03LockDoor_ReturnsDoorLocked
-      fullName: Game.Core.LockTests.LockTest.T03LockDoor_ReturnsDoorLocked
+      fullName: Game.Core.LockTests.DoorLockTest.T03LockDoor_ReturnsDoorLocked
       resultStatus: 1
-      duration: 0.003863
+      duration: 0.004342
       messages: 
       output: 
       stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
-    - id: '[Assembly-CSharp-Editor.dll][Game.Core.LockTests.LockTest.T04LockDoor_ReturnsDoorUnLocked]'
+    - id: '[Assembly-CSharp-Editor.dll][Game.Core.LockTests.DoorLockTest.T04LockDoor_ReturnsDoorUnLocked]'
       name: T04LockDoor_ReturnsDoorUnLocked
-      fullName: Game.Core.LockTests.LockTest.T04LockDoor_ReturnsDoorUnLocked
+      fullName: Game.Core.LockTests.DoorLockTest.T04LockDoor_ReturnsDoorUnLocked
       resultStatus: 1
-      duration: 0.004253
+      duration: 0.004519
       messages: 
       output: 
       stacktrace: 
@@ -1214,7 +1247,7 @@ MonoBehaviour:
       name: Tests
       fullName: Game.Core.Tests
       resultStatus: 2
-      duration: 0.130993
+      duration: 0.176076
       messages: One or more child tests had errors
       output: 
       stacktrace: 
@@ -1225,7 +1258,7 @@ MonoBehaviour:
       name: VectorCalculationsTest
       fullName: Game.Core.Tests.VectorCalculationsTest
       resultStatus: 2
-      duration: 0.119995
+      duration: 0.163181
       messages: One or more child tests had errors
       output: 
       stacktrace: 
@@ -1236,7 +1269,7 @@ MonoBehaviour:
       name: T01GetAngle_Return90Degrees
       fullName: Game.Core.Tests.VectorCalculationsTest.T01GetAngle_Return90Degrees
       resultStatus: 1
-      duration: 0.003627
+      duration: 0.006076
       messages: 
       output: 
       stacktrace: 
@@ -1247,7 +1280,7 @@ MonoBehaviour:
       name: T02aGetSign_ReturnPositionSign
       fullName: Game.Core.Tests.VectorCalculationsTest.T02aGetSign_ReturnPositionSign
       resultStatus: 1
-      duration: 0.003955
+      duration: 0.004185
       messages: 
       output: 
       stacktrace: 
@@ -1258,7 +1291,7 @@ MonoBehaviour:
       name: T02bGetSign_ReturnPositionSign
       fullName: Game.Core.Tests.VectorCalculationsTest.T02bGetSign_ReturnPositionSign
       resultStatus: 1
-      duration: 0.003741
+      duration: 0.004158
       messages: 
       output: 
       stacktrace: 
@@ -1269,7 +1302,7 @@ MonoBehaviour:
       name: T02cGetSign_ReturnPositionSign
       fullName: Game.Core.Tests.VectorCalculationsTest.T02cGetSign_ReturnPositionSign
       resultStatus: 1
-      duration: 0.003512
+      duration: 0.00457
       messages: 
       output: 
       stacktrace: 
@@ -1280,7 +1313,7 @@ MonoBehaviour:
       name: T03aGetSign_ReturnNegativeSign
       fullName: Game.Core.Tests.VectorCalculationsTest.T03aGetSign_ReturnNegativeSign
       resultStatus: 2
-      duration: 0.003799
+      duration: 0.011589
       messages: "  Expected: -1\n  But was:  1.0f\n"
       output: 
       stacktrace: 'at Game.Core.Tests.VectorCalculationsTest.T03aGetSign_ReturnNegativeSign
@@ -1294,7 +1327,7 @@ MonoBehaviour:
       name: T03bGetSign_ReturnNegativeSign
       fullName: Game.Core.Tests.VectorCalculationsTest.T03bGetSign_ReturnNegativeSign
       resultStatus: 2
-      duration: 0.004449
+      duration: 0.004786
       messages: "  Expected: -1\n  But was:  1.0f\n"
       output: 
       stacktrace: 'at Game.Core.Tests.VectorCalculationsTest.T03bGetSign_ReturnNegativeSign
@@ -1308,7 +1341,7 @@ MonoBehaviour:
       name: T03cGetSign_ReturnNegativeSign
       fullName: Game.Core.Tests.VectorCalculationsTest.T03cGetSign_ReturnNegativeSign
       resultStatus: 2
-      duration: 0.004645
+      duration: 0.003419
       messages: "  Expected: -1\n  But was:  1.0f\n"
       output: 
       stacktrace: 'at Game.Core.Tests.VectorCalculationsTest.T03cGetSign_ReturnNegativeSign
@@ -1318,13 +1351,17 @@ MonoBehaviour:
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
-    m_ResultText: EnemyAnimationControllerTests (0.119s)
+    m_ResultText: 'VectorCalculationsTest (0.163s)
+
+      ---
+
+      One or more child tests had errors'
     m_ResultStacktrace: 
     m_TestListState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 9c56573d
-      m_LastClickedID: 1029133980
-      m_ExpandedIDs: 10afdb809c022c9890bafab0ddd6e1d85d4dbcdbfadaffdc768d16e6012a13eb43dd82f7bbecbdfdd38dbc020f3d640aa3d39421fea50d2570c3482dd869962fc96784359c56573d760da942aeee214e9743fd51e8c4db5dffffff7f
+      m_SelectedIDs: ddd6e1d8
+      m_LastClickedID: -656288035
+      m_ExpandedIDs: 10afdb809c022c98a616509890bafab0ddd6e1d85d4dbcdbfadaffdc768d16e643dd82f7bbecbdfdd38dbc020f3d640aa3d39421fea50d2570c3482dd869962fc96784359c56573dcb92a03d760da9429743fd51e8c4db5dffffff7f
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -1364,9 +1401,9 @@ MonoBehaviour:
   m_DepthBufferBits: 0
   m_Pos:
     serializedVersion: 2
-    x: 1542
+    x: 1571
     y: 49
-    width: 378
+    width: 349
     height: 1009
 --- !u!114 &24
 MonoBehaviour:
