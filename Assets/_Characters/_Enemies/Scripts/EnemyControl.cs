@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
+//Enemy Control and animation. 
 namespace Game.Characters{
 	public class EnemyControl : CharacterControl, IEnemyControl 
 	{
@@ -12,6 +13,7 @@ namespace Game.Characters{
 		Transform _target;
 		public Transform target{get{return _target;}}
 		EnemyAnimationController _enemyAnimationController;
+		
 		void Awake()
         {
             AddNavMeshAgentComponent();
@@ -22,29 +24,12 @@ namespace Game.Characters{
 			_anim = GetComponent<Animator>();
 			_body = GetComponent<Rigidbody>();
 		}
-        
-        void Update ()
-        {
-            if (IsDead() || (_target != null && TargetIsDead()))
-            {
-                _agent.isStopped = true;
-                return;
-            }
-            
-            _enemyAnimationController.UpdateAnimationState();
-            UpdateAnimation();
-        }
 
         public bool TargetIsDead()
 		{
-			if (_target != null)
-			{
-				return (_target.GetComponent(typeof(Character)) as Character).isDead;
-			} 
-			else 
-			{
-				return false;
-			}
+			if (_target == null) return false;
+
+			return _target.GetComponent<Player>().isDead;
 		}
 
 		void FixedUpdate()
@@ -52,31 +37,47 @@ namespace Game.Characters{
 			MoveBodyPosition();
 		}
 
-        private void UpdateAnimation()
+        public void UpdateEnemyMovementAnimation()
         {
+			_enemyAnimationController.UpdateAnimationState();
+
             if (_enemyAnimationController.animationState == CharacterControl.AnimationState.ATTACK)
             {
-                _anim.Play(ANIMATION_STATE_ATTACK);
-				_anim.SetBool(IS_IDLE, false);
-                _agent.isStopped = true;
-                float delay = GetComponent<Enemy>().animOC[DEFAULT_ATTACK].length;
-                StartCoroutine(SetBacktoForwardState(delay));
+                PlayAttackAnimation();
             }
             else if (_enemyAnimationController.animationState == CharacterControl.AnimationState.FORWARD)
             {
-                _anim.Play(ANIMATION_STATE_FORWARD);
-                _anim.SetBool(IS_IDLE, false);
-                _agent.isStopped = false;
-                _agent.SetDestination(_target.position);
+                PlayWalkForwardAnimation();
             }
             else if (_enemyAnimationController.animationState == CharacterControl.AnimationState.IDLE)
             {
-                _anim.SetBool(IS_IDLE, true);
+                PlayIdleAnimation();
             }
         }
 
+        private void PlayIdleAnimation()
+        {
+            _anim.SetBool(IS_IDLE, true);
+        }
 
-		private void AddNavMeshAgentComponent()
+        private void PlayWalkForwardAnimation()
+        {
+            _anim.Play(ANIMATION_STATE_FORWARD);
+            _anim.SetBool(IS_IDLE, false);
+            _agent.isStopped = false;
+            _agent.SetDestination(_target.position);
+        }
+
+        private void PlayAttackAnimation()
+        {
+            _anim.Play(ANIMATION_STATE_ATTACK);
+            _anim.SetBool(IS_IDLE, false);
+            _agent.isStopped = true;
+            float delay = GetComponent<Enemy>().animOC[DEFAULT_ATTACK].length;
+            StartCoroutine(SetBacktoForwardState(delay));
+        }
+
+        private void AddNavMeshAgentComponent()
         {
             _agent = this.gameObject.AddComponent<NavMeshAgent>();
             _agent.speed = _forwardSpeed;
@@ -98,12 +99,6 @@ namespace Game.Characters{
         {
             _target = target;
         }
-
-        public bool IsDead()
-        {
-			return GetComponent<Enemy>().isDead;
-		}
-
 	}
 }
 

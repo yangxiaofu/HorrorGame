@@ -13,7 +13,6 @@ namespace Game.Core{
 		const  int INTERACTABLE_ITEM_BIT = 8;
 		const int ENEMY_BIT = 9;
 		const int GROUND_BIT = 10;
-
 		Vector3 _mousePosition;
 		public Vector3 mousePosition {get{return _mousePosition;}}
 
@@ -53,7 +52,7 @@ namespace Game.Core{
 			{
 				var enemy = hit.transform.gameObject.GetComponent<Enemy>();
 				Assert.IsNotNull(enemy, "The game object that you are click on may not have an enemy script on top of it. " + hit.transform.gameObject.name);
-				OnMouseOverEnemy(enemy);
+				if (OnMouseOverEnemy != null) OnMouseOverEnemy(enemy);
 			}
         }
 	}

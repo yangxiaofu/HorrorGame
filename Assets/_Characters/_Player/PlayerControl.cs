@@ -38,6 +38,22 @@ namespace Game.Core{
             _body = GetComponent<Rigidbody>();
         }
 
+
+        void Update()
+        {
+            if ((GetComponent<Player>().isDead))
+            {
+                _speed = 0;
+                return;
+            }
+
+            UpdateControllerInput();
+            _controller.UpdateMovementDirection(GetAngleFromSightPosition());
+            UpdateMovementAnimation();//Player Specific
+            ScanForFoodButtonPress();//Player Specific
+        }
+
+
         private void SetupPlayerMovementController()//Player Specific
         {
             _controller = new PlayerMovementController(this,
@@ -74,26 +90,12 @@ namespace Game.Core{
             _cameraRaycaster.OnMouseOverGround += ApplyFaceDirectionToPlayer;
         }
 
-        void Update()
-        {
-            if ((GetComponent<Player>().isDead))
-            {
-                _speed = 0;
-                return;
-            }
-
-            UpdateControllerInput();
-            _controller.UpdateMovementDirection(GetAngleFromSightPosition());
-            UpdateMovementAnimation();//Player Specific
-            ScanKeyButtonPresses();//Player Specific
-        }
-
         public void Reset()
         {
             _anim.Play("Idle");
         }
 
-        private void ScanKeyButtonPresses()//Player Specific
+        private void ScanForFoodButtonPress()//Player Specific
         {
             if (Input.GetKeyDown(KeyCode.Q))
             {
@@ -123,7 +125,7 @@ namespace Game.Core{
         void OnAnimatorIK(int layerIndex)//Player Specific
         {
             _anim.SetIKPosition(AvatarIKGoal.RightHand, _cameraRaycaster.mousePosition);
-            _anim.SetIKPositionWeight(AvatarIKGoal.RightHand, 1);    
+            _anim.SetIKPositionWeight(AvatarIKGoal.RightHand, 0.5f);    
         }
 
         private void UpdateMovementAnimation()//Player Specific

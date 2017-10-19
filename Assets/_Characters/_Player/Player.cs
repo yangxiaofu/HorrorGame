@@ -10,17 +10,20 @@ namespace Game.Characters{
 	[SelectionBase]
 	public class Player : Character, IPlayer{
 		[SerializeField] float _pickupDistance = 2f;
+		[SerializeField] AudioClip _footstepsAudio;
 		public float pickupDistance{get{return _pickupDistance;}}
         CameraRaycaster _cameraRaycaster;
-
+		AudioSource _audioSource;
+		
 		void Awake()
-		{
-			AddAnimatorComponent();
-			AddRigidBodyComponent();
-			AddCapsuleCollider();
-		}
+        {
+            AddAnimatorComponent();
+            AddRigidBodyComponent();
+            AddCapsuleCollider();
+            AddAudioSource();
+        }
 
-		void Start()
+        void Start()
 		{
 			_cameraRaycaster = FindObjectOfType<CameraRaycaster>();
 
@@ -45,6 +48,14 @@ namespace Game.Characters{
         {
             return this.transform.position;
         }
+
+		private void AddAudioSource()
+        {
+            _audioSource = this.gameObject.AddComponent<AudioSource>();
+            _audioSource.loop = false;
+            _audioSource.playOnAwake = false;
+        }
+
     }
 }
 

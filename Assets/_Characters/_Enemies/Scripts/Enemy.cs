@@ -2,8 +2,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 using UnityEngine.Assertions;
 
+//AI logic in the enemy base. 
 namespace Game.Characters{
 	[SelectionBase]
 	[RequireComponent(typeof(EnemyControl))]
@@ -21,33 +23,57 @@ namespace Game.Characters{
             AddRigidBodyComponent();
 			AddAnimatorComponent();			
 		}
-		void Start(){
+		void Start()
+        {
+            FindPlayer();
+            SetupEnemyVision();
+            SetupEnergyControl();
+        }
 
-			_player = FindObjectOfType<Player>();
-			Assert.IsNotNull(
-				_player, 
-				"There is no player in the game scene."
-			);
-
-			_sight = GetComponentInChildren<EnemySight>();	
-			Assert.IsNotNull(
-				_sight, 
-				"You need to add the player sight into the transform of the player."
-			);
-			_sight.Setup(this.transform);
-			_sight.OnPlayerSeen += OnPlayerSeen;
-
-			_enemyControl = GetComponent<EnemyControl>();
-			Assert.IsNotNull(_enemyControl, "There is no enemy control scrip on the game object of " + name);
-		}
-
-		void LateUpdate()
+		void Update()
 		{
-			if (_enemyControl.TargetIsDead()) return;
+			if (PlayerOrEnemyIsDead())
+            {
+				GetComponent<NavMeshAgent>().isStopped = true;
+                return;
+            }
 
-			ScanForPlayerWithinSightRadius();
-			ScanForPlayerInAttackRadius();				
+            _enemyControl.UpdateEnemyMovementAnimation();
+			ScanForPlayerWithinSightRadius();			
+			ScanForPlayerInAttackRadius();	
 		}
+
+		private bool PlayerOrEnemyIsDead(){
+			return (_isDead || (_enemyControl.target != null && _enemyControl.TargetIsDead()));
+		}
+
+        private void FindPlayer()
+        {
+            _player = FindObjectOfType<Player>();
+
+            Assert.IsNotNull(
+                _player,
+                "There is no player in the game scene."
+            );
+        }
+
+        private void SetupEnergyControl()
+        {
+            _enemyControl = GetComponent<EnemyControl>();
+            Assert.IsNotNull(_enemyControl, "There is no enemy control scrip on the game object of " + name);
+        }
+
+        private void SetupEnemyVision()
+        {
+            _sight = GetComponentInChildren<EnemySight>();
+            Assert.IsNotNull(
+                _sight,
+                "You need to add the player sight into the transform of the player."
+            );
+            _sight.Setup(this.transform);
+            _sight.OnPlayerSeen += OnPlayerSeen;
+        }
+
 		void Hit() //Callback furnction from the animatior.
 		{
 			//Calculate Hit Percentage on teh player.

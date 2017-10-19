@@ -84,6 +84,7 @@
      <Compile Include="Assets\_Core\_Scripts\SelectionBase.cs" />
      <Compile Include="Assets\_Core\_Scripts\StartPoint.cs" />
      <Compile Include="Assets\_Core\_Scripts\VectorCalculations.cs" />
+     <Compile Include="Assets\_Core\AudioSounds.cs" />
      <Compile Include="Assets\_Core\CrossPlatformInput\Scripts\AxisTouchButton.cs" />
      <Compile Include="Assets\_Core\CrossPlatformInput\Scripts\ButtonHandler.cs" />
      <Compile Include="Assets\_Core\CrossPlatformInput\Scripts\CrossPlatformInputManager.cs" />
