@@ -1756,7 +1756,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1478101941135492}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 265.89, y: 0.122, z: 140.83}
+  m_LocalPosition: {x: 250.15, y: 0.122, z: 224.34}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4337840111951646}
@@ -2601,8 +2601,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _meleeAttackRadius: 0.94
-  _deathAnimationClip: {fileID: 0}
-  _meleeWeaponDamage: 100
+  _deathAnimationClip: {fileID: 7400000, guid: 589a11892e95f834dbf23f9e1cc1f090, type: 3}
+  _animOC: {fileID: 22100000, guid: 78044126ab0d04cd48f58be9cafb9a46, type: 2}
+  _avatar: {fileID: 9000000, guid: 938034fd331d570419fa906225436adc, type: 3}
+  _center: {x: 0, y: 0.8, z: 0}
+  _radius: 0.3
+  _height: 1.6
+  _meleeWeaponDamage: 10
   _pickupDistance: 1.49
 --- !u!114 &114321649311362562
 MonoBehaviour:
@@ -2641,15 +2646,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _forwardSpeed: 4
-  _animOC: {fileID: 22100000, guid: 78044126ab0d04cd48f58be9cafb9a46, type: 2}
-  _avatar: {fileID: 9000000, guid: ba3786cedeed8f347a9f04d75650e204, type: 3}
-  _center: {x: 0, y: 0.8, z: 0}
-  _radius: 0.3
-  _height: 1.6
   _animationState: 0
   _backwardSpeed: 2
   _strafeSpeed: 2
-  _minimumEnergyFactor: 0.1
   _angleOfForwardWalking: 45
   _angleOfBackwardWalking: 135
 --- !u!114 &114503269127648902
@@ -2711,6 +2710,7 @@ MonoBehaviour:
   _currentEnergy: 100
   _startingEnergy: 100
   _energyLostPerSecond: 0.05
+  _minimumEnergyFactor: 0.1
 --- !u!114 &114912681740671600
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2726,6 +2726,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 92737a8a62b084b109032c4e77c8bcb0, type: 2}
   _items: []
   _keys: []
+  _foods:
+  - {fileID: 11400000, guid: ba54dce8d04884c44874efe3f45a386a, type: 2}
 --- !u!136 &136370296227139826
 CapsuleCollider:
   m_ObjectHideFlags: 1

@@ -8,36 +8,40 @@ using Game.Characters;
 
 namespace Game.Items{
 	public class WeaponSystem : MonoBehaviour {
-		[SerializeField] WeaponConfig _equippedWeapon;
-		public void SetEquippedWeapon(WeaponConfig weapon)
-		{
-			_equippedWeapon = weapon;
-			_equippedWeapon.AddComponentTo(this.gameObject);
-		}
+		[SerializeField] WeaponConfig _equippedWeapon; //Used for testing and debugging pursposes. 
 		ItemGrip _equippedWeaponGrip;
 		CameraRaycaster _cameraRaycaster;
 		Animator _anim;
-		PlayerControl _playerControl;
+
 		const string DEFAULT_ATTACK = "DEFAULT_ATTACK";
 		const string ANIMATION_STATE_ATTACK = "Attack";
-		void Start(){
+
+		void Start()
+		{
 			_cameraRaycaster = FindObjectOfType<CameraRaycaster>();
-			Assert.IsNotNull(_cameraRaycaster, "Camera Raycaster is no longer in the game scene.");
+			Assert.IsNotNull(
+				_cameraRaycaster, 
+				"Camera Raycaster is no longer in the game scene."
+			);
 
 			_anim = GetComponent<Animator>();
-			Assert.IsNotNull(_anim, "There is no animation that starts up on run-time.");
-
-			_playerControl = GetComponent<PlayerControl>();
-			
+			Assert.IsNotNull(
+				_anim, 
+				"There is no animation that starts up on run-time."
+			);			
 		}
 
 		void Update()
 		{
 			DestroyItemsInWeaponGrip();
 			AddEquippedWeaponToWeaponGrip();
-			ScanForCharacterAttack();
+			ScanForCharacterAttack();	
+		}
 
-			
+		public void SetEquippedWeapon(WeaponConfig weapon)
+		{
+			_equippedWeapon = weapon;
+			_equippedWeapon.AddComponentTo(this.gameObject);
 		}
 
         private void ScanForCharacterAttack()

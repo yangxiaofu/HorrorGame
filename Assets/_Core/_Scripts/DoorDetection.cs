@@ -13,9 +13,7 @@ namespace Game.Core{
 		public enum DoorSide{
 			Front, Back
 		}
-
-		DoorSide _doorSide;
-
+	
 		public DoorDetection(IDoor door, IPlayer player)
 		{
 			_door = door;
@@ -24,7 +22,6 @@ namespace Game.Core{
 		
 		public DoorSide PlayerSideOn()
 		{
-			_doorSide = DoorSide.Front;
 			Vector3 forward = _door.GetForwardDirectionOfDoor();
 			Vector3 toOther = _player.GetPosition() - _door.GetPosition();
 			

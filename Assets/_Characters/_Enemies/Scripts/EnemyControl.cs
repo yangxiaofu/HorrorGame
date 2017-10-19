@@ -12,7 +12,6 @@ namespace Game.Characters{
 		Transform _target;
 		public Transform target{get{return _target;}}
 		EnemyAnimationController _enemyAnimationController;
-        Player _player;
 		void Awake()
         {
             AddNavMeshAgentComponent();
@@ -22,7 +21,6 @@ namespace Game.Characters{
 			_enemyAnimationController = new EnemyAnimationController(this);
 			_anim = GetComponent<Animator>();
 			_body = GetComponent<Rigidbody>();
-            _player = FindObjectOfType<Player>();
 		}
         
         void Update ()

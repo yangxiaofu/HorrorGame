@@ -19,7 +19,6 @@ namespace Game.Core{
 			_backLocked = backLocked;
 		}
 
-		bool _locked = false;
 		public bool isLockedOnBothSides
 		{
 			get{

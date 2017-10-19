@@ -9,7 +9,6 @@ using System;
 namespace Game.Characters{
 	[SelectionBase]
 	public class Player : Character, IPlayer{
-		[SerializeField] float _meleeWeaponDamage = 10f;
 		[SerializeField] float _pickupDistance = 2f;
 		public float pickupDistance{get{return _pickupDistance;}}
         CameraRaycaster _cameraRaycaster;
@@ -29,28 +28,7 @@ namespace Game.Characters{
 				_cameraRaycaster, 
 				"Camera Raycaster is not available."
 			);
-
-			_cameraRaycaster.OnMouseOverEnemy += OnMouseOverEnemy;	
 		}
-
-        private void OnMouseOverEnemy(Enemy enemy)
-        {
-			if (Input.GetMouseButtonDown(0))
-			{
-				float distanceFromEnemy = Vector3.Distance(transform.position, enemy.transform.position);
-
-				if (distanceFromEnemy <= _meleeAttackRadius)
-				{
-					//Change this later to do a melee.  
-					//todo: change this for just picking up the enemies. 
-
-					enemy.GetComponent<CharacterHealth>().TakeDamage(_meleeWeaponDamage);
-				} else {
-					//I use the keyboard input key to shoot hte emy.
-
-				}
-			}
-        }
 
         public override void ResetCharacter()
         {
