@@ -25,7 +25,7 @@ namespace Game.Core{
 		public DoorSide PlayerSideOn()
 		{
 			_doorSide = DoorSide.Front;
-			Vector3 forward = _door.GetForwardDirection();
+			Vector3 forward = _door.GetForwardDirectionOfDoor();
 			Vector3 toOther = _player.GetPosition() - _door.GetPosition();
 			
 			if (Vector3.Dot(forward, toOther) < 0){

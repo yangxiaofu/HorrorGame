@@ -30,11 +30,6 @@ namespace Game.Environment{
 
 		}
 
-        protected void Unlock(string keyCode)
-		{
-			_doorLock.UnlockDoor(keyCode);
-		}
-
         void Update()
         {
 			if (_doorLock.isLockedOnBothSides == false && PlayerIsFarAwayFromDoor())
@@ -43,6 +38,11 @@ namespace Game.Environment{
 				CloseDoor();
 			}
         }
+
+        private void Unlock(string keyCode)
+		{
+			_doorLock.UnlockDoor(keyCode);
+		}
 
         public void OnPointerClick(PointerEventData eventData)
         {
@@ -63,12 +63,11 @@ namespace Game.Environment{
         protected override void PerformDoorInteraction() //TODO: Unit Testing for this should occur. 
         {
             if (_doorLock.isLockedOnBothSides)
-            { //IF BOTH SIDES LOCKED.
+            { 
                 AttemptUnlock();
             }
             else 
             {   
-                //IF ONE SIDE IS LOCKED OR NO SIDES ARE LOCKED.
                 if (GetPlayerSideOn()== DoorDetection.DoorSide.Front && !_doorLock.frontLocked)
                 {
                     OpenDoor();
@@ -108,7 +107,7 @@ namespace Game.Environment{
             }
         }
 
-        public Vector3 GetForwardDirection()
+        public Vector3 GetForwardDirectionOfDoor()
         {
             return this.transform.right;
         }
@@ -118,13 +117,12 @@ namespace Game.Environment{
             return this.transform.position;
         }
 
-
         void OnDrawGizmos()
         {
             DrawGizmos();
-
+            //Black Ray is the forward direction of the door. 
             Gizmos.color = Color.black;
-            Gizmos.DrawRay(this.transform.position, this.transform.right * 100f);
+            Gizmos.DrawRay(this.transform.position, this.transform.right * 100f); 
             
         }
     }

@@ -14,7 +14,7 @@ namespace Game.Environment{
 			_forwardDirection = forwardDirection;
 		}
 
-        public Vector3 GetForwardDirection()
+        public Vector3 GetForwardDirectionOfDoor()
         {
             return _forwardDirection;
         }
