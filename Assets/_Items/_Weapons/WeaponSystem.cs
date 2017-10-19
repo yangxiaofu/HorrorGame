@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.Assertions;
 using Game.Core;
 using System;
+using Game.Characters;
 
 namespace Game.Items{
 	public class WeaponSystem : MonoBehaviour {
@@ -35,6 +36,8 @@ namespace Game.Items{
 			DestroyItemsInWeaponGrip();
 			AddEquippedWeaponToWeaponGrip();
 			ScanForCharacterAttack();
+
+			
 		}
 
         private void ScanForCharacterAttack()
@@ -43,7 +46,7 @@ namespace Game.Items{
 			if (Input.GetKeyDown(KeyCode.Space))
 			{
 				if (_equippedWeapon != null){
-					_playerControl.animOC[DEFAULT_ATTACK] = _equippedWeapon.GetAnimation();
+					GetComponent<Player>().animOC[DEFAULT_ATTACK] = _equippedWeapon.GetAnimation();
 					_equippedWeapon.UseWeapon();
 					_anim.Play(ANIMATION_STATE_ATTACK);
 				} else {

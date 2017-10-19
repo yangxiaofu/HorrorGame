@@ -24,7 +24,7 @@ namespace Game.Characters{
 			}
 		}
 
-		public void ResetHealth()
+		public void Reset()
 		{
 			_currentHealth = _startingHealth;
 		}

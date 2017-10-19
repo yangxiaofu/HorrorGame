@@ -14,9 +14,6 @@ namespace Game.Core{
 		[SerializeField] float _backwardSpeed = 2f;
         [SerializeField] float _strafeSpeed = 1f;	
 
-		[Tooltip("Adjusting this impacts the minimum energy level that impacts the player movement.")]
-		[Range(0, 1)]
-		[SerializeField] float _minimumEnergyFactor = 0.1f;
 
 		[Header("Movement Angles")]
         [Tooltip("The angle from the sight view from the front from where the animation changes from a walking animation to a strafing animation.")]
@@ -30,22 +27,15 @@ namespace Game.Core{
 		Flashlight _flashlight;
 		PlayerMovementController _controller;
 
-        public delegate void HealthKeyDown();
-        public event HealthKeyDown OnHealthKeyDown;
-        
-		
-		void Awake()
-        {
-            AddAnimatorComponent();
-			AddRigidBodyComponent();
-			AddCapsuleCollider();
-        }
+        public delegate void EnergyKeyDown(float energyToIncrease);
+        public event EnergyKeyDown OnEnergyKeyDown;
 
         void Start()
         {
             SetupComponentVariables(); //Player specific
             RegisterToNotifiers();  //Player Specific
             SetupPlayerMovementController(); //Player Specific
+            _body = GetComponent<Rigidbody>();
         }
 
         private void SetupPlayerMovementController()//Player Specific
@@ -73,6 +63,8 @@ namespace Game.Core{
                 _flashlight, 
                 "You must carry a flashlight as a child of the player game object."
             );
+
+            _anim = GetComponent<Animator>();
         }
 
         private void RegisterToNotifiers()//Player Specific
@@ -84,8 +76,9 @@ namespace Game.Core{
 
         void Update()
         {
-            if ((GetComponent(typeof(Character)) as Character).isDead)
+            if ((GetComponent<Player>().isDead))
             {
+                _speed = 0;
                 return;
             }
 
@@ -104,8 +97,16 @@ namespace Game.Core{
         {
             if (Input.GetKeyDown(KeyCode.Q))
             {
-                if (OnHealthKeyDown != null) 
-                    OnHealthKeyDown();
+                if (OnEnergyKeyDown != null) 
+                {
+                    var food = GetComponent<Inventory>().GetFood();
+
+                    if (food != null)
+                    {
+                        OnEnergyKeyDown(food.energyBoost);
+                    }
+                    
+                }
             }
         }
         private void UpdateControllerInput()//Player Specific
@@ -132,7 +133,7 @@ namespace Game.Core{
                 _anim.SetBool(IS_IDLE, false);
                 _animationState = AnimationState.FORWARD;
                 _anim.Play(ANIMATION_STATE_FORWARD);
-                _speed = _forwardSpeed * GetEnergyFactor();
+                _speed = _forwardSpeed * GetComponent<PlayerEnergy>().GetEnergyFactor();
             }
             else if (_controller.movementDirection == PlayerMovementController.MovementDirection.BACKWARD && _animationState != AnimationState.BACKWARD)
             {
@@ -160,21 +161,7 @@ namespace Game.Core{
                 _speed = _strafeSpeed;
 			}
         }
-        private float GetEnergyFactor()
-        {
-            var energyLevel = GetComponent<PlayerEnergy>();
-            var energyFactor = energyLevel.energyAsPercentage;
-			
-			float maximumEnergyFactor = 1;
-
-			energyFactor = Mathf.Clamp(
-				energyFactor, 
-				_minimumEnergyFactor, 
-				maximumEnergyFactor
-			);
-
-            return energyFactor;
-        }
+        
         private float GetAngleFromSightPosition()
         {
         	var forwardDirection = transform.forward;

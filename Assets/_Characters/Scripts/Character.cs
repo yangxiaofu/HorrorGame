@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Assertions;
 
 namespace Game.Characters{
 	public abstract class Character : MonoBehaviour {
@@ -10,6 +11,17 @@ namespace Game.Characters{
 		protected bool _isDead = false;
 		public bool isDead{get{return _isDead;}}
 		const string DEATH_TRIGGER = "death";
+
+		[Header("Animator Variables")]
+		[SerializeField] protected AnimatorOverrideController _animOC;
+        public AnimatorOverrideController animOC{get{return _animOC;}}
+		[SerializeField] protected Avatar _avatar;
+
+		[Header("Capsule Collider")]
+		[SerializeField] protected Vector3 _center = new Vector3(0, 0.8f, 0);
+		[SerializeField] protected float _radius = 0.3f;
+		[SerializeField] protected float _height = 1.6f;
+
 		void OnDrawGizmos()
 		{
 			Gizmos.color = Color.blue;
@@ -21,15 +33,47 @@ namespace Game.Characters{
 			_isDead = true;
 			//Do death animation.
 			GetComponent<Animator>().SetTrigger(DEATH_TRIGGER);
+			GetComponent<Rigidbody>().Sleep();
 
 			yield return new WaitForSeconds(delay);
 
-			RemoveCharacter();
+			ResetCharacter();
 
 			yield return null;
 		}
 
-		public abstract void RemoveCharacter();
+		protected void AddAnimatorComponent()
+        {
+            Assert.IsNotNull(
+				_animOC,
+				"Please add the player animation Override Controller referenced in the PlayerControl component"
+			);
+
+            Assert.IsNotNull(
+                _avatar,
+                "Add the player avatar into PlayerControl component on Player"
+            );
+
+            var anim = gameObject.AddComponent<Animator>();
+            anim.runtimeAnimatorController = _animOC;
+            anim.avatar = _avatar;
+        }
+
+		protected void AddRigidBodyComponent()
+        {
+            var body = gameObject.AddComponent<Rigidbody>();
+			body.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
+        }
+
+		protected void AddCapsuleCollider()
+        {
+			var cc = gameObject.AddComponent<CapsuleCollider>();
+			cc.center = _center;
+			cc.radius = _radius;
+			cc.height = _height;
+        }
+
+		public abstract void ResetCharacter();
 		
 	}
 }

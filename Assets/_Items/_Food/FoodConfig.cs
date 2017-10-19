@@ -10,7 +10,7 @@ namespace Game.Items{
         public float energyBoost{get{return _energyBoost;}}
         public override void AddToInventory(Inventory inv)
         {
-            inv.AddItem(this);
+            inv.AddFood(this);
         }
     }
 

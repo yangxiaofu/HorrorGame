@@ -4,27 +4,27 @@ using UnityEngine;
 using UnityEngine.AI;
 
 namespace Game.Characters{
-	public class EnemyControl : CharacterControl, IEnemyControl {
-		[Range(0, 1)]
-		[SerializeField] float _hitSuccessPercentage = .50f;
-		[SerializeField] float _hitDamage = 50f;
+	public class EnemyControl : CharacterControl, IEnemyControl 
+	{
 		const string DEFAULT_ATTACK = "DEFAULT_ATTACK";
 		const string ANIMATION_STATE_ATTACK = "Attack";
 		NavMeshAgent _agent;
 		Transform _target;
 		public Transform target{get{return _target;}}
 		EnemyAnimationController _enemyAnimationController;
+        Player _player;
 		void Awake()
         {
             AddNavMeshAgentComponent();
-			AddCapsuleCollider();
-            AddRigidBodyComponent();
-			AddAnimatorComponent();
         }
 		void Start()
 		{
 			_enemyAnimationController = new EnemyAnimationController(this);
+			_anim = GetComponent<Animator>();
+			_body = GetComponent<Rigidbody>();
+            _player = FindObjectOfType<Player>();
 		}
+        
         void Update ()
         {
             if (EnemyIsDead())
@@ -33,20 +33,39 @@ namespace Game.Characters{
                 return;
             }
 
-            if (_target != null && TargetIsDead()) return;
-
+            if (_target != null && TargetIsDead()) {
+                return;
+            }
+				
             _enemyAnimationController.UpdateAnimationState();
-			
             UpdateAnimation();
         }
+
+        public bool TargetIsDead()
+		{
+			if (_target != null)
+			{
+				return (_target.GetComponent(typeof(Character)) as Character).isDead;
+			} 
+			else 
+			{
+				return false;
+			}
+		}
+
+		void FixedUpdate()
+		{
+			MoveBodyPosition();
+		}
 
         private void UpdateAnimation()
         {
             if (_enemyAnimationController.animationState == CharacterControl.AnimationState.ATTACK)
             {
                 _anim.Play(ANIMATION_STATE_ATTACK);
+				_anim.SetBool(IS_IDLE, false);
                 _agent.isStopped = true;
-                float delay = _animOC[DEFAULT_ATTACK].length;
+                float delay = GetComponent<Enemy>().animOC[DEFAULT_ATTACK].length;
                 StartCoroutine(SetBacktoForwardState(delay));
             }
             else if (_enemyAnimationController.animationState == CharacterControl.AnimationState.FORWARD)
@@ -62,35 +81,7 @@ namespace Game.Characters{
             }
         }
 
-        bool EnemyIsDead(){
-			return (GetComponent(typeof(Character)) as Character).isDead;
-		}
 
-		bool TargetIsDead(){
-			return (_target.GetComponent(typeof(Character)) as Character).isDead;
-		}
-
-		void Hit()
-		{
-			//Calculate Hit Percentage on teh player.
-			if (UnityEngine.Random.Range(0f, 1f) < _hitSuccessPercentage)
-			{
-				if (_target == null) return;
-				_target.GetComponent<CharacterHealth>().TakeDamage(_hitDamage);//TODO: Refactor the magic number out. 
-			} 
-			else 
-			{
-				//TODO: Do animation where you miss
-				//TODO: Do sounds where you miss the player.
-				print("MISSED THE PLAYER");
-			}
-			
-		}
-
-		void FixedUpdate()
-		{
-			MoveBodyPosition();
-		}
 		private void AddNavMeshAgentComponent()
         {
             _agent = this.gameObject.AddComponent<NavMeshAgent>();
@@ -113,6 +104,11 @@ namespace Game.Characters{
         {
             _target = target;
         }
+
+        public bool EnemyIsDead(){
+			return (GetComponent(typeof(Character)) as Character).isDead;
+		}
+
 	}
 }
 

@@ -2523,7 +2523,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _meleeAttackRadius: 1.17
-  _deathAnimationClip: {fileID: 0}
+  _deathAnimationClip: {fileID: 7400000, guid: 589a11892e95f834dbf23f9e1cc1f090, type: 3}
+  _animOC: {fileID: 22100000, guid: 136f03d40f6ed46d58452c021d8828a8, type: 2}
+  _avatar: {fileID: 9000000, guid: b235179bd2a63d1468dd430670338c55, type: 3}
+  _center: {x: 0, y: 0.8, z: 0}
+  _radius: 0.3
+  _height: 1.6
 --- !u!114 &114497918375232894
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2574,11 +2579,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _forwardSpeed: 1
-  _animOC: {fileID: 22100000, guid: 136f03d40f6ed46d58452c021d8828a8, type: 2}
-  _avatar: {fileID: 9000000, guid: b235179bd2a63d1468dd430670338c55, type: 3}
-  _center: {x: 0, y: 0.8, z: 0}
-  _radius: 0.3
-  _height: 1.6
   _animationState: 0
   _hitSuccessPercentage: 1
   _hitDamage: 50

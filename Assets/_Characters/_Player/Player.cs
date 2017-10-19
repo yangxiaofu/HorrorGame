@@ -12,9 +12,15 @@ namespace Game.Characters{
 		[SerializeField] float _meleeWeaponDamage = 10f;
 		[SerializeField] float _pickupDistance = 2f;
 		public float pickupDistance{get{return _pickupDistance;}}
-
-
         CameraRaycaster _cameraRaycaster;
+
+		void Awake()
+		{
+			AddAnimatorComponent();
+			AddRigidBodyComponent();
+			AddCapsuleCollider();
+		}
+
 		void Start()
 		{
 			_cameraRaycaster = FindObjectOfType<CameraRaycaster>();
@@ -35,28 +41,26 @@ namespace Game.Characters{
 
 				if (distanceFromEnemy <= _meleeAttackRadius)
 				{
-					//TODO: Perform the attack animation.
+					//Change this later to do a melee.  
+					//todo: change this for just picking up the enemies. 
+
 					enemy.GetComponent<CharacterHealth>().TakeDamage(_meleeWeaponDamage);
 				} else {
-					//TODO: Shoot the enemy.	
+					//I use the keyboard input key to shoot hte emy.
+
 				}
 			}
         }
 
-        public override void RemoveCharacter()
+        public override void ResetCharacter()
         {
-			//Rest the character somewhere else. 
+			var health = GetComponent<PlayerHealth>();
+			health.Reset();
+			GetComponent<PlayerControl>().Reset();
+			_isDead = false;
+
 			var startPoint = GameObject.FindObjectOfType<StartPoint>();
 			this.transform.position = startPoint.transform.position;
-
-			var characterhealth = GetComponent(typeof(CharacterHealth)) as CharacterHealth;
-			characterhealth.ResetHealth();
-
-			GetComponent<Rigidbody>().Sleep();
-
-			GetComponent<PlayerControl>().Reset();
-			
-			_isDead = false;
         }
 
         public Vector3 GetPosition()
