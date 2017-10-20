@@ -6,22 +6,25 @@ namespace Game.Core{
 	public class Flashlight : MonoBehaviour {
 
 		[SerializeField] bool _isOn = true;
+		public bool isOn{get{return _isOn;}}
 		Light[] _lights;
-		public bool isOn{
-			get{return _isOn;}
-			set{_isOn = value;}
-		}
-
-		void Start()
+		public void ToggleFlashlight(bool isOn)
 		{
-			_lights = GetComponentsInChildren<Light>();
-		}
+			_isOn = isOn;
 
-		void Update(){
 			for(int i = 0; i < _lights.Length; i++)
 			{
 				_lights[i].enabled = _isOn;
 			}
+			if (OnFlashLightToggled != null) OnFlashLightToggled(isOn);
+		}
+
+		public delegate void FlashLightToggled(bool isOn);
+		public event FlashLightToggled OnFlashLightToggled;
+
+		void Start()
+		{
+			_lights = GetComponentsInChildren<Light>();
 		}
 	}
 }

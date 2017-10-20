@@ -18,7 +18,9 @@ namespace Game.Characters{
 
         [Header("Enemy Vision")]
         [SerializeField] float _sightDistance = 5f;
+        [SerializeField] float _sightDistanceNoLight = 1f;
         [SerializeField] float _angleOfSight = 45f;
+        [SerializeField] float _angleOfSightNoLight = 10f;
 		EnemySight _sight;
 		EnemyControl _enemyControl;
 		Player _player;
@@ -33,11 +35,32 @@ namespace Game.Characters{
 		void Start()
         {
             FindPlayer();
+            RegisterToFlashlight();
             SetupEnemyVision();
             SetupEnergyControl();
         }
 
-		void Update()
+        private void RegisterToFlashlight()
+        {
+            Debug.Log("Registering to the flashlight");
+            _player.flashlight.OnFlashLightToggled += OnFlashLightToggled;
+        }
+
+        private void OnFlashLightToggled(bool flashLightIsOn)
+        {
+            Debug.Log("Flashlight toggled");
+            if (flashLightIsOn)
+            {
+                _sight.SetupPlayerSight(_sightDistance, _angleOfSight);
+            } 
+            else 
+            {
+                _sight.SetupPlayerSight(_sightDistanceNoLight, _angleOfSightNoLight);
+            }
+
+        }
+
+        void Update()
 		{
 			if (PlayerOrEnemyIsDead())
             {
@@ -62,7 +85,6 @@ namespace Game.Characters{
             } else {
                 _audioSource.volume = 0f;
             }
-            
         }
 
 		private bool PlayerOrEnemyIsDead(){

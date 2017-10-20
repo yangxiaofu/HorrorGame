@@ -18,6 +18,7 @@ namespace Game.Characters{
         CameraRaycaster _cameraRaycaster;
         PlayerControl _playerControl;
         Flashlight _flashlight;
+        public Flashlight flashlight{get{return _flashlight;}}
 
         public delegate void EnergyKeyDown(float energyToIncrease);
         public event EnergyKeyDown OnEnergyKeyDown;
@@ -28,6 +29,10 @@ namespace Game.Characters{
             AddRigidBodyComponent();
             AddCapsuleCollider();
             AddAudioSource();
+            
+            _flashlight = GetComponentInChildren<Flashlight>(); 
+            Assert.IsNotNull(_flashlight, "There are not flashlights in the child of your player");
+            //Needs to be early so that enemies can register to it in their start methods.
         }
 
         void Start()
@@ -40,9 +45,6 @@ namespace Game.Characters{
 			);
 
             _playerControl = GetComponent<PlayerControl>();
-            _flashlight = GetComponentInChildren<Flashlight>();
-
-            
 		}
 
         void Update()
@@ -58,7 +60,8 @@ namespace Game.Characters{
         {
             if (Input.GetMouseButtonDown(1))
             {
-                _flashlight.isOn = _flashlight.isOn ? _flashlight.isOn = false : _flashlight.isOn = true;
+                var isOn = _flashlight.isOn ? false : true;
+                _flashlight.ToggleFlashlight(isOn);
             }
         }
 
