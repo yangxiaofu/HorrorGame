@@ -27,8 +27,6 @@ namespace Game.Core{
         const string HORIZONTAL_AXIS = "Horizontal";
         const string VERTICAL_AXIS = "Vertical";
 
-        public delegate void EnergyKeyDown(float energyToIncrease);
-        public event EnergyKeyDown OnEnergyKeyDown;
 
         void Start()
         {
@@ -39,29 +37,11 @@ namespace Game.Core{
             GetAnimatorComponent();
         }
 
-        void Update()
+        public void UpdateMovementDirection()
         {
-            if (PlayerIsDead()) return;
-
-            UpdateControllerInput();
-            UpdateMovementDirection();
-            UpdateMovementAnimation();
-            ScanForFoodButtonPress();
-        }
-
-        private void UpdateMovementDirection()
-        {
+            _inputs = new Vector3(Input.GetAxis(HORIZONTAL_AXIS), 0, Input.GetAxis(VERTICAL_AXIS));
             _controller.UpdateMovementDirection(GetAngleFromSightPosition());
-        }
-
-        private bool PlayerIsDead()
-        {
-            if (GetComponent<Player>().isDead){
-                _speed = 0;
-                return true;
-            } else {
-                return false;
-            }
+            UpdateMovementAnimation();
         }
 
         private void SetupPlayerMovementController()//Player Specific
@@ -89,8 +69,6 @@ namespace Game.Core{
                 _flashlight, 
                 "You must carry a flashlight as a child of the player game object."
             );
-
-
         }
 
         private void RegisterToNotifiers()//Player Specific
@@ -102,28 +80,9 @@ namespace Game.Core{
 
         public void Reset()
         {
-            _anim.Play("Idle");
+            _anim.Play(ANIMATION_STATE_IDLE);
         }
 
-        private void ScanForFoodButtonPress()//Player Specific
-        {
-            if (Input.GetKeyDown(KeyCode.Q))
-            {
-                if (OnEnergyKeyDown != null) 
-                {
-                    var food = GetComponent<Inventory>().GetFood();
-
-                    if (food != null)
-                    {
-                        OnEnergyKeyDown(food.energyBoost);
-                    }
-                }
-            }
-        }
-        private void UpdateControllerInput()//Player Specific
-        {
-            _inputs = new Vector3(Input.GetAxis(HORIZONTAL_AXIS), 0, Input.GetAxis(VERTICAL_AXIS));
-        }
         void FixedUpdate()
         {
             MoveBodyPosition(); //CharacterControl

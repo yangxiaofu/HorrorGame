@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Assertions;
+using Game.Core;
 
 //AI logic in the enemy base. 
 namespace Game.Characters{
@@ -13,6 +14,11 @@ namespace Game.Characters{
 		[Range(0, 1)]
 		[SerializeField] float _hitSuccessPercentage = .50f;
 		[SerializeField] float _hitDamage = 50f;
+        [SerializeField] float _distanceToStartAudio = 5f;
+
+        [Header("Enemy Vision")]
+        [SerializeField] float _sightDistance = 5f;
+        [SerializeField] float _angleOfSight = 45f;
 		EnemySight _sight;
 		EnemyControl _enemyControl;
 		Player _player;
@@ -39,10 +45,25 @@ namespace Game.Characters{
                 return;
             }
 
-            _enemyControl.UpdateEnemyMovementAnimation();
-			ScanForPlayerWithinSightRadius();			
+            UpdateEnemySoundVolume();
+            ScanForPlayerWithinSightRadius();			
 			ScanForPlayerInAttackRadius();	
+            _enemyControl.UpdateEnemyMovementAnimation();
+			
 		}
+        private void UpdateEnemySoundVolume()
+        {
+            var distanceFromPlayer = Vector3.Distance(this.transform.position, _player.transform.position);
+            if (distanceFromPlayer <= _distanceToStartAudio)
+            {
+                var normalizer = new Normalizer(distanceFromPlayer, 0, _distanceToStartAudio);
+                var volume = normalizer.InverseNormalizedValue();
+                _audioSource.volume = volume;
+            } else {
+                _audioSource.volume = 0f;
+            }
+            
+        }
 
 		private bool PlayerOrEnemyIsDead(){
 			return (_isDead || (_enemyControl.target != null && _enemyControl.TargetIsDead()));
@@ -72,6 +93,7 @@ namespace Game.Characters{
                 "You need to add the player sight into the transform of the player."
             );
             _sight.Setup(this.transform);
+            _sight.SetupPlayerSight(_sightDistance, _angleOfSight);
             _sight.OnPlayerSeen += OnPlayerSeen;
         }
 
@@ -96,12 +118,11 @@ namespace Game.Characters{
 			}
         }
 		
-
         private void ScanForPlayerWithinSightRadius()
         {
             var distanceFromPlayer = Vector3.Distance(this.transform.position, _player.transform.position);
 
-            if (distanceFromPlayer > _sight.sightDistance)
+            if (distanceFromPlayer > _sightDistance)
             {
                 _enemyControl.SetTarget(null);
             }
@@ -115,11 +136,16 @@ namespace Game.Characters{
 		void OnDrawGizmos()
 		{
 			Gizmos.color = Color.yellow;
-
 			Gizmos.DrawWireSphere(
 				this.transform.position, 
-				GetComponentInChildren<EnemySight>().sightDistance
+				_sightDistance
 			);
+
+            Gizmos.color = Color.red;
+            Gizmos.DrawWireSphere(
+                this.transform.position, 
+                _distanceToStartAudio
+            );
 		}
 
         public override void ResetCharacter()

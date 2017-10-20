@@ -23,7 +23,7 @@ namespace Game.Characters{
 		float _minimumEnergyLevel = 0f;
 		public float minimumEnergyLevel{get{return _minimumEnergyLevel;}}
 		PlayerEnergyController _controller;
-		PlayerControl _playerControl;
+		Player _player;
 		public float energyAsPercentage{
 			get{return _currentEnergy / _startingEnergy;}
 		}
@@ -31,11 +31,8 @@ namespace Game.Characters{
         void Start(){
 			_controller = new PlayerEnergyController(this);
 
-			_playerControl = GetComponent<PlayerControl>();
-			Assert.IsNotNull(_playerControl, "Player Control is not on the player game object.");
-			
-			_playerControl.OnEnergyKeyDown += IncreaseEnergy;
-
+			_player = GetComponent<Player>();
+			_player.OnEnergyKeyDown += IncreaseEnergy;
 		}
 		void Update()
 		{

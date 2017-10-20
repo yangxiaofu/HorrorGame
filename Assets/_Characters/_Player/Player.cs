@@ -14,12 +14,13 @@ namespace Game.Characters{
     
 	public class Player : Character, IPlayer{
 		[SerializeField] float _pickupDistance = 2f;
-
-        
-		
 		public float pickupDistance{get{return _pickupDistance;}}
         CameraRaycaster _cameraRaycaster;
-		
+        PlayerControl _playerControl;
+        Flashlight _flashlight;
+
+        public delegate void EnergyKeyDown(float energyToIncrease);
+        public event EnergyKeyDown OnEnergyKeyDown;
 		
 		void Awake()
         {
@@ -37,7 +38,55 @@ namespace Game.Characters{
 				_cameraRaycaster, 
 				"Camera Raycaster is not available."
 			);
+
+            _playerControl = GetComponent<PlayerControl>();
+            _flashlight = GetComponentInChildren<Flashlight>();
+
+            
 		}
+
+        void Update()
+        {
+            if (PlayerIsDead()) return;
+
+            _playerControl.UpdateMovementDirection();
+            ScanForFoodButtonPress();
+            ScanForFlashLightPress();
+        }
+
+        private void ScanForFlashLightPress()
+        {
+            if (Input.GetMouseButtonDown(1))
+            {
+                _flashlight.isOn = _flashlight.isOn ? _flashlight.isOn = false : _flashlight.isOn = true;
+            }
+        }
+
+        private void ScanForFoodButtonPress()//Player Specific
+        {
+            if (Input.GetKeyDown(KeyCode.Q))
+            {
+                if (OnEnergyKeyDown != null) 
+                {
+                    var food = GetComponent<Inventory>().GetFood();
+
+                    if (food != null)
+                    {
+                        OnEnergyKeyDown(food.energyBoost);
+                    }
+                }
+            }
+        }
+
+         private bool PlayerIsDead()
+        {
+            if (_isDead){
+                GetComponent<PlayerControl>().speed = 0;
+                return true;
+            } else {
+                return false;
+            }
+        }
 
 
         public override void ResetCharacter()

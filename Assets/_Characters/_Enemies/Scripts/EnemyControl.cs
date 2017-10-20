@@ -21,8 +21,10 @@ namespace Game.Characters{
 		void Start()
 		{
 			_enemyAnimationController = new EnemyAnimationController(this);
+
 			GetAnimatorComponent();
 			GetRigidBodyComponent();
+            _target = FindObjectOfType<Player>().transform;
 		}
 
         public bool TargetIsDead()
@@ -34,7 +36,7 @@ namespace Game.Characters{
 
 		void FixedUpdate()
 		{
-			MoveBodyPosition();
+            MoveBodyPosition();
 		}
 
         public void UpdateEnemyMovementAnimation()
@@ -99,6 +101,18 @@ namespace Game.Characters{
 		public void SetTarget(Transform target)
         {
             _target = target;
+
+            if (target == null) 
+            {
+                _agent.SetDestination(this.transform.position);
+                _agent.isStopped = true;
+            } 
+            else 
+            {
+                _agent.SetDestination(target.position);
+                
+            }
+
             
         }
 	}

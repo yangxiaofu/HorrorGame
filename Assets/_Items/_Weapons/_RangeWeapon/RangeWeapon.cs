@@ -6,6 +6,11 @@ namespace Game.Items{
 	[CreateAssetMenu(menuName = "Game/Items/Range Weapon")]
 	public class RangeWeapon : WeaponConfig {
 		[SerializeField] GameObject _projectilePrefab;
+		[SerializeField] AudioClip _shotAudio;
+		public AudioClip GetShotAudioClip()
+		{
+			return _shotAudio;
+		}
 		public GameObject GetProjectilePrefab(){
 			return _projectilePrefab;
 		}
@@ -13,6 +18,8 @@ namespace Game.Items{
 		public Transform GetProjectileSocket(){
 			return _projectileSocket;
 		}
+
+
 		
         public override void AddComponentTo(GameObject gameObjectToAddTo)
         {

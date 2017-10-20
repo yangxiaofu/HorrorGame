@@ -21,6 +21,7 @@ namespace Game.Characters{
 
 		[Header("Audio")]
 		[SerializeField] AudioClip _footstepsAudio;
+		[Range(0, 1)] [SerializeField] float _audioVolume = 1;
 		protected AudioSource _audioSource;
 		protected bool _isDead = false;
 		public bool isDead{get{return _isDead;}}
@@ -43,6 +44,7 @@ namespace Game.Characters{
             _audioSource = this.gameObject.AddComponent<AudioSource>();
             _audioSource.loop = false;
             _audioSource.playOnAwake = false;
+			_audioSource.volume = _audioVolume;
         }
 
 		public IEnumerator KillCharacter(float delay)

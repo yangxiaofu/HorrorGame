@@ -12,7 +12,7 @@ namespace Game.Items{
 		ItemGrip _equippedWeaponGrip;
 		CameraRaycaster _cameraRaycaster;
 		Animator _anim;
-
+		AudioSource _audioSource;
 		const string DEFAULT_ATTACK = "DEFAULT_ATTACK";
 		const string ANIMATION_STATE_ATTACK = "Attack";
 
@@ -28,7 +28,10 @@ namespace Game.Items{
 			Assert.IsNotNull(
 				_anim, 
 				"There is no animation that starts up on run-time."
-			);			
+			);		
+
+			_audioSource = GetComponent<AudioSource>();
+			Assert.IsNotNull(_audioSource);
 		}
 
 		void Update()
@@ -49,14 +52,27 @@ namespace Game.Items{
 			
 			if (Input.GetKeyDown(KeyCode.Space))
 			{
-				if (_equippedWeapon != null){
-					GetComponent<Player>().animOC[DEFAULT_ATTACK] = _equippedWeapon.GetAnimation();
-					_equippedWeapon.UseWeapon();
-					_anim.Play(ANIMATION_STATE_ATTACK);
-				} else {
-					print("Do Melee Attack with no weapon.");
+				if (_equippedWeapon == null) return;
+				
+				if (_equippedWeapon is RangeWeapon)
+                {
+                    GetComponent<Player>().animOC[DEFAULT_ATTACK] = _equippedWeapon.GetAnimation();
+                    _equippedWeapon.UseWeapon();
+                    _anim.Play(ANIMATION_STATE_ATTACK);
+                    PlayEquippedWeaponGunShotSound();
+                }
+                else if (_equippedWeapon is MeleeWeapon)
+				{
+					print("Do a melee attack'");
 				}
 			}
+        }
+
+        private void PlayEquippedWeaponGunShotSound()
+        {
+            var audioClip = (_equippedWeapon as RangeWeapon).GetShotAudioClip();
+            _audioSource.clip = audioClip;
+            _audioSource.Play();
         }
 
         private void AddEquippedWeaponToWeaponGrip()

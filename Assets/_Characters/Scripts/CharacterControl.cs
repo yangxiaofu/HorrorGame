@@ -16,6 +16,10 @@ namespace Game.Characters{
 
 		[Header("Capsule Collider")]
 		protected float _speed = 0f;
+		public float speed{
+			get{return _speed;}
+			set{_speed = value;}
+		}
 		protected Rigidbody _body;
 		protected Animator _anim;
 		protected const string IS_IDLE = "isIdle";
@@ -23,6 +27,7 @@ namespace Game.Characters{
     	protected const string ANIMATION_STATE_BACKWARD = "WalkBackward";
         protected const string ANIMATION_STATE_STRAFE_LEFT = "Strafe Left";
         protected const string ANIMATION_STATE_STRAFE_RIGHT = "Strafe Right";
+		protected const string ANIMATION_STATE_IDLE = "Idle";
 
 		public enum AnimationState {
             FORWARD, BACKWARD, LEFT, RIGHT, IDLE, ATTACK

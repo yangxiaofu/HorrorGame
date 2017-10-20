@@ -5,9 +5,8 @@ using UnityEngine.Assertions;
 
 namespace Game.Characters{
 	public class EnemySight : MonoBehaviour {
-		[SerializeField] float _angleOfSight = 45f;
-		[SerializeField] float _sightDistance = 50f;
-		public float sightDistance{get{return _sightDistance;}}
+		float _angleOfSight = 45f;
+		float _sightDistance = 6f;
 		Transform _parent;
 		const string PLAYER = "Player";
 		Player _target;
@@ -21,6 +20,12 @@ namespace Game.Characters{
 		{
 			_target = FindObjectOfType<Player>();
 			Assert.IsNotNull(_target, "Player is not in the game scene.");
+		}
+
+		public void SetupPlayerSight(float sightDistance, float angleOfSight)
+		{
+			_sightDistance = sightDistance;
+			_angleOfSight = angleOfSight;
 		}
 		
 		public void Setup(Transform parent)
@@ -52,24 +57,14 @@ namespace Game.Characters{
 
             {
                 if (!hit.transform.CompareTag(PLAYER)) return;
-
-				var player = hit.transform.gameObject.GetComponent<Player>();
-
-				Assert.IsNotNull(player);
-
-				if (OnPlayerSeen != null) OnPlayerSeen(player);
+		
+				if (OnPlayerSeen != null) OnPlayerSeen(_target);
             }
         }
 
         private bool PlayerInLineOfSight(float angleOfPlayer)
 		{
 			return angleOfPlayer < _angleOfSight;
-		}
-
-		void OnDrawGizmos()
-		{
-			Gizmos.color = Color.red;
-			Gizmos.DrawRay(transform.position, _targetDirection);
 		}
 	}
 }

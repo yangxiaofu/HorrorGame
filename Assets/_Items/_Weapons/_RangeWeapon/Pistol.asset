@@ -18,4 +18,5 @@ MonoBehaviour:
   _animation: {fileID: 7400000, guid: ac4675c4d1758a342a4abd7f9d49697f, type: 3}
   _projectilePrefab: {fileID: 1185728981465958, guid: 0057643342cd34e5dbc582f74ef5bd8f,
     type: 2}
+  _shotAudio: {fileID: 8300000, guid: 44a9361b07fef445aa90ba576c8c72e4, type: 3}
   _projectileSocket: {fileID: 0}

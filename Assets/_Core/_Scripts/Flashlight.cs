@@ -2,15 +2,26 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Flashlight : MonoBehaviour {
+namespace Game.Core{
+	public class Flashlight : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
+		[SerializeField] bool _isOn = true;
+		Light[] _lights;
+		public bool isOn{
+			get{return _isOn;}
+			set{_isOn = value;}
+		}
+
+		void Start()
+		{
+			_lights = GetComponentsInChildren<Light>();
+		}
+
+		void Update(){
+			for(int i = 0; i < _lights.Length; i++)
+			{
+				_lights[i].enabled = _isOn;
+			}
+		}
 	}
 }

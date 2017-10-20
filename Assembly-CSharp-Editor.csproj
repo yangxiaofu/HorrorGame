@@ -54,6 +54,7 @@
      <Compile Include="Assets\_Characters\_Enemies\Editor\EnemyAnimationControllerTests.cs" />
      <Compile Include="Assets\_Characters\_Player\Editor\PlayerEnergyTests.cs" />
      <Compile Include="Assets\_Characters\_Player\Editor\PlayerMovementControllerTests.cs" />
+     <Compile Include="Assets\_Core\_Scripts\Editor\NormalizerTests.cs" />
      <Compile Include="Assets\_Core\_Scripts\Lock\Editor\CabinetLockTests.cs" />
      <Compile Include="Assets\_Core\_Scripts\Lock\Editor\DoorDetectionTests.cs" />
      <Compile Include="Assets\_Core\CrossPlatformInput\Editor\CrossPlatformInput\CrossPlatformInputInitialize.cs" />

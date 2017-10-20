@@ -2530,8 +2530,12 @@ MonoBehaviour:
   _radius: 0.3
   _height: 1.6
   _footstepsAudio: {fileID: 8300000, guid: 8bc94ec6ed537e743b481638bdcd503d, type: 3}
+  _audioVolume: 1
   _hitSuccessPercentage: 1
   _hitDamage: 50
+  _distanceToStartAudio: 11.6
+  _sightDistance: 8.88
+  _angleOfSight: 45
 --- !u!114 &114497918375232894
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2568,8 +2572,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b75dcdfdb2fbf4ac9a5a71118f68d787, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _angleOfSight: 45
-  _sightDistance: 5.7
 --- !u!114 &114860175754565668
 MonoBehaviour:
   m_ObjectHideFlags: 1
